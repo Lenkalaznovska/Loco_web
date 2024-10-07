@@ -1,11 +1,20 @@
-function switchLanguage() {
-    const language = document.getElementById("language-select").value;
-    const elements = document.querySelectorAll("[data-lang-cs]");
+document.addEventListener('DOMContentLoaded', () => {
+    const languageSwitcher = document.getElementById("language-select");
+    
+    languageSwitcher.addEventListener('change', switchLanguage);
 
-    elements.forEach((element) => {
-        const text = element.getAttribute(`data-lang-${language}`);
-        if (text) {
-            element.innerText = text;
-        }
-    });
-}
+    function switchLanguage() {
+        const selectedLanguage = languageSwitcher.value;
+        const elementsToTranslate = document.querySelectorAll("[data-lang-cs]");
+
+        elementsToTranslate.forEach((element) => {
+            const translation = element.getAttribute(`data-lang-${selectedLanguage}`);
+            if (translation) {
+                element.innerText = translation;
+            }
+        });
+    }
+
+    // Voláme funkci při načtení stránky, aby se aplikoval výchozí jazyk
+    switchLanguage();
+});
