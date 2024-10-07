@@ -3,49 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Výrobce Modelových Vláčků</title>
+    <title>Výrobce modelových vláčků</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
+        <div class="logo">
+            <h1>Modelové Vláčky</h1>
+        </div>
         <nav>
             <ul>
-                <li><a href="#">Domů</a></li>
-                <li><a href="#">Produkty</a></li>
-                <li><a href="#">O nás</a></li>
-                <li><a href="#">Kontakt</a></li>
-                <li>
-                    <select id="languageSwitcher">
-                        <option value="cz" selected>Čeština</option>
-                        <option value="en">English</option>
-                    </select>
-                </li>
+                <li><a href="#home" class="nav-link" data-section="home">Domů</a></li>
+                <li><a href="#products" class="nav-link" data-section="products">Produkty</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">O Nás</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Kontakt</a></li>
             </ul>
         </nav>
-        <div class="hero">
-            <h1>Výrobce Modelových Vláčků</h1>
-            <p>Kvalitní modely železnic pro všechny nadšence.</p>
+        <div class="language-switcher">
+            <select id="language-select" onchange="switchLanguage()">
+                <option value="cs" selected>Čeština</option>
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+            </select>
         </div>
     </header>
 
-    <section id="produkty">
-        <h2>Naše Produkty</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="train1.jpg" alt="Modelový Vláček 1">
-                <h3>Modelový Vláček 1</h3>
-                <p>Detailní replika starého parního vlaku.</p>
-            </div>
-            <div class="gallery-item">
-                <img src="train2.jpg" alt="Modelový Vláček 2">
-                <h3>Modelový Vláček 2</h3>
-                <p>Precizní model elektrické lokomotivy.</p>
-            </div>
+    <section id="home">
+        <h2 data-lang-cs="Vítejte na stránkách výrobce modelových vláčků" 
+            data-lang-en="Welcome to the model train manufacturer's website" 
+            data-lang-de="Willkommen auf der Website des Modellzugherstellers">
+            Vítejte na stránkách výrobce modelových vláčků
+        </h2>
+        <p data-lang-cs="Naše modelové vláčky jsou vysoce kvalitní a detailní." 
+           data-lang-en="Our model trains are high quality and detailed." 
+           data-lang-de="Unsere Modellzüge sind von hoher Qualität und detailliert.">
+           Naše modelové vláčky jsou vysoce kvalitní a detailní.
+        </p>
+    </section>
+
+    <section id="products">
+        <h2 data-lang-cs="Naše Produkty" 
+            data-lang-en="Our Products" 
+            data-lang-de="Unsere Produkte">Naše Produkty</h2>
+        <div class="product-list">
+            <!-- Zde bude seznam produktů -->
         </div>
     </section>
 
+    <section id="about">
+        <h2 data-lang-cs="O Nás" 
+            data-lang-en="About Us" 
+            data-lang-de="Über Uns">O Nás</h2>
+        <p data-lang-cs="Jsme přední výrobce modelových vláčků s dlouholetou tradicí." 
+           data-lang-en="We are a leading model train manufacturer with a long-standing tradition." 
+           data-lang-de="Wir sind ein führender Modellzughersteller mit langjähriger Tradition.">
+           Jsme přední výrobce modelových vláčků s dlouholetou tradicí.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2 data-lang-cs="Kontaktujte nás" 
+            data-lang-en="Contact Us" 
+            data-lang-de="Kontaktieren Sie uns">Kontaktujte nás</h2>
+        <p data-lang-cs="Máte otázky? Rádi Vám pomůžeme!" 
+           data-lang-en="Do you have questions? We are happy to help!" 
+           data-lang-de="Haben Sie Fragen? Wir helfen Ihnen gerne weiter!">
+           Máte otázky? Rádi Vám pomůžeme!
+        </p>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Výrobce Modelových Vláčků. Všechna práva vyhrazena.</p>
+        <p>&copy; 2024 Výrobce modelových vláčků</p>
     </footer>
 
     <script src="script.js"></script>
