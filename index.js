@@ -45,23 +45,25 @@ languageButtons.forEach(button => {
     });
 });
 
-// Funkce pro animace viditelnosti sekcí
-function handleSectionVisibility() {
-    const sections = document.querySelectorAll('.text-container');
-    const triggerHeight = window.innerHeight / 5 * 4; // Výška pro spuštění animace
-
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        
-        if (sectionTop < triggerHeight) {
-            section.classList.add('visible');
-        }
-    });
-}
-
 // Inicializace obsahu
 updateContent();
 
-// Zobrazení sekcí při scrollování
-window.addEventListener('scroll', handleSectionVisibility);
-handleSectionVisibility();
+// Funkce pro sledování viditelnosti sekcí
+const sections = document.querySelectorAll('.text-container');
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1 // Spustí animaci, když je 10% sekce viditelné
+};
+
+const observerCallback = (entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible'); // Přidá třídu pro viditelnost
+            observer.unobserve(entry.target); // Zastaví sledování po zobrazení
+        }
+    });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach(section => observer.observe(section)); // Začátek sledování všech sekcí
