@@ -37,10 +37,12 @@ function updateContent() {
 }
 
 // Jazykový přepínač
-const languageSelect = document.getElementById('language-select');
-languageSelect.addEventListener('change', (e) => {
-    currentLanguage = e.target.value; // Získání zvoleného jazyka
-    updateContent(); // Aktualizace obsahu
+const languageButtons = document.querySelectorAll('.lang-btn');
+languageButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        currentLanguage = e.target.dataset.lang; // Získání zvoleného jazyka
+        updateContent(); // Aktualizace obsahu
+    });
 });
 
 // Inicializace obsahu
