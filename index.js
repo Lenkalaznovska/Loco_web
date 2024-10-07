@@ -45,5 +45,30 @@ languageButtons.forEach(button => {
     });
 });
 
-// Inicializace obsahu
-updateContent();
+// Funkce pro odhalení sekcí při scrollování
+function revealSections() {
+    const sections = document.querySelectorAll('.text-container');
+    const options = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}
+
+// Spuštění při načtení stránky
+document.addEventListener('DOMContentLoaded', () => {
+    updateContent();  // Inicializace obsahu
+    revealSections(); // Spuštění funkce pro zobrazení sekcí
+});
