@@ -1,53 +1,38 @@
-// Jazykové možnosti
 const languages = {
     cs: {
-        title: "Vítejte na naší železniční stránce",
-        description: "Objevte svět modelových vláčků a příslušenství.",
-        order: "Objednat",
-        gallery: "Galerie",
-        contact: "Kontakt",
-        languageSwitcher: "Vyberte jazyk"
+        title: "Modelové Vláčky",
+        about: "Naše firma se specializuje na výrobu detailně propracovaných modelů vlaků a železnic. Každý model je precizně zpracován a je věnována maximální pozornost každému detailu.",
+        products: "Nabízíme širokou škálu modelových vlaků, kolejnic a příslušenství pro všechny železniční nadšence. Naše produkty jsou známé svou kvalitou a precizností.",
+        order: "Objednejte si svůj model ještě dnes!"
     },
     en: {
-        title: "Welcome to Our Railway Page",
-        description: "Discover the world of model trains and accessories.",
-        order: "Order",
-        gallery: "Gallery",
-        contact: "Contact",
-        languageSwitcher: "Select Language"
+        title: "Model Trains",
+        about: "Our company specializes in the production of highly detailed model trains and railways. Each model is meticulously crafted with great attention to detail.",
+        products: "We offer a wide range of model trains, tracks, and accessories for all railway enthusiasts. Our products are known for their quality and precision.",
+        order: "Order your model today!"
     },
     de: {
-        title: "Willkommen auf unserer Eisenbahnseite",
-        description: "Entdecken Sie die Welt der Modelleisenbahnen und Zubehör.",
-        order: "Bestellen",
-        gallery: "Galerie",
-        contact: "Kontakt",
-        languageSwitcher: "Sprache auswählen"
+        title: "Modelleisenbahnen",
+        about: "Unser Unternehmen ist auf die Herstellung von detailgetreuen Modelleisenbahnen spezialisiert. Jedes Modell wird mit großer Sorgfalt und Liebe zum Detail gefertigt.",
+        products: "Wir bieten eine große Auswahl an Modelleisenbahnen, Schienen und Zubehör für alle Eisenbahn-Enthusiasten. Unsere Produkte sind für ihre Qualität und Präzision bekannt.",
+        order: "Bestellen Sie Ihr Modell noch heute!"
     }
 };
 
-// První jazyk (čeština)
 let currentLanguage = 'cs';
 
-// Funkce pro aktualizaci textu na stránce
 function updateContent() {
     document.querySelector('.main-heading').innerText = languages[currentLanguage].title;
-    document.querySelector('.text-container p').innerText = languages[currentLanguage].description;
+    document.querySelector('.section1 p').innerText = languages[currentLanguage].about;
+    document.querySelector('.section2 p').innerText = languages[currentLanguage].products;
     document.querySelector('.order-section h2').innerText = languages[currentLanguage].order;
-    document.querySelector('.gallery-section h2').innerText = languages[currentLanguage].gallery;
-    document.querySelector('.contact-section h2').innerText = languages[currentLanguage].contact;
-    document.querySelector('.language-switcher-label').innerText = languages[currentLanguage].languageSwitcher;
 }
 
-// Jazykový přepínač
-const languageSwitcher = document.querySelectorAll('.language-switcher a');
-languageSwitcher.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        currentLanguage = e.target.dataset.lang; // Získání zvoleného jazyka
-        updateContent(); // Aktualizace obsahu
+document.querySelectorAll('.lang-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        currentLanguage = button.id;
+        updateContent();
     });
 });
 
-// Inicializace obsahu
 updateContent();
