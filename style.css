@@ -1,13 +1,13 @@
 /* Reset a obecné styly */
 :root {
-    --main-bg-color: #f0f4f8; /* Světle modrá pozadí */
-    --primary-color: #34495e; /* Tmavě modrá pro text (symbol železnice) */
-    --accent-color: #3498db; /* Světlá modrá pro železniční téma */
-    --secondary-color: #e74c3c; /* Červená barva pro akcenty (symbolizuje výstrahy) */
+    --main-bg-color: #f0f4f8; /* Světle šedá pozadí */
+    --primary-color: #4a90e2; /* Světle modrá pro text */
+    --accent-color: #ff5722; /* Výrazná červená barva pro akcenty */
+    --secondary-color: #388e3c; /* Světlá zelená pro akcenty */
     --section-bg-color: #ffffff; /* Bílá pozadí sekcí */
-    --footer-bg-color: #2980b9; /* Tmavě modrá pro patičku */
-    --link-color: #3498db; /* Světlá modrá pro odkazy */
-    --highlight-color: #e74c3c; /* Červená pro zvýraznění */
+    --footer-bg-color: #34495e; /* Tmavě modrá pro patičku */
+    --link-color: #4a90e2; /* Světle modrá pro odkazy */
+    --highlight-color: #ff5722; /* Výrazná červená pro zvýraznění */
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -29,7 +29,7 @@ body {
     position: relative;
     overflow: hidden;
     text-align: center;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
 }
 
 .menu-background {
@@ -51,7 +51,7 @@ body {
     font-size: 60px;
     font-weight: bold;
     text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.5);
-    animation: slideDown 0.8s ease-out, shine 1.5s ease-in-out infinite;
+    animation: slideDown 0.8s ease-out;
 }
 
 @keyframes slideDown {
@@ -62,18 +62,6 @@ body {
     100% {
         transform: translateY(0);
         opacity: 1;
-    }
-}
-
-@keyframes shine {
-    0% {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
-    }
-    50% {
-        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
     }
 }
 
@@ -90,7 +78,7 @@ body {
     background-color: var(--accent-color);
     border: none;
     color: white;
-    padding: 10px 15px;
+    padding: 12px 18px; /* Vyraznější padding */
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -129,13 +117,11 @@ body {
     margin-bottom: 20px;
     font-weight: bold;
     color: var(--accent-color);
-    text-align: center; /* Vycentrování textu */
 }
 
 .text-container p {
     margin-bottom: 20px;
     color: var(--primary-color);
-    text-align: center; /* Vycentrování textu */
 }
 
 /* Footer */
@@ -161,7 +147,7 @@ body {
     }
 
     .lang-btn {
-        padding: 8px 12px;
+        padding: 10px 15px; /* Úprava paddingu pro menší obrazovky */
         font-size: 14px;
     }
 
