@@ -2,15 +2,16 @@
 :root {
     --main-bg-color: #ffffff;
     --primary-color: #003366;
-    --accent-color: #e63946;
+    --accent-color: #e63946; /* červená barva pro kolenice */
     --secondary-color: #d9d9d9; /* původní barva */
-    --section-bg-color: #b3b3b3; /* Ztmavený odstín pro sekce */
+    --section-bg-color: #c0c0c0; /* tmavší odstín pro sekce */
     --footer-bg-color: #003366;
     --link-color: #003366;
-    --highlight-color: #e63946;
+    --highlight-color: #e63946; /* červená pro zvýraznění */
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
+/* Resetování marginů a paddingů */
 * {
     margin: 0;
     padding: 0;
@@ -245,4 +246,35 @@ button {
     .text-container h2 {
         font-size: 20px;
     }
+}
+
+/* Červené kolenice */
+.red-stripe {
+    position: relative; /* Pozicování pro absolutní pozice vnitřních prvků */
+    height: 40px; /* Výška sekce s kolenicemi */
+    display: flex; /* Použití flexboxu pro zarovnání */
+    justify-content: center; /* Zarovnání obsahu na střed */
+    align-items: center; /* Vertikální zarovnání */
+}
+
+.red-stripe::before,
+.red-stripe::after {
+    content: ""; /* Vytvoření pseudo-elementu */
+    background-color: var(--accent-color); /* Červená barva pro kolenice */
+    position: absolute; /* Absolutní pozice */
+    height: 10px; /* Výška kolenice */
+}
+
+.red-stripe::before {
+    width: 30%; /* Šířka kratší kolenice */
+    left: 20%; /* Umístění kratší kolenice */
+    top: 50%; /* Vertikální umístění */
+    transform: translateY(-50%); /* Vertikálně vycentrování */
+}
+
+.red-stripe::after {
+    width: 50%; /* Šířka delší kolenice */
+    left: 50%; /* Umístění delší kolenice */
+    top: 50%; /* Vertikální umístění */
+    transform: translate(-50%, -50%); /* Vycentrování */
 }
