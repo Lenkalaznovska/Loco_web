@@ -95,7 +95,7 @@ body {
     background: var(--section-bg-color);
     border-radius: 10px;
     box-shadow: 0 10px 30px var(--shadow-color);
-    opacity: 0;
+    opacity: 0; /* Sekce začínají jako neviditelné */
     transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     text-align: center;
@@ -113,8 +113,8 @@ body {
 
 /* Zobrazení sekcí při viditelnosti */
 .text-container.visible {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Sekce se stanou viditelnými */
+    transform: translateY(0); /* Sekce se posune na původní pozici */
 }
 
 .text-container h2 {
