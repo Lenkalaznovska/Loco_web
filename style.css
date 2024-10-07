@@ -1,13 +1,13 @@
 /* Reset a obecné styly */
 :root {
-    --main-bg-color: #e9f5fb; /* Světle modrá */
-    --primary-color: #333333; /* Tmavě šedá */
-    --accent-color: #007bff; /* Světlejší modrá */
-    --secondary-color: #ffc107; /* Žlutá */
-    --section-bg-color: #ffffff; /* Bílá */
-    --footer-bg-color: #007bff; /* Světlejší modrá */
-    --link-color: #007bff; /* Světlejší modrá */
-    --highlight-color: #007bff; /* Světlejší modrá */
+    --main-bg-color: #f2f2f2;
+    --primary-color: #333333;
+    --accent-color: #4a90e2; /* Světle modrá */
+    --secondary-color: #e27b4a;
+    --section-bg-color: #ffffff;
+    --footer-bg-color: #333333;
+    --link-color: #4a90e2; /* Světle modrá */
+    --highlight-color: #4a90e2; /* Světle modrá */
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -95,15 +95,20 @@ body {
     background: var(--section-bg-color);
     border-radius: 10px;
     box-shadow: 0 10px 30px var(--shadow-color);
-    opacity: 0; /* Sekce začínají jako neviditelné */
+    opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     text-align: center;
+    animation: breathing 3s infinite;
 }
 
-.text-container.visible {
-    opacity: 1; /* Sekce se stanou viditelnými */
-    transform: translateY(0); /* Sekce se posune na původní pozici */
+@keyframes breathing {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
 }
 
 .text-container h2 {
@@ -144,5 +149,9 @@ body {
     .lang-btn {
         padding: 8px 12px;
         font-size: 14px;
+    }
+
+    .text-container {
+        animation: breathing 3s infinite; /* Přidání efektu dýchání */
     }
 }
