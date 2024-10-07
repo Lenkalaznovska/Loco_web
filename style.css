@@ -1,52 +1,43 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
 }
 
 header {
-    background-color: #1e3a5f;
-    color: white;
-    padding: 20px 0;
+    background-color: #4b5320; /* Tmavě zelená */
+    color: #fff;
+    padding: 20px;
     text-align: center;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
 }
 
-#language-switcher button {
-    background-color: #f0b429;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 5px;
-    cursor: pointer;
+nav a {
+    color: #fff;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-#language-switcher button:hover {
-    background-color: #e09e24;
+nav a:hover {
+    background-color: #575757;
 }
 
-section {
-    padding: 50px 0;
-    text-align: center;
-}
-
-#products {
-    background-color: #f7f7f7;
+main {
+    padding: 20px;
 }
 
 footer {
-    background-color: #1e3a5f;
-    color: white;
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 10px 0;
 }
