@@ -1,38 +1,49 @@
+// Jazykové možnosti
 const languages = {
     cs: {
-        title: "Modelové Vláčky",
-        about: "Naše firma se specializuje na výrobu detailně propracovaných modelů vlaků a železnic. Každý model je precizně zpracován a je věnována maximální pozornost každému detailu.",
-        products: "Nabízíme širokou škálu modelových vlaků, kolejnic a příslušenství pro všechny železniční nadšence. Naše produkty jsou známé svou kvalitou a precizností.",
-        order: "Objednejte si svůj model ještě dnes!"
+        "about-title": "O nás",
+        "about-desc": "Naše firma se specializuje na výrobu detailně propracovaných modelů vlaků a železnic. Každý model je precizně zpracován a je věnována maximální pozornost každému detailu.",
+        "products-title": "Naše modely",
+        "products-desc": "Nabízíme širokou škálu modelových vlaků, kolejnic a příslušenství pro všechny železniční nadšence. Naše produkty jsou známé svou kvalitou a precizností.",
+        "order-title": "Objednejte si svůj model ještě dnes!",
+        "order-desc": "Pro více informací nás kontaktujte na e-mailu nebo telefonním čísle uvedeném níže."
     },
     en: {
-        title: "Model Trains",
-        about: "Our company specializes in the production of highly detailed model trains and railways. Each model is meticulously crafted with great attention to detail.",
-        products: "We offer a wide range of model trains, tracks, and accessories for all railway enthusiasts. Our products are known for their quality and precision.",
-        order: "Order your model today!"
+        "about-title": "About Us",
+        "about-desc": "Our company specializes in creating detailed models of trains and railways. Each model is meticulously crafted with the utmost attention to detail.",
+        "products-title": "Our Models",
+        "products-desc": "We offer a wide range of model trains, tracks, and accessories for all railway enthusiasts. Our products are known for their quality and precision.",
+        "order-title": "Order Your Model Today!",
+        "order-desc": "For more information, contact us via email or phone number below."
     },
     de: {
-        title: "Modelleisenbahnen",
-        about: "Unser Unternehmen ist auf die Herstellung von detailgetreuen Modelleisenbahnen spezialisiert. Jedes Modell wird mit großer Sorgfalt und Liebe zum Detail gefertigt.",
-        products: "Wir bieten eine große Auswahl an Modelleisenbahnen, Schienen und Zubehör für alle Eisenbahn-Enthusiasten. Unsere Produkte sind für ihre Qualität und Präzision bekannt.",
-        order: "Bestellen Sie Ihr Modell noch heute!"
+        "about-title": "Über uns",
+        "about-desc": "Unser Unternehmen ist auf die Herstellung von detaillierten Modellen von Zügen und Eisenbahnen spezialisiert. Jedes Modell wird mit größter Sorgfalt und Liebe zum Detail gefertigt.",
+        "products-title": "Unsere Modelle",
+        "products-desc": "Wir bieten eine breite Palette von Modellzügen, Schienen und Zubehör für alle Eisenbahnfans. Unsere Produkte sind für ihre Qualität und Präzision bekannt.",
+        "order-title": "Bestellen Sie Ihr Modell noch heute!",
+        "order-desc": "Für weitere Informationen kontaktieren Sie uns per E-Mail oder unter der unten angegebenen Telefonnummer."
     }
 };
 
+// První jazyk (čeština)
 let currentLanguage = 'cs';
 
+// Funkce pro aktualizaci textu na stránce
 function updateContent() {
-    document.querySelector('.main-heading').innerText = languages[currentLanguage].title;
-    document.querySelector('.section1 p').innerText = languages[currentLanguage].about;
-    document.querySelector('.section2 p').innerText = languages[currentLanguage].products;
-    document.querySelector('.order-section h2').innerText = languages[currentLanguage].order;
+    document.querySelectorAll('[data-key]').forEach(el => {
+        el.innerText = languages[currentLanguage][el.getAttribute('data-key')];
+    });
 }
 
-document.querySelectorAll('.lang-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        currentLanguage = button.id;
-        updateContent();
+// Jazykový přepínač
+const languageButtons = document.querySelectorAll('.lang-btn');
+languageButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        currentLanguage = e.target.dataset.lang; // Získání zvoleného jazyka
+        updateContent(); // Aktualizace obsahu
     });
 });
 
+// Inicializace obsahu
 updateContent();
