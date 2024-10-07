@@ -1,62 +1,51 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
 header {
-    background-color: #39424e; /* železniční motiv */
+    background-color: #1e3a5f;
     color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 20px 0;
+    text-align: center;
 }
 
-.logo h1 {
-    margin: 0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li a {
+#language-switcher button {
+    background-color: #f0b429;
     color: white;
-    text-decoration: none;
-    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
 }
 
-.language-switcher {
-    margin-left: auto;
-}
-
-.language-switcher select {
-    padding: 5px;
-    border-radius: 5px;
+#language-switcher button:hover {
+    background-color: #e09e24;
 }
 
 section {
-    padding: 40px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 10px;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#products {
+    background-color: #f7f7f7;
 }
 
 footer {
-    background-color: #39424e;
+    background-color: #1e3a5f;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 20px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
