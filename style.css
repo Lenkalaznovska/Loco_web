@@ -35,7 +35,7 @@ body {
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
     width: 100%;
-    height: 300px; /* Zmenšení úvodního obrázku */
+    height: 250px; /* Dále zmenšený úvodní obrázek */
     filter: brightness(0.8); /* Snížení jasu pro lepší kontrast textu */
 }
 
@@ -48,7 +48,7 @@ body {
 }
 
 .main-heading {
-    font-size: 50px; /* Zmenšení velikosti hlavního nadpisu */
+    font-size: 50px; /* Velikost hlavního nadpisu */
     font-weight: bold;
     animation: slideDown 0.8s ease-out;
 }
@@ -90,6 +90,7 @@ body {
 .lang-btn:active {
     background-color: var(--highlight-color); /* Změna barvy na červenou po kliknutí */
     transform: scale(0.95); /* Zmenšení tlačítka po kliknutí */
+    box-shadow: 0 0 10px var(--highlight-color); /* Svítící efekt po kliknutí */
 }
 
 /* Sekce */
@@ -140,11 +141,11 @@ body {
 /* Responzivní design */
 @media (max-width: 768px) {
     .menu-background {
-        height: 250px; /* Další zmenšení pro mobilní zařízení */
+        height: 200px; /* Další zmenšení pro mobilní zařízení */
     }
 
     .main-heading {
-        font-size: 40px;
+        font-size: 40px; /* Zmenšení velikosti nadpisu na mobilech */
     }
 
     .lang-btn {
