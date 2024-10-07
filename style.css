@@ -81,6 +81,8 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s; /* Přidání transformace */
+    font-weight: bold; /* Tučné písmo pro tlačítka */
+    font-size: 16px; /* Zvýšení velikosti písma */
 }
 
 .lang-btn:hover {
@@ -150,7 +152,7 @@ body {
 
     .lang-btn {
         padding: 10px 15px; /* Úprava paddingu pro mobilní zařízení */
-        font-size: 14px;
+        font-size: 14px; /* Zmenšení velikosti písma na mobilech */
     }
 
     .text-container {
