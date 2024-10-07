@@ -1,13 +1,13 @@
 /* Reset a obecné styly */
 :root {
-    --main-bg-color: #f9f9f9; /* Světle šedá pozadí */
-    --primary-color: #333333; /* Tmavě šedá pro text */
-    --accent-color: #5a99d9; /* Světle modrá */
-    --secondary-color: #f28e1c; /* Teplá oranžová */
+    --main-bg-color: #e8e8e8; /* Světle šedá pozadí */
+    --primary-color: #2c3e50; /* Tmavě šedá pro text (symbol železnice) */
+    --accent-color: #2980b9; /* Modrá barva pro železniční téma */
+    --secondary-color: #c0392b; /* Červená barva pro akcenty (symbolizuje výstrahy) */
     --section-bg-color: #ffffff; /* Bílá pozadí sekcí */
-    --footer-bg-color: #333333; /* Tmavě šedá pro patičku */
-    --link-color: #5a99d9; /* Světle modrá pro odkazy */
-    --highlight-color: #5a99d9; /* Světle modrá pro zvýraznění */
+    --footer-bg-color: #2c3e50; /* Tmavě šedá pro patičku */
+    --link-color: #2980b9; /* Modrá pro odkazy */
+    --highlight-color: #c0392b; /* Červená pro zvýraznění */
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -96,11 +96,10 @@ body {
     background: var(--section-bg-color);
     border-radius: 10px;
     box-shadow: 0 10px 30px var(--shadow-color);
-    opacity: 0;
-    transform: translateY(50px);
+    opacity: 1; /* Zajištění viditelnosti */
+    transform: translateY(0);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     animation: breathing 3s infinite;
-    animation-fill-mode: forwards; /* Udržení efektu dýchání */
 }
 
 @keyframes breathing {
