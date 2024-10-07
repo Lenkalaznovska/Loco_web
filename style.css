@@ -111,6 +111,12 @@ body {
     }
 }
 
+/* Zobrazení sekcí při viditelnosti */
+.text-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .text-container h2 {
     border-bottom: 4px solid var(--accent-color);
     padding-bottom: 15px;
@@ -136,32 +142,6 @@ body {
     margin: 0;
 }
 
-/* Scroll to top button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 120px;
-    right: 75px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    transition: transform 0.3s ease;
-    animation: moveUp 1s infinite alternate;
-}
-
-@keyframes moveUp {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(-5px);
-    }
-}
-
 /* Responzivní design */
 @media (max-width: 768px) {
     .menu-background {
@@ -175,12 +155,5 @@ body {
     .lang-btn {
         padding: 8px 12px;
         font-size: 14px;
-    }
-
-    .scroll-to-top {
-        bottom: 140px;
-        right: 80px;
-        width: 20px;
-        height: 20px;
     }
 }
