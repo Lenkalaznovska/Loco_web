@@ -1,29 +1,53 @@
-const translations = {
+// Jazykové možnosti
+const languages = {
     cs: {
-        title: "Výrobce modelových vláčků",
-        description: "Vítejte na stránkách výrobce modelových železnic.",
-        contact: "Kontaktujte nás"
+        title: "Vítejte na naší železniční stránce",
+        description: "Objevte svět modelových vláčků a příslušenství.",
+        order: "Objednat",
+        gallery: "Galerie",
+        contact: "Kontakt",
+        languageSwitcher: "Vyberte jazyk"
     },
     en: {
-        title: "Model Train Manufacturer",
-        description: "Welcome to the model railway manufacturer website.",
-        contact: "Contact Us"
+        title: "Welcome to Our Railway Page",
+        description: "Discover the world of model trains and accessories.",
+        order: "Order",
+        gallery: "Gallery",
+        contact: "Contact",
+        languageSwitcher: "Select Language"
     },
     de: {
-        title: "Modellbahnhersteller",
-        description: "Willkommen auf der Website des Modellbahnherstellers.",
-        contact: "Kontaktieren Sie uns"
+        title: "Willkommen auf unserer Eisenbahnseite",
+        description: "Entdecken Sie die Welt der Modelleisenbahnen und Zubehör.",
+        order: "Bestellen",
+        gallery: "Galerie",
+        contact: "Kontakt",
+        languageSwitcher: "Sprache auswählen"
     }
 };
 
-// Funkce pro změnu jazyka
-function changeLanguage(language) {
-    document.getElementById("title").textContent = translations[language].title;
-    document.getElementById("description").textContent = translations[language].description;
-    document.getElementById("contact").textContent = translations[language].contact;
+// První jazyk (čeština)
+let currentLanguage = 'cs';
+
+// Funkce pro aktualizaci textu na stránce
+function updateContent() {
+    document.querySelector('.main-heading').innerText = languages[currentLanguage].title;
+    document.querySelector('.text-container p').innerText = languages[currentLanguage].description;
+    document.querySelector('.order-section h2').innerText = languages[currentLanguage].order;
+    document.querySelector('.gallery-section h2').innerText = languages[currentLanguage].gallery;
+    document.querySelector('.contact-section h2').innerText = languages[currentLanguage].contact;
+    document.querySelector('.language-switcher-label').innerText = languages[currentLanguage].languageSwitcher;
 }
 
-// Přidání event listenerů pro přepínače jazyka
-document.getElementById("language-selector").addEventListener("change", function() {
-    changeLanguage(this.value);
+// Jazykový přepínač
+const languageSwitcher = document.querySelectorAll('.language-switcher a');
+languageSwitcher.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentLanguage = e.target.dataset.lang; // Získání zvoleného jazyka
+        updateContent(); // Aktualizace obsahu
+    });
 });
+
+// Inicializace obsahu
+updateContent();
