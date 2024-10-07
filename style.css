@@ -25,6 +25,51 @@ body {
     text-align: center;
 }
 
+/* Tlačítka - obecný styl */
+button {
+    background-color: var(--primary-color); /* Hlavní barva tlačítka */
+    color: white; /* Barva textu */
+    border: none; /* Odstranění okrajů */
+    padding: 12px 24px; /* Prostor kolem textu */
+    font-size: 16px;
+    font-weight: bold; /* Tučné písmo */
+    text-transform: uppercase; /* Velká písmena */
+    border-radius: 8px; /* Zakulacené rohy */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Plynulé přechody */
+    box-shadow: 0 4px 6px var(--shadow-color); /* Jemný stín */
+}
+
+/* Hover efekt */
+button:hover {
+    background-color: var(--highlight-color); /* Změna barvy při najetí myší */
+    transform: translateY(-3px); /* Lehké přiblížení */
+    box-shadow: 0 8px 12px var(--shadow-color); /* Zvýšení stínu */
+}
+
+/* Kliknutí na tlačítko */
+button:active {
+    background-color: var(--accent-color); /* Barva při kliknutí */
+    transform: scale(0.98); /* Mírné zmenšení při kliknutí */
+    box-shadow: 0 4px 6px var(--shadow-color); /* Stín zpět do původního stavu */
+}
+
+/* Responzivní design pro tlačítka na menších obrazovkách */
+@media (max-width: 768px) {
+    button {
+        padding: 10px 20px;
+        font-size: 14px; /* Menší písmo pro menší zařízení */
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        padding: 8px 16px; /* Další zmenšení pro velmi malé obrazovky */
+        font-size: 12px;
+    }
+}
+
 /* Menu */
 .menu-header {
     position: relative;
