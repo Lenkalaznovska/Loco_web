@@ -1,13 +1,13 @@
 /* Reset a obecné styly */
 :root {
-    --main-bg-color: #b2e0ff; /* Světle modrá pozadí */
-    --primary-color: #4e7c3c; /* Tmavě zelená pro text (symbol železnice) */
-    --accent-color: #f1c40f; /* Žlutá barva pro železniční téma */
-    --secondary-color: #34495e; /* Tmavě šedá pro akcenty */
+    --main-bg-color: #f0f8ff; /* Světle modré pozadí */
+    --primary-color: #3c763d; /* Tmavě zelená pro text */
+    --accent-color: #5bc0de; /* Světle modrá pro železniční téma */
+    --secondary-color: #d9534f; /* Červená barva pro akcenty */
     --section-bg-color: #ffffff; /* Bílá pozadí sekcí */
-    --footer-bg-color: #4e7c3c; /* Tmavě zelená pro patičku */
-    --link-color: #2ecc71; /* Zelená pro odkazy */
-    --highlight-color: #f39c12; /* Zlatá pro zvýraznění */
+    --footer-bg-color: #3c763d; /* Tmavě zelená pro patičku */
+    --link-color: #5bc0de; /* Světle modrá pro odkazy */
+    --highlight-color: #d9534f; /* Červená pro zvýraznění */
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -51,7 +51,7 @@ body {
     font-size: 60px;
     font-weight: bold;
     text-shadow: 1px 1px 40px rgba(0, 0, 0, 0.5);
-    animation: slideDown 0.8s ease-out, pulse 2s infinite; /* Přidání pulzujícího efektu */
+    animation: slideDown 0.8s ease-out, breathing 3s infinite; /* Přidání efektu dýchání */
 }
 
 @keyframes slideDown {
@@ -65,15 +65,13 @@ body {
     }
 }
 
-@keyframes pulse {
-    0% {
+/* Efekt dýchání pro hlavní nadpis */
+@keyframes breathing {
+    0%, 100% {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
+        transform: scale(1.02);
     }
 }
 
@@ -112,15 +110,6 @@ body {
     transform: translateY(0);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     animation: breathing 3s infinite;
-}
-
-@keyframes breathing {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.02);
-    }
 }
 
 .text-container h2 {
