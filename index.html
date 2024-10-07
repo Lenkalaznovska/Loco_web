@@ -4,78 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Výrobce modelových vláčků</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>Modelové Vláčky</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#home" class="nav-link" data-section="home">Domů</a></li>
-                <li><a href="#products" class="nav-link" data-section="products">Produkty</a></li>
-                <li><a href="#about" class="nav-link" data-section="about">O Nás</a></li>
-                <li><a href="#contact" class="nav-link" data-section="contact">Kontakt</a></li>
-            </ul>
-        </nav>
-        <div class="language-switcher">
-            <select id="language-select" onchange="switchLanguage()">
-                <option value="cs" selected>Čeština</option>
-                <option value="en">English</option>
-                <option value="de">Deutsch</option>
-            </select>
+        <div class="container">
+            <h1>Výrobce modelových vláčků</h1>
+            <div id="language-switcher">
+                <button data-lang="cs">Čeština</button>
+                <button data-lang="en">English</button>
+                <button data-lang="de">Deutsch</button>
+            </div>
         </div>
     </header>
 
-    <section id="home">
-        <h2 data-lang-cs="Vítejte na stránkách výrobce modelových vláčků" 
-            data-lang-en="Welcome to the model train manufacturer's website" 
-            data-lang-de="Willkommen auf der Website des Modellzugherstellers">
-            Vítejte na stránkách výrobce modelových vláčků
-        </h2>
-        <p data-lang-cs="Naše modelové vláčky jsou vysoce kvalitní a detailní." 
-           data-lang-en="Our model trains are high quality and detailed." 
-           data-lang-de="Unsere Modellzüge sind von hoher Qualität und detailliert.">
-           Naše modelové vláčky jsou vysoce kvalitní a detailní.
-        </p>
-    </section>
-
-    <section id="products">
-        <h2 data-lang-cs="Naše Produkty" 
-            data-lang-en="Our Products" 
-            data-lang-de="Unsere Produkte">Naše Produkty</h2>
-        <div class="product-list">
-            <!-- Zde bude seznam produktů -->
+    <section id="intro">
+        <div class="container">
+            <h2 data-key="welcome">Vítejte na stránkách našeho modelového světa</h2>
+            <p data-key="intro-text">
+                Nabízíme širokou škálu detailních modelů železnic. Naše výrobky jsou vyrobeny s důrazem na přesnost a kvalitu.
+            </p>
         </div>
     </section>
 
-    <section id="about">
-        <h2 data-lang-cs="O Nás" 
-            data-lang-en="About Us" 
-            data-lang-de="Über Uns">O Nás</h2>
-        <p data-lang-cs="Jsme přední výrobce modelových vláčků s dlouholetou tradicí." 
-           data-lang-en="We are a leading model train manufacturer with a long-standing tradition." 
-           data-lang-de="Wir sind ein führender Modellzughersteller mit langjähriger Tradition.">
-           Jsme přední výrobce modelových vláčků s dlouholetou tradicí.
-        </p>
-    </section>
-
-    <section id="contact">
-        <h2 data-lang-cs="Kontaktujte nás" 
-            data-lang-en="Contact Us" 
-            data-lang-de="Kontaktieren Sie uns">Kontaktujte nás</h2>
-        <p data-lang-cs="Máte otázky? Rádi Vám pomůžeme!" 
-           data-lang-en="Do you have questions? We are happy to help!" 
-           data-lang-de="Haben Sie Fragen? Wir helfen Ihnen gerne weiter!">
-           Máte otázky? Rádi Vám pomůžeme!
-        </p>
+    <section id="products">
+        <div class="container">
+            <h2 data-key="products-title">Naše produkty</h2>
+            <p data-key="products-description">
+                V naší nabídce najdete lokomotivy, vagóny, koleje a další doplňky pro modelové železnice.
+            </p>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Výrobce modelových vláčků</p>
+        <div class="container">
+            <p>&copy; 2024 Výrobce modelových vláčků</p>
+        </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
