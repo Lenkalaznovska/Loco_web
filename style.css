@@ -1,13 +1,13 @@
 /* Reset a obecné styly */
 :root {
-    --main-bg-color: #ffffff; /* Bílá pozadí */
-    --primary-color: #003366; /* Tmavě modrá pro pozadí a hlavičku */
-    --accent-color: #e63946; /* Červená pro akcenty (symbolizuje výstrahy) */
-    --secondary-color: #f1faee; /* Světle šedá pro text a pozadí sekcí */
-    --section-bg-color: #d9d9d9; /* Mírně ztmavená barva pozadí sekcí */
-    --footer-bg-color: #003366; /* Tmavě modrá pro patičku */
-    --link-color: #003366; /* Tmavě modrá pro odkazy */
-    --highlight-color: #e63946; /* Červená pro zvýraznění */
+    --main-bg-color: #ffffff;
+    --primary-color: #003366;
+    --accent-color: #e63946;
+    --secondary-color: #f1faee;
+    --section-bg-color: #d9d9d9;
+    --footer-bg-color: #003366;
+    --link-color: #003366;
+    --highlight-color: #e63946;
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -22,7 +22,7 @@ body {
     color: var(--primary-color);
     background-color: var(--main-bg-color);
     line-height: 1.6;
-    text-align: center; /* Centrum textu */
+    text-align: center;
 }
 
 /* Menu */
@@ -30,14 +30,14 @@ body {
     position: relative;
     overflow: hidden;
     background-color: var(--primary-color);
-    padding: 20px 0; /* Přidání paddingu pro větší prostor */
+    padding: 20px 0;
 }
 
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
     width: 100%;
-    height: 350px; /* Zmenšení úvodního obrázku */
-    filter: brightness(0.8); /* Snížení jasu pro lepší kontrast textu */
+    height: 350px;
+    filter: brightness(0.8);
 }
 
 .menu-content {
@@ -49,7 +49,7 @@ body {
 }
 
 .main-heading {
-    font-size: 70px; /* Větší nadpis */
+    font-size: 70px;
     font-weight: bold;
     animation: slideDown 0.8s ease-out;
 }
@@ -77,21 +77,16 @@ body {
 .lang-btn {
     background-color: var(--accent-color);
     border: none;
-    color: white; /* Vyrazné bílé písmo */
+    color: white;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s; /* Přidání efektu pro barvu */
-    font-weight: bold; /* Tlustší písmo */
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
 }
 
 .lang-btn:hover {
-    background-color: var(--highlight-color); /* Červená barva pro hover */
-}
-
-.lang-btn:active {
-    background-color: var(--highlight-color); /* Červená barva pro kliknutí */
-    color: #ffffff; /* Bílé písmo pro viditelnost */
+    background-color: var(--highlight-color);
 }
 
 /* Sekce */
@@ -120,18 +115,18 @@ body {
     margin-bottom: 20px;
     font-weight: bold;
     color: var(--accent-color);
-    font-size: 24px; /* Větší text pro nadpisy */
+    font-size: 24px;
 }
 
 .text-container p {
     margin-bottom: 20px;
-    color: var(--primary-color); /* Tmavě modrý text */
+    color: var(--primary-color);
 }
 
 /* Footer */
 .footer {
     background-color: var(--footer-bg-color);
-    color: #fff; /* Bílá barva pro text */
+    color: #fff;
     text-align: center;
     padding: 20px;
 }
@@ -143,11 +138,11 @@ body {
 /* Responzivní design */
 @media (max-width: 768px) {
     .menu-background {
-        height: 250px; /* Další zmenšení úvodního obrázku */
+        height: 250px;
     }
 
     .main-heading {
-        font-size: 50px; /* Větší nadpis pro mobilní zařízení */
+        font-size: 50px;
     }
 
     .lang-btn {
@@ -155,11 +150,7 @@ body {
         font-size: 14px;
     }
 
-    .text-container {
-        animation: breathing 3s infinite; /* Přidání efektu dýchání */
-    }
-
     .text-container h2 {
-        font-size: 20px; /* Přizpůsobení velikosti nadpisu pro mobilní zařízení */
+        font-size: 20px;
     }
 }
