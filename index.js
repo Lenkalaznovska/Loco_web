@@ -45,30 +45,23 @@ languageButtons.forEach(button => {
     });
 });
 
-// Funkce pro odhalení sekcí při scrollování
-function revealSections() {
+// Funkce pro animace viditelnosti sekcí
+function handleSectionVisibility() {
     const sections = document.querySelectorAll('.text-container');
-    const options = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, options);
+    const triggerHeight = window.innerHeight / 5 * 4; // Výška pro spuštění animace
 
     sections.forEach(section => {
-        observer.observe(section);
+        const sectionTop = section.getBoundingClientRect().top;
+        
+        if (sectionTop < triggerHeight) {
+            section.classList.add('visible');
+        }
     });
 }
 
-// Spuštění při načtení stránky
-document.addEventListener('DOMContentLoaded', () => {
-    updateContent();  // Inicializace obsahu
-    revealSections(); // Spuštění funkce pro zobrazení sekcí
-});
+// Inicializace obsahu
+updateContent();
+
+// Zobrazení sekcí při scrollování
+window.addEventListener('scroll', handleSectionVisibility);
+handleSectionVisibility();
