@@ -4,7 +4,7 @@
     --primary-color: #003366;
     --accent-color: #e63946;
     --secondary-color: #d9d9d9; /* původní barva */
-    --section-bg-color: #a8a8a8; /* tmavší odstín pro sekce */
+    --section-bg-color: #c0c0c0; /* tmavší odstín pro sekce */
     --footer-bg-color: #003366;
     --link-color: #003366;
     --highlight-color: #e63946;
@@ -40,18 +40,55 @@ button {
     box-shadow: 0 4px 6px var(--shadow-color); /* Jemný stín */
 }
 
-/* Hover efekt */
-button:hover {
-    background-color: var(--highlight-color); /* Změna barvy při najetí myší */
+/* Atraktivní tlačítko pro desktop */
+.attractive-button {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow: hidden; /* Skrytí přetékajícího obsahu */
+    transition: color 0.4s, transform 0.4s; /* Plynulé přechody */
+    box-shadow: 0 8px 15px var(--shadow-color); /* Větší stín */
+}
+
+.attractive-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%; /* Větší šířka pro efekt */
+    height: 300%; /* Větší výška pro efekt */
+    background: rgba(255, 255, 255, 0.3); /* Světlý efekt */
+    border-radius: 50%;
+    transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease; /* Plynulé přechody */
+    z-index: 0;
+    transform: translate(-50%, -50%) scale(0); /* Zpočátku skrytý */
+}
+
+.attractive-button:hover::before {
+    width: 400%; /* Zvětšení šířky */
+    height: 400%; /* Zvětšení výšky */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1); /* Zobrazení efektu */
+}
+
+.attractive-button:hover {
+    color: var(--primary-color); /* Změna barvy textu při najetí */
     transform: translateY(-3px); /* Lehké přiblížení */
-    box-shadow: 0 8px 12px var(--shadow-color); /* Zvýšení stínu */
+    box-shadow: 0 15px 30px var(--shadow-color); /* Zvýšení stínu */
 }
 
 /* Kliknutí na tlačítko */
-button:active {
-    background-color: var(--accent-color); /* Barva při kliknutí */
-    transform: scale(0.98); /* Mírné zmenšení při kliknutí */
-    box-shadow: 0 4px 6px var(--shadow-color); /* Stín zpět do původního stavu */
+.attractive-button:active {
+    transform: scale(0.95); /* Mírné zmenšení při kliknutí */
 }
 
 /* Responzivní design pro tlačítka na menších obrazovkách */
@@ -61,12 +98,22 @@ button:active {
         font-size: 14px; /* Menší písmo pro menší zařízení */
         border-radius: 6px;
     }
+
+    .attractive-button {
+        padding: 10px 20px; /* Úprava paddingu pro mobilní zařízení */
+        font-size: 16px; /* Mírně menší písmo */
+    }
 }
 
 @media (max-width: 480px) {
     button {
         padding: 8px 16px; /* Další zmenšení pro velmi malé obrazovky */
         font-size: 12px;
+    }
+
+    .attractive-button {
+        padding: 8px 16px; /* Úprava paddingu pro mobilní zařízení */
+        font-size: 14px; /* Mírně menší písmo */
     }
 }
 
@@ -83,29 +130,6 @@ button:active {
     width: 100%;
     height: 350px;
     filter: brightness(0.8);
-}
-
-/* Kolejnice v úvodním obrázku */
-.track {
-    position: absolute;
-    left: 20px; /* Vzdálenost od levého okraje */
-    background-color: red; /* Barva kolejnic */
-}
-
-/* Delší kolejnice */
-.track-long {
-    width: 5px; /* Šířka kolejnice */
-    height: 100px; /* Délka delší kolejnice */
-    top: 50%; /* Umístění kolejnice ve středu */
-    transform: translateY(-50%); /* Vycentrování */
-}
-
-/* Kratší kolejnice */
-.track-short {
-    width: 5px; /* Šířka kolejnice */
-    height: 60px; /* Délka kratší kolejnice */
-    top: 60%; /* Umístění kratší kolejnice */
-    transform: translateY(-50%); /* Vycentrování */
 }
 
 .menu-content {
