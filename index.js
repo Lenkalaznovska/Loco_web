@@ -9,11 +9,11 @@ const languages = {
         "order-desc": "Pro více informací nás kontaktujte na e-mailu nebo telefonním čísle uvedeném níže."
     },
     en: {
-        "about-title": "About Us",
+        "about-title": "About us",
         "about-desc": "Our company specializes in creating detailed models of trains and railways. Each model is meticulously crafted with the utmost attention to detail.",
-        "products-title": "Our Models",
+        "products-title": "Our models",
         "products-desc": "We offer a wide range of model trains, tracks, and accessories for all railway enthusiasts. Our products are known for their quality and precision.",
-        "order-title": "Order Your Model Today!",
+        "order-title": "Order your model today!",
         "order-desc": "For more information, contact us via email or phone number below."
     },
     de: {
