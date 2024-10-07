@@ -4,6 +4,7 @@
     --primary-color: #003366; /* Tmavě modrá pro pozadí a hlavičku */
     --accent-color: #e63946; /* Červená pro akcenty (symbolizuje výstrahy) */
     --secondary-color: #f1faee; /* Světle šedá pro text a pozadí sekcí */
+    --section-bg-color: #d9d9d9; /* Mírně ztmavená barva pozadí sekcí */
     --footer-bg-color: #003366; /* Tmavě modrá pro patičku */
     --link-color: #003366; /* Tmavě modrá pro odkazy */
     --highlight-color: #e63946; /* Červená pro zvýraznění */
@@ -35,7 +36,7 @@ body {
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
     width: 100%;
-    height: 250px; /* Dále zmenšený úvodní obrázek */
+    height: 350px; /* Zmenšení úvodního obrázku */
     filter: brightness(0.8); /* Snížení jasu pro lepší kontrast textu */
 }
 
@@ -48,7 +49,7 @@ body {
 }
 
 .main-heading {
-    font-size: 50px; /* Velikost hlavního nadpisu */
+    font-size: 70px; /* Větší nadpis */
     font-weight: bold;
     animation: slideDown 0.8s ease-out;
 }
@@ -77,12 +78,11 @@ body {
     background-color: var(--accent-color);
     border: none;
     color: white; /* Vyrazné bílé písmo */
-    padding: 12px 20px; /* Zvýšení paddingu pro větší tlačítka */
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s; /* Přidání transformace */
-    font-weight: bold; /* Tučné písmo pro tlačítka */
-    font-size: 16px; /* Zvýšení velikosti písma */
+    transition: background-color 0.3s, color 0.3s; /* Přidání efektu pro barvu */
+    font-weight: bold; /* Tlustší písmo */
 }
 
 .lang-btn:hover {
@@ -90,9 +90,8 @@ body {
 }
 
 .lang-btn:active {
-    background-color: var(--highlight-color); /* Změna barvy na červenou po kliknutí */
-    transform: scale(0.95); /* Zmenšení tlačítka po kliknutí */
-    box-shadow: 0 0 10px var(--highlight-color); /* Svítící efekt po kliknutí */
+    background-color: var(--highlight-color); /* Červená barva pro kliknutí */
+    color: #ffffff; /* Bílé písmo pro viditelnost */
 }
 
 /* Sekce */
@@ -121,6 +120,7 @@ body {
     margin-bottom: 20px;
     font-weight: bold;
     color: var(--accent-color);
+    font-size: 24px; /* Větší text pro nadpisy */
 }
 
 .text-container p {
@@ -143,19 +143,23 @@ body {
 /* Responzivní design */
 @media (max-width: 768px) {
     .menu-background {
-        height: 200px; /* Další zmenšení pro mobilní zařízení */
+        height: 250px; /* Další zmenšení úvodního obrázku */
     }
 
     .main-heading {
-        font-size: 40px; /* Zmenšení velikosti nadpisu na mobilech */
+        font-size: 50px; /* Větší nadpis pro mobilní zařízení */
     }
 
     .lang-btn {
-        padding: 10px 15px; /* Úprava paddingu pro mobilní zařízení */
-        font-size: 14px; /* Zmenšení velikosti písma na mobilech */
+        padding: 8px 12px;
+        font-size: 14px;
     }
 
     .text-container {
         animation: breathing 3s infinite; /* Přidání efektu dýchání */
+    }
+
+    .text-container h2 {
+        font-size: 20px; /* Přizpůsobení velikosti nadpisu pro mobilní zařízení */
     }
 }
