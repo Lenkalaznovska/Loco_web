@@ -1,13 +1,13 @@
 /* Reset a obecné styly */
 :root {
-    --main-bg-color: #f2f2f2;
-    --primary-color: #333333;
-    --accent-color: #4a90e2;
-    --secondary-color: #e27b4a;
-    --section-bg-color: #ffffff;
-    --footer-bg-color: #333333;
-    --link-color: #4a90e2;
-    --highlight-color: #4a90e2;
+    --main-bg-color: #e9f5fb; /* Světle modrá */
+    --primary-color: #333333; /* Tmavě šedá */
+    --accent-color: #007bff; /* Světlejší modrá */
+    --secondary-color: #ffc107; /* Žlutá */
+    --section-bg-color: #ffffff; /* Bílá */
+    --footer-bg-color: #007bff; /* Světlejší modrá */
+    --link-color: #007bff; /* Světlejší modrá */
+    --highlight-color: #007bff; /* Světlejší modrá */
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -99,19 +99,8 @@ body {
     transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     text-align: center;
-    animation: breathing 3s infinite;
 }
 
-@keyframes breathing {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.02);
-    }
-}
-
-/* Zobrazení sekcí při viditelnosti */
 .text-container.visible {
     opacity: 1; /* Sekce se stanou viditelnými */
     transform: translateY(0); /* Sekce se posune na původní pozici */
