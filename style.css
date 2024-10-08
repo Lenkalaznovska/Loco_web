@@ -51,10 +51,8 @@ button {
 }
 
 .lang-btn img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
+    width: 32px; /* Fixní šířka pro vlajky */
+    height: 32px; /* Fixní výška pro vlajky */
     display: block;
 }
 
@@ -62,8 +60,11 @@ button {
     transform: scale(1.1);
 }
 
-/* Zarovnání vlajek */
+/* Umístění tlačítek pro přepínání jazyků */
 .lang-btn-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,6 +110,11 @@ button {
         padding: 10px 20px; /* Úprava paddingu pro mobilní zařízení */
         font-size: 16px; /* Mírně menší písmo */
     }
+
+    .lang-btn img {
+        width: 28px; /* Menší vlajky na menších obrazovkách */
+        height: 28px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -120,6 +126,11 @@ button {
     .attractive-button {
         padding: 8px 16px; /* Úprava paddingu pro mobilní zařízení */
         font-size: 14px; /* Mírně menší písmo */
+    }
+
+    .lang-btn img {
+        width: 24px; /* Ještě menší vlajky pro mobilní obrazovky */
+        height: 24px;
     }
 }
 
