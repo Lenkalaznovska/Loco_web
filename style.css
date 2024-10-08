@@ -59,8 +59,8 @@ button {
     border: none;
     cursor: pointer;
     transition: transform 0.3s ease;
-    width: 50px; /* Zvětšení šířky tlačítka pro vlajku */
-    height: 40px; /* Zvětšení výšky tlačítka pro vlajku */
+    width: 70px; /* Zvětšení šířky tlačítka pro vlajku */
+    height: 50px; /* Zvětšení výšky tlačítka pro vlajku */
 }
 
 .lang-btn img {
@@ -147,8 +147,8 @@ button {
     }
 
     .lang-btn {
-        width: 45px; /* Mírně menší šířka pro mobilní zařízení */
-        height: 35px; /* Mírně menší výška pro mobilní zařízení */
+        width: 60px; /* Mírně menší šířka pro mobilní zařízení */
+        height: 45px; /* Mírně menší výška pro mobilní zařízení */
     }
 }
 
@@ -164,8 +164,8 @@ button {
     }
 
     .lang-btn {
-        width: 40px; /* Ještě menší šířka pro mobilní zařízení */
-        height: 30px; /* Ještě menší výška pro mobilní zařízení */
+        width: 50px; /* Ještě menší šířka pro mobilní zařízení */
+        height: 40px; /* Ještě menší výška pro mobilní zařízení */
     }
 }
 
