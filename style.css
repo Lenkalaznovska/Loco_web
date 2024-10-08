@@ -34,10 +34,17 @@ body {
     position: relative; /* Přidání relativní pozice */
     max-width: 800px; /* Maximální šířka sekce */
     margin: 20px auto; /* Vycentrování sekce */
+    animation: breathing 4s infinite; /* Neustálý efekt dýchání */
 }
 
-.section:hover {
-    transform: scale(1.02); /* Efekt dýchání */
+/* Efekt dýchání */
+@keyframes breathing {
+    0%, 100% {
+        transform: scale(1); /* Výchozí velikost */
+    }
+    50% {
+        transform: scale(1.05); /* Mírné zvětšení */
+    }
 }
 
 /* Čáry ve stylu kolejnic */
@@ -196,6 +203,13 @@ button {
 /* Změna barvy odkazu při najetí myší */
 .menu-link:hover {
     color: var(--highlight-color); /* Barva při najetí */
+}
+
+/* Hlavní nadpis */
+h1 {
+    font-size: 36px; /* Velikost nadpisu */
+    margin-bottom: 20px; /* Mezera pod nadpisem */
+    color: var(--primary-color); /* Barva nadpisu */
 }
 
 /* Footer */
