@@ -189,7 +189,7 @@ button {
 /* Pozadí menu */
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
-    height: 350px; /* Zmenšení výšky pozadí o 50 px */
+    height: 300px; /* Zmenšení výšky pozadí o 50 px */
 }
 
 /* Styly pro odkazy v menu */
@@ -224,15 +224,7 @@ footer {
 /* Responzivní design pro footer */
 @media (max-width: 768px) {
     footer {
-        font-size: 14px; /* Zmenšení písma pro footer */
+        font-size: 14px; /* Zmenšení písma pro menší obrazovky */
+        padding: 15px 0; /* Zmenšení paddingu */
     }
-}
-
-/* Zajištění, že celá stránka je vycentrována */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Výška minimálně 100% výšky obrazovky */
 }
