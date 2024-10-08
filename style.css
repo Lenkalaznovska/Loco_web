@@ -250,11 +250,60 @@ button {
     justify-content: center; /* Horizontální zarovnání */
     align-items: center; /* Vertikální zarovnání */
     background-color: var(--accent-color); /* Barva kolejnic */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Jemný stín */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Jemný stín pro kolejnice */
+    margin: 10px 0; /* Vzdálenost mezi sekcemi */
 }
 
-.red-stripe h3 {
-    color: white; /* Barva textu kolejnic */
-    font-weight: bold; /* Tučné písmo */
-    margin: 0;
+.red-stripe:before, .red-stripe:after {
+    content: ''; /* Obsah pro pseudo-elementy */
+    position: absolute;
+    width: 50%; /* Šířka poloviny */
+    height: 10px; /* Výška */
+    background-color: var(--highlight-color); /* Barva pro zvýraznění */
+}
+
+.red-stripe:before {
+    left: 0; /* Levá strana */
+    top: 0; /* Horní strana */
+}
+
+.red-stripe:after {
+    right: 0; /* Pravá strana */
+    bottom: 0; /* Spodní strana */
+}
+
+/* Zvýraznění pro odkazy */
+a {
+    color: var(--link-color);
+    text-decoration: none; /* Bez podtržení */
+    transition: color 0.3s ease; /* Plynulý přechod barvy */
+}
+
+a:hover {
+    color: var(--highlight-color); /* Změna barvy při najetí myší */
+}
+
+/* Snížení paddingu v sekcích */
+section {
+    padding: 20px 0; /* Přizpůsobení paddingu v sekcích */
+}
+
+section:nth-of-type(even) {
+    background: var(--section-bg-color); /* Barva pro sudé sekce */
+}
+
+section:nth-of-type(odd) {
+    background: var(--secondary-color); /* Barva pro liché sekce */
+}
+
+/* Animace sekcí při najetí */
+section {
+    opacity: 0; /* Zpočátku skryté */
+    transform: translateY(20px); /* Mírné posunutí dolů */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Plynulý přechod */
+}
+
+section.visible {
+    opacity: 1; /* Zobrazení sekce */
+    transform: translateY(0); /* Návrat do původní pozice */
 }
