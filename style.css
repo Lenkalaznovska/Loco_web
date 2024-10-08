@@ -49,28 +49,23 @@ body {
 }
 
 /* Čáry ve stylu kolejnic */
-.rails {
-    position: absolute;
-    left: 20px; /* Mezera od levého okraje */
-    top: 20px; /* Umístění nadpisu */
-    width: 100%; /* Šířka kolejnic */
-    display: flex;
-    justify-content: flex-start; /* Zarovnání na začátek */
-    gap: 10px; /* Mezera mezi čárami */
-    z-index: 0; /* Umístění pod nadpisem */
-}
-
 .rail {
-    height: 4px; /* Výška čáry */
+    position: absolute;
+    left: 50%; /* Umístění od středu */
     background-color: var(--accent-color);
+    z-index: 1; /* Zajištění, že je nad sekcí */
+    transform: translateX(-50%); /* Vycentrování čáry */
+    height: 6px; /* Výška čáry */
 }
 
-.long-rail {
-    width: 120px; /* Délka delší čáry */
+.rail.red-rail {
+    width: 80px; /* Šířka kolejnice */
+    top: 40%; /* Umístění na 40% výšky sekce */
 }
 
-.short-rail {
-    width: 80px; /* Délka kratší čáry */
+.rail.green-rail {
+    width: 120px; /* Šířka druhé kolejnice */
+    top: 60%; /* Umístění na 60% výšky sekce */
 }
 
 /* Tlačítka - obecný styl */
@@ -80,7 +75,7 @@ button {
     border: none; /* Odstranění okrajů */
     padding: 12px; /* Prostor kolem textu */
     width: 100%; /* Tlačítko na celou šířku */
-    height: 50px; /* Stanovení výšky tlačítka */
+    height: 100%; /* Tlačítko na celou výšku */
     font-size: 16px;
     font-weight: bold; /* Tučné písmo */
     text-transform: uppercase; /* Velká písmena */
@@ -95,8 +90,8 @@ button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    width: 50px; /* Šířka tlačítka pro vlajku */
-    height: 50px; /* Výška tlačítka pro vlajku */
+    width: 100%; /* Tlačítko na celou šířku */
+    height: 100%; /* Tlačítko na celou výšku */
     position: relative; /* Přidání relativní pozice */
     transition: transform 0.3s ease;
 }
@@ -132,31 +127,48 @@ button {
     color: white;
     border: none;
     border-radius: 10px; /* Zakulacení rohů */
-    text-transform: uppercase;
+    font-size: 18px;
     font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    overflow: hidden; /* Skrytí přetékajícího obsahu */
+    transition: color 0.4s, transform 0.4s;
+    text-decoration: none; /* Zrušení podtržení */
 }
 
 .attractive-button:hover {
-    background-color: var(--highlight-color); /* Změna barvy při najetí myší */
-    transform: translateY(-2px); /* Efekt zvednutí */
-}
-
-/* Footer */
-.footer {
-    background-color: var(--footer-bg-color);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+    color: var(--accent-color); /* Barva textu při hoveru */
+    transform: scale(1.05); /* Mírné zvětšení */
 }
 
 /* Odkazy */
 a {
     color: var(--link-color);
-    text-decoration: none;
+    text-decoration: none; /* Zrušení podtržení */
 }
 
 a:hover {
-    text-decoration: underline; /* Podtržení při najetí */
+    color: var(--highlight-color); /* Barva odkazu při hoveru */
+    text-decoration: underline; /* Podtržení při hoveru */
+}
+
+/* Patička */
+.footer {
+    background-color: var(--footer-bg-color); /* Barva pozadí patičky */
+    color: white; /* Barva textu v patičce */
+    padding: 20px; /* Prostor v patičce */
+    position: relative; /* Relativní pozice pro umístění */
+}
+
+/* Hlavní nadpis */
+.main-heading {
+    font-size: 48px; /* Velikost písma hlavního nadpisu */
+    font-weight: bold; /* Tučné písmo */
+    line-height: 1.2; /* Výška řádku */
+}
+
+/* Doplňkové styly pro sekce */
+.text-container {
+    max-width: 800px; /* Maximální šířka pro textové kontejnery */
+    margin: 0 auto; /* Vycentrování textu */
 }
