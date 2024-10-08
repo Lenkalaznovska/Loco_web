@@ -38,6 +38,18 @@ body {
     transform: scale(1.02); /* Efekt dýchání */
 }
 
+/* Červené čáry ve stylu kolejnic */
+.railway-lines {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 10px; /* Výška čar */
+    background: linear-gradient(to right, var(--accent-color) 20%, transparent 20%, transparent 40%, var(--accent-color) 40%, var(--accent-color) 60%, transparent 60%, transparent 80%, var(--accent-color) 80%);
+    background-size: 50px 10px; /* Vzdálenost mezi čárami */
+    z-index: 0; /* Základní úroveň */
+}
+
 /* Tlačítka - obecný styl */
 button {
     background-color: var(--primary-color); /* Hlavní barva tlačítka */
@@ -83,49 +95,6 @@ button {
     position: absolute; /* Absolutní pozicování */
     top: 20px; /* Vzdálenost od horní části */
     right: 20px; /* Vzdálenost od pravé části */
-}
-
-/* Červené čáry ve stylu kolejnic */
-.track {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Umožnit interakci s ostatními prvky */
-}
-
-.track .line {
-    position: absolute;
-    background-color: var(--accent-color);
-    transition: all 0.5s ease; /* Plynulý přechod */
-}
-
-.track .line.short {
-    height: 10px; /* Kratší čára */
-    width: 30%;
-    top: 30%; /* Vzdálenost od horní části */
-    left: 20%; /* Vzdálenost od levé části */
-}
-
-.track .line.long {
-    height: 10px; /* Delší čára */
-    width: 50%;
-    top: 60%; /* Vzdálenost od horní části */
-    left: 10%; /* Vzdálenost od levé části */
-}
-
-/* Efekt plynulého pohybu pro sekce */
-@keyframes smooth-motion {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
-}
-
-.section {
-    animation: smooth-motion 3s ease-in-out infinite; /* Opakující se efekt plynulého pohybu */
 }
 
 /* Atraktivní tlačítko pro desktop */
