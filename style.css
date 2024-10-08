@@ -45,18 +45,29 @@ button {
 .lang-btn {
     background-color: transparent;
     border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 5px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    font-weight: bold;
-    width: 40px; /* Zajištění stejné šířky */
-    height: 30px; /* Zajištění stejné výšky */
+}
+
+.lang-btn img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
 }
 
 .lang-btn:hover {
     transform: scale(1.1);
+}
+
+/* Zarovnání vlajek */
+.lang-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Mezera mezi vlajkami */
 }
 
 /* Atraktivní tlačítko pro desktop */
@@ -74,35 +85,11 @@ button {
     cursor: pointer;
     overflow: hidden; /* Skrytí přetékajícího obsahu */
     transition: color 0.4s, transform 0.4s; /* Plynulé přechody */
-    box-shadow: 0 8px 15px var(--shadow-color); /* Větší stín */
-}
-
-.attractive-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%; /* Větší šířka pro efekt */
-    height: 300%; /* Větší výška pro efekt */
-    background: rgba(255, 255, 255, 0.3); /* Světlý efekt */
-    border-radius: 50%;
-    transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease; /* Plynulé přechody */
-    z-index: 0;
-    transform: translate(-50%, -50%) scale(0); /* Zpočátku skrytý */
-}
-
-.attractive-button:hover::before {
-    width: 400%; /* Zvětšení šířky */
-    height: 400%; /* Zvětšení výšky */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1); /* Zobrazení efektu */
 }
 
 .attractive-button:hover {
     color: var(--primary-color); /* Změna barvy textu při najetí */
     transform: translateY(-3px); /* Lehké přiblížení */
-    box-shadow: 0 15px 30px var(--shadow-color); /* Zvýšení stínu */
 }
 
 /* Kliknutí na tlačítko */
@@ -148,7 +135,6 @@ button {
     background: url("images/train.jpg") no-repeat center right/cover;
     width: 100%;
     height: 350px;
-    filter: brightness(1); /* Zrušení ztmavení obrázku */
     position: relative;
 }
 
@@ -189,16 +175,6 @@ button {
     background: var(--section-bg-color); /* Velmi světlá nebesky modrá */
     border-radius: 10px;
     box-shadow: 0 10px 30px var(--shadow-color);
-    animation: breathing 3s infinite;
-}
-
-@keyframes breathing {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.02);
-    }
 }
 
 .text-container h2 {
@@ -238,7 +214,6 @@ button {
     }
 
     .lang-btn {
-        padding: 8px; /* Úprava paddingu pro mobilní zařízení */
-        font-size: 14px;
+        padding: 5px;
     }
 }
