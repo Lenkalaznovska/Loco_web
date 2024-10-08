@@ -2,7 +2,7 @@
 :root {
     --main-bg-color: #ffffff;
     --primary-color: #003366;
-    --accent-color: #e63946; /* červená barva pro kolenice */
+    --accent-color: #e63946; /* červená barva pro kolejnice */
     --secondary-color: #d9d9d9; /* původní barva */
     --section-bg-color: #c0c0c0; /* tmavší odstín pro sekce */
     --footer-bg-color: #003366;
@@ -176,6 +176,8 @@ button {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     font-weight: bold;
+    width: 40px;
+    height: 40px; /* Zajištění stejné velikosti vlajek */
 }
 
 .lang-btn:hover {
@@ -248,10 +250,10 @@ button {
     }
 }
 
-/* Červené kolenice */
+/* Červené kolejnice */
 .red-stripe {
     position: relative; /* Pozicování pro absolutní pozice vnitřních prvků */
-    height: 40px; /* Výška sekce s kolenicemi */
+    height: 40px; /* Výška sekce s kolejnicemi */
     display: flex; /* Použití flexboxu pro zarovnání */
     justify-content: center; /* Zarovnání obsahu na střed */
     align-items: center; /* Vertikální zarovnání */
@@ -260,21 +262,17 @@ button {
 .red-stripe::before,
 .red-stripe::after {
     content: ""; /* Vytvoření pseudo-elementu */
-    background-color: var(--accent-color); /* Červená barva pro kolenice */
+    background-color: var(--accent-color); /* Červená barva pro kolejnice */
     position: absolute; /* Absolutní pozice */
-    height: 10px; /* Výška kolenice */
+    height: 10px; /* Výška kolejnice */
 }
 
 .red-stripe::before {
-    width: 30%; /* Šířka kratší kolenice */
-    left: 20%; /* Umístění kratší kolenice */
-    top: 50%; /* Vertikální umístění */
-    transform: translateY(-50%); /* Vertikální zarovnání */
+    width: 30%; /* Šířka levé kolejnice */
+    left: 0; /* Umístění vlevo */
 }
 
 .red-stripe::after {
-    width: 50%; /* Šířka delší kolenice */
-    right: 10%; /* Umístění delší kolenice */
-    top: 50%; /* Vertikální umístění */
-    transform: translateY(-50%); /* Vertikální zarovnání */
+    width: 30%; /* Šířka pravé kolejnice */
+    right: 0; /* Umístění vpravo */
 }
