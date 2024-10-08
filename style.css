@@ -269,12 +269,12 @@ button {
     width: 30%; /* Šířka kratší kolenice */
     left: 20%; /* Umístění kratší kolenice */
     top: 50%; /* Vertikální umístění */
-    transform: translateY(-50%); /* Vertikálně vycentrování */
+    transform: translateY(-50%); /* Vertikální zarovnání */
 }
 
 .red-stripe::after {
     width: 50%; /* Šířka delší kolenice */
-    left: 50%; /* Umístění delší kolenice */
+    right: 10%; /* Umístění delší kolenice */
     top: 50%; /* Vertikální umístění */
-    transform: translate(-50%, -50%); /* Vycentrování */
+    transform: translateY(-50%); /* Vertikální zarovnání */
 }
