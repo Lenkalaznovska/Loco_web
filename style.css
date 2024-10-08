@@ -49,7 +49,7 @@ body {
 }
 
 /* Čáry ve stylu kolejnic */
-.track {
+.track-line {
     position: absolute;
     left: 50%; /* Umístění od středu */
     background-color: var(--accent-color);
@@ -58,12 +58,12 @@ body {
     height: 6px; /* Výška čáry */
 }
 
-.track.short {
+.track-line.short {
     width: 80px; /* Šířka kratší čáry */
     top: 40%; /* Umístění na 40% výšky sekce */
 }
 
-.track.long {
+.track-line.long {
     width: 120px; /* Šířka delší čáry */
     top: 60%; /* Umístění na 60% výšky sekce */
 }
@@ -132,20 +132,49 @@ button {
     text-transform: uppercase;
     cursor: pointer;
     overflow: hidden; /* Skrytí přetékajícího obsahu */
-    box-shadow: 0 4px 10px var(--shadow-color); /* Jemný stín */
-    transition: all 0.3s ease;
+    transition: color 0.4s, transform 0.4s; /* Plynulé přechody */
+    width: 100%; /* Tlačítko na celou šířku */
 }
 
+/* Efekt na tlačítku při hover */
 .attractive-button:hover {
-    background-color: white;
-    color: var(--accent-color);
+    color: var(--highlight-color); /* Změna barvy textu */
     transform: scale(1.05); /* Mírné zvětšení */
 }
 
-/* Footer */
+/* Patička */
 .footer {
     background-color: var(--footer-bg-color);
-    color: white; /* Barva textu pro footer */
-    padding: 20px 0; /* Prostor v patičce */
-    position: relative; /* Relativní pozice pro footer */
+    color: white; /* Barva textu */
+    padding: 20px 0; /* Prostor kolem textu */
+    position: relative; /* Relativní pozicování */
+    bottom: 0;
+    width: 100%; /* Na celou šířku */
+}
+
+/* Styling pro nadpisy */
+.main-heading {
+    font-size: 2.5rem; /* Velikost písma pro hlavní nadpis */
+    margin-bottom: 10px; /* Mezera pod nadpisem */
+}
+
+.main-heading span {
+    color: var(--highlight-color); /* Změna barvy pro část nadpisu */
+}
+
+/* Další stylování pro sekce */
+.text-container {
+    max-width: 800px; /* Maximální šířka pro text */
+    margin: 0 auto; /* Vycentrování textu */
+    padding: 20px; /* Prostor kolem textu */
+}
+
+/* Odkazy */
+a {
+    color: var(--link-color);
+    text-decoration: none; /* Odstranění podtržení */
+}
+
+a:hover {
+    text-decoration: underline; /* Podtržení při hover */
 }
