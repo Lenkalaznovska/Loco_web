@@ -43,20 +43,20 @@ button {
 
 /* Tlačítka s vlajkami */
 .lang-btn {
-    background-color: var(--accent-color);
+    background-color: transparent;
     border: none;
     color: white;
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: transform 0.3s ease;
     font-weight: bold;
     width: 40px; /* Zajištění stejné šířky */
     height: 30px; /* Zajištění stejné výšky */
 }
 
 .lang-btn:hover {
-    background-color: var(--highlight-color);
+    transform: scale(1.1);
 }
 
 /* Atraktivní tlačítko pro desktop */
@@ -148,7 +148,7 @@ button {
     background: url("images/train.jpg") no-repeat center right/cover;
     width: 100%;
     height: 350px;
-    filter: brightness(0.5); /* Snížení jasnosti obrázku pro lepší kontrast */
+    filter: brightness(1); /* Zrušení ztmavení obrázku */
     position: relative;
 }
 
@@ -178,18 +178,7 @@ button {
 .main-heading {
     font-size: 70px;
     font-weight: bold;
-    animation: slideDown 0.8s ease-out;
-}
-
-@keyframes slideDown {
-    0% {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    color: white; /* Zajištění čitelnosti */
 }
 
 /* Sekce */
