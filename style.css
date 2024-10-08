@@ -48,11 +48,13 @@ button {
     padding: 5px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    width: 30px; /* Stanovení šířky pro všechny vlajky */
+    height: 20px; /* Stanovení výšky pro všechny vlajky */
 }
 
 .lang-btn img {
-    width: 40px; /* Šířka vlajky */
-    height: 25px; /* Výška vlajky */
+    width: 100%; /* Zajištění, že vlajky zaplní tlačítka */
+    height: auto;
     display: block;
 }
 
@@ -62,13 +64,11 @@ button {
 
 /* Zarovnání vlajek */
 .lang-btn-container {
-    position: absolute;
-    top: 10px; /* Umístění do pravého horního rohu */
-    right: 10px; /* Umístění do pravého horního rohu */
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Zarovnání vlajek doprava */
     align-items: center;
     gap: 10px; /* Mezera mezi vlajkami */
+    padding: 10px; /* Padding pro lepší umístění */
 }
 
 /* Atraktivní tlačítko pro desktop */
@@ -110,6 +110,11 @@ button {
         padding: 10px 20px; /* Úprava paddingu pro mobilní zařízení */
         font-size: 16px; /* Mírně menší písmo */
     }
+
+    .lang-btn {
+        width: 25px; /* Úprava šířky vlajek pro menší obrazovky */
+        height: 15px; /* Úprava výšky vlajek pro menší obrazovky */
+    }
 }
 
 @media (max-width: 480px) {
@@ -121,6 +126,11 @@ button {
     .attractive-button {
         padding: 8px 16px; /* Úprava paddingu pro mobilní zařízení */
         font-size: 14px; /* Mírně menší písmo */
+    }
+
+    .lang-btn {
+        width: 20px; /* Další úprava šířky vlajek pro velmi malé obrazovky */
+        height: 12px; /* Další úprava výšky vlajek pro velmi malé obrazovky */
     }
 }
 
@@ -216,10 +226,5 @@ button {
 
     .lang-btn {
         padding: 5px;
-    }
-
-    .lang-btn img {
-        width: 30px; /* Šířka vlajky pro menší obrazovky */
-        height: 20px; /* Výška vlajky pro menší obrazovky */
     }
 }
