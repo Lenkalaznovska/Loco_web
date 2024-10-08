@@ -3,7 +3,8 @@
     --main-bg-color: #ffffff;
     --primary-color: #003366; /* tmavě modrá barva */
     --accent-color: #e63946; /* červená barva pro kolejnice */
-    --section-bg-color: #b3e0ff; /* světlounce modrá barva pro sekce */
+    --secondary-color: #d9d9d9; /* původní barva */
+    --section-bg-color: #e0f7fa; /* velmi světlá nebesky modrá barva */
     --footer-bg-color: #003366; /* tmavě modrá pro footer */
     --link-color: #003366; /* tmavě modrá pro odkazy */
     --highlight-color: #e63946; /* červená pro zvýraznění */
@@ -38,6 +39,24 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Plynulé přechody */
     box-shadow: 0 4px 6px var(--shadow-color); /* Jemný stín */
+}
+
+/* Tlačítka s vlajkami */
+.lang-btn {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    width: 40px; /* Zajištění stejné šířky */
+    height: 30px; /* Zajištění stejné výšky */
+}
+
+.lang-btn:hover {
+    background-color: var(--highlight-color);
 }
 
 /* Atraktivní tlačítko pro desktop */
@@ -129,7 +148,7 @@ button {
     background: url("images/train.jpg") no-repeat center right/cover;
     width: 100%;
     height: 350px;
-    filter: brightness(0.8);
+    filter: brightness(0.5); /* Snížení jasnosti obrázku pro lepší kontrast */
 }
 
 .menu-content {
@@ -162,7 +181,7 @@ button {
     padding: 25px; /* Zmenšení horního paddingu o 5 px */
     max-width: 900px;
     margin: 50px auto;
-    background: var(--section-bg-color); /* Světlounce modrá */
+    background: var(--section-bg-color); /* Velmi světlá nebesky modrá */
     border-radius: 10px;
     box-shadow: 0 10px 30px var(--shadow-color);
     animation: breathing 3s infinite;
@@ -213,20 +232,13 @@ button {
         font-size: 50px;
     }
 
+    .lang-btn {
+        padding: 8px; /* Úprava paddingu pro mobilní zařízení */
+        font-size: 14px;
+    }
+
     .text-container h2 {
         font-size: 20px;
-    }
-
-    .flag-buttons {
-        position: fixed; /* Umístění tlačítek vlajek */
-        top: 10px; /* Vzdálenost od horního okraje */
-        right: 10px; /* Vzdálenost od pravého okraje */
-        z-index: 1000; /* Zajištění, že budou nad ostatními prvky */
-        display: flex; /* Flexbox pro zarovnání tlačítek vedle sebe */
-    }
-
-    .flag-button {
-        margin-left: 10px; /* Mezery mezi tlačítky */
     }
 }
 
@@ -237,7 +249,7 @@ button {
     display: flex; /* Použití flexboxu pro zarovnání */
     justify-content: center; /* Horizontální zarovnání */
     align-items: center; /* Vertikální zarovnání */
-    background-color: var(--accent-color); /* Barva kolejnic */
+    background-color: rgba(230, 57, 70, 0.9); /* Barva kolejnic s poloprůhledností */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Jemný stín pro kolejnice */
     margin: 10px 0; /* Vzdálenost mezi sekcemi */
 }
@@ -248,7 +260,7 @@ button {
     position: absolute;
     width: 50%; /* Šířka poloviny */
     height: 10px; /* Výška */
-    background-color: var(--highlight-color); /* Barva pro zvýraznění */
+    background-color: rgba(255, 0, 0, 0.9); /* Barva pro zvýraznění s poloprůhledností */
 }
 
 .red-stripe:before {
@@ -259,36 +271,4 @@ button {
 .red-stripe:after {
     right: 0; /* Pravá strana */
     bottom: 0; /* Spodní strana */
-}
-
-/* Zvýraznění pro odkazy */
-a {
-    color: var(--link-color);
-    text-decoration: none; /* Bez podtržení */
-    transition: color 0.3s ease; /* Plynulý přechod barvy */
-}
-
-a:hover {
-    color: var(--highlight-color); /* Změna barvy při najetí myší */
-}
-
-/* Snížení paddingu v sekcích */
-section {
-    padding: 20px 0; /* Přizpůsobení paddingu v sekcích */
-}
-
-section {
-    background: var(--section-bg-color); /* Barva pro všechny sekce */
-}
-
-/* Animace sekcí při najetí */
-section {
-    opacity: 0; /* Zpočátku skryté */
-    transform: translateY(20px); /* Mírné posunutí dolů */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Plynulý přechod */
-}
-
-section.visible {
-    opacity: 1; /* Zobrazení sekce */
-    transform: translateY(0); /* Návrat do původní pozice */
 }
