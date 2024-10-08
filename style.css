@@ -219,33 +219,33 @@ h1 {
 
 /* Hlavní patička */
 footer {
-    background-color: var(--footer-bg-color);
+    background-color: var(--footer-bg-color); /* Barva pozadí */
     color: white; /* Barva textu */
-    padding: 15px 0; /* Padding v patičce */
-    text-align: center; /* Zarovnání textu na střed */
+    padding: 20px 0; /* Padding okolo textu */
+    text-align: center; /* Vycentrování textu */
 }
 
-/* Responzivní design pro sekce a nadpisy */
-@media (max-width: 768px) {
-    .section {
-        padding: 30px 10px; /* Úprava paddingu pro mobilní zařízení */
-        border-radius: 15px; /* Mírné zakulacení rohů */
-    }
-
-    h1 {
-        font-size: 36px; /* Menší velikost nadpisu */
-        border-radius: 15px; /* Mírné zakulacení rohů */
-    }
+/* Styl pro nadpisy v sekcích */
+h2, h3 {
+    font-weight: bold; /* Tučné písmo */
+    color: var(--primary-color); /* Barva nadpisu */
+    margin: 20px 0; /* Mezera pod nadpisem */
+    text-transform: uppercase; /* Velká písmena */
 }
 
-@media (max-width: 480px) {
-    .section {
-        padding: 20px 5px; /* Další zmenšení paddingu */
-        border-radius: 10px; /* Další zmenšení zakulacení rohů */
-    }
+/* Podtržení nadpisu */
+h2 {
+    text-decoration: underline; /* Podtržení */
+    text-decoration-color: var(--highlight-color); /* Barva podtržení */
+}
 
-    h1 {
-        font-size: 28px; /* Ještě menší velikost nadpisu */
-        border-radius: 10px; /* Další zmenšení zakulacení rohů */
-    }
+/* Styl pro zvýrazněné odkazy */
+a {
+    color: var(--link-color); /* Barva pro odkazy */
+    text-decoration: none; /* Žádné podtržení */
+}
+
+a:hover {
+    color: var(--highlight-color); /* Změna barvy odkazu při najetí */
+    text-decoration: underline; /* Podtržení při najetí */
 }
