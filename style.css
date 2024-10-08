@@ -1,12 +1,12 @@
 /* Reset a obecné styly */
 :root {
     --main-bg-color: #ffffff;
-    --primary-color: #003366;
+    --primary-color: #003366; /* tmavě modrá barva */
     --accent-color: #e63946; /* červená barva pro kolejnice */
     --secondary-color: #d9d9d9; /* původní barva */
-    --section-bg-color: #c0c0c0; /* tmavší odstín pro sekce */
-    --footer-bg-color: #003366;
-    --link-color: #003366;
+    --section-bg-color: #e0f7fa; /* velmi světlá nebesky modrá barva */
+    --footer-bg-color: #003366; /* tmavě modrá pro footer */
+    --link-color: #003366; /* tmavě modrá pro odkazy */
     --highlight-color: #e63946; /* červená pro zvýraznění */
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
@@ -39,6 +39,24 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Plynulé přechody */
     box-shadow: 0 4px 6px var(--shadow-color); /* Jemný stín */
+}
+
+/* Tlačítka s vlajkami */
+.lang-btn {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    width: 40px; /* Zajištění stejné šířky */
+    height: 30px; /* Zajištění stejné výšky */
+}
+
+.lang-btn:hover {
+    background-color: var(--highlight-color);
 }
 
 /* Atraktivní tlačítko pro desktop */
@@ -158,38 +176,12 @@ button {
     }
 }
 
-/* Language Switcher */
-.language-switcher {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 10px;
-}
-
-.lang-btn {
-    background-color: var(--accent-color);
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    font-weight: bold;
-    width: 40px;
-    height: 40px; /* Zajištění stejné velikosti vlajek */
-}
-
-.lang-btn:hover {
-    background-color: var(--highlight-color);
-}
-
 /* Sekce */
 .text-container {
-    padding: 30px;
+    padding: 25px; /* Zmenšení horního paddingu o 5 px */
     max-width: 900px;
     margin: 50px auto;
-    background: var(--section-bg-color); /* Ztmavená barva sekcí */
+    background: var(--section-bg-color); /* Velmi světlá nebesky modrá */
     border-radius: 10px;
     box-shadow: 0 10px 30px var(--shadow-color);
     animation: breathing 3s infinite;
@@ -223,7 +215,7 @@ button {
     background-color: var(--footer-bg-color);
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 10px; /* Zmenšení dolního paddingu o 10 px */
 }
 
 .footer p {
@@ -241,7 +233,7 @@ button {
     }
 
     .lang-btn {
-        padding: 8px 12px;
+        padding: 8px; /* Úprava paddingu pro mobilní zařízení */
         font-size: 14px;
     }
 
@@ -255,24 +247,14 @@ button {
     position: relative; /* Pozicování pro absolutní pozice vnitřních prvků */
     height: 40px; /* Výška sekce s kolejnicemi */
     display: flex; /* Použití flexboxu pro zarovnání */
-    justify-content: center; /* Zarovnání obsahu na střed */
+    justify-content: center; /* Horizontální zarovnání */
     align-items: center; /* Vertikální zarovnání */
+    background-color: var(--accent-color); /* Barva kolejnic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Jemný stín */
 }
 
-.red-stripe::before,
-.red-stripe::after {
-    content: ""; /* Vytvoření pseudo-elementu */
-    background-color: var(--accent-color); /* Červená barva pro kolejnice */
-    position: absolute; /* Absolutní pozice */
-    height: 10px; /* Výška kolejnice */
-}
-
-.red-stripe::before {
-    width: 30%; /* Šířka levé kolejnice */
-    left: 0; /* Umístění vlevo */
-}
-
-.red-stripe::after {
-    width: 30%; /* Šířka pravé kolejnice */
-    right: 0; /* Umístění vpravo */
+.red-stripe h3 {
+    color: white; /* Barva textu kolejnic */
+    font-weight: bold;
+    margin: 0; /* Odstranění defaultního marginu */
 }
