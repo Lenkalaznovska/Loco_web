@@ -48,13 +48,12 @@ button {
     padding: 5px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    width: 40px; /* Nastavení šířky pro všechny vlajky */
-    height: 30px; /* Nastavení výšky pro všechny vlajky */
 }
 
 .lang-btn img {
-    width: 100%; /* Přizpůsobení šířky vlajek */
-    height: auto; /* Zachování poměru stran */
+    width: 24px; /* Nastavení šířky vlajky */
+    height: 16px; /* Nastavení výšky vlajky */
+    display: block;
 }
 
 .lang-btn:hover {
@@ -64,12 +63,12 @@ button {
 /* Zarovnání vlajek */
 .lang-btn-container {
     display: flex;
-    justify-content: flex-end; /* Zarovnání k pravému okraji */
+    justify-content: flex-end; /* Zarovná vlajky do pravého horního rohu */
     align-items: center;
     gap: 10px; /* Mezera mezi vlajkami */
-    position: absolute; /* Absolutní pozice */
-    top: 10px; /* Vzdálenost od horního okraje */
-    right: 10px; /* Vzdálenost od pravého okraje */
+    position: absolute;
+    top: 10px; /* Umístění do pravého horního rohu */
+    right: 10px;
 }
 
 /* Atraktivní tlačítko pro desktop */
