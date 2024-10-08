@@ -190,7 +190,7 @@ button {
 /* Pozadí menu */
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
-    height: 300px; /* Zmenšení výšky pozadí o 50 px */
+    height: 280px;
 }
 
 /* Styly pro odkazy v menu */
@@ -210,12 +210,10 @@ button {
 h1 {
     font-size: 36px; /* Velikost nadpisu */
     margin: 20px 0; /* Mezera pod nadpisem */
-    color: var(--primary-color); /* Barva nadpisu */
+    color: white; /* Bílá barva nadpisu */
+    font-weight: bold; /* Tučné písmo */
     z-index: 2; /* Zajištění, že je nad sekcí */
     position: relative; /* Přidání relativní pozice */
-    border-radius: 20px; /* Zakulacení rohů hlavního nadpisu */
-    padding: 10px; /* Padding pro nadpis */
-    background-color: rgba(255, 255, 255, 0.8); /* Poloprůhledné pozadí pro nadpis */
 }
 
 /* Hlavní obsah */
