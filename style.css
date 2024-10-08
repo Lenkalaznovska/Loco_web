@@ -35,6 +35,7 @@ body {
     max-width: 800px; /* Maximální šířka sekce */
     margin: 20px auto; /* Vycentrování sekce */
     animation: breathing 4s infinite; /* Neustálý efekt dýchání */
+    border-radius: 20px; /* Zakulacení rohů sekce */
 }
 
 /* Efekt dýchání */
@@ -50,22 +51,22 @@ body {
 /* Čáry ve stylu kolejnic */
 .track-line {
     position: absolute;
-    left: 0; /* Umístění od levého okraje */
+    left: 50%; /* Umístění od středu */
     background-color: var(--accent-color);
+    z-index: 1; /* Zajištění, že je nad sekcí */
+    transform: translateX(-50%); /* Vycentrování čáry */
 }
 
 .track-line.short {
     height: 4px; /* Výška kratší čáry */
     width: 80px; /* Šířka kratší čáry */
     top: 40%; /* Umístění na 40% výšky sekce */
-    z-index: 1; /* Zajištění, že je nad sekcí */
 }
 
 .track-line.long {
     height: 6px; /* Výška delší čáry */
     width: 120px; /* Šířka delší čáry */
     top: 60%; /* Umístění na 60% výšky sekce */
-    z-index: 1; /* Zajištění, že je nad sekcí */
 }
 
 /* Tlačítka - obecný styl */
@@ -123,7 +124,7 @@ button {
     background-color: var(--accent-color);
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 10px; /* Zakulacení rohů */
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
@@ -212,19 +213,45 @@ h1 {
     color: var(--primary-color); /* Barva nadpisu */
     z-index: 2; /* Zajištění, že je nad sekcí */
     position: relative; /* Přidání relativní pozice */
+    border-radius: 20px; /* Zakulacení rohů hlavního nadpisu */
+    padding: 10px; /* Padding pro nadpis */
+    background-color: rgba(255, 255, 255, 0.8); /* Poloprůhledné pozadí pro nadpis */
 }
 
-/* Footer */
+/* Hlavní obsah */
+.main-content {
+    margin: 40px 0;
+}
+
+/* Patička */
 footer {
     background-color: var(--footer-bg-color);
-    color: white;
-    padding: 20px 0;
+    color: white; /* Barva textu */
+    padding: 15px 0; /* Padding v patičce */
+    text-align: center; /* Zarovnání textu na střed */
 }
 
-/* Responzivní design pro footer */
+/* Responzivní design pro sekce a nadpisy */
 @media (max-width: 768px) {
-    footer {
-        font-size: 14px; /* Zmenšení písma pro menší obrazovky */
-        padding: 15px 0; /* Zmenšení paddingu */
+    .section {
+        padding: 30px 10px; /* Úprava paddingu pro mobilní zařízení */
+        border-radius: 15px; /* Mírné zakulacení rohů */
+    }
+
+    h1 {
+        font-size: 28px; /* Menší velikost nadpisu */
+        border-radius: 15px; /* Mírné zakulacení rohů */
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 20px 5px; /* Další zmenšení paddingu */
+        border-radius: 10px; /* Další zmenšení zakulacení rohů */
+    }
+
+    h1 {
+        font-size: 24px; /* Ještě menší velikost nadpisu */
+        border-radius: 10px; /* Další zmenšení zakulacení rohů */
     }
 }
