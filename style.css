@@ -207,30 +207,47 @@ button {
 .menu-link {
     color: white; /* Barva textu */
     text-decoration: none; /* Žádné podtržení */
-    padding: 10px 20px; /* Prostor kolem textu */
-    transition: color 0.3s ease; /* Plynulé přechody */
+    font-size: 18px; /* Velikost textu */
+    margin: 0 15px; /* Okraje mezi odkazy */
 }
 
-/* Styl pro hover na odkazy v menu */
+/* Změna barvy odkazu při najetí */
 .menu-link:hover {
-    color: var(--highlight-color); /* Změna barvy textu při najetí */
+    text-decoration: underline; /* Podtržení při najetí */
 }
 
-/* Footer */
-footer {
-    background-color: var(--footer-bg-color);
-    padding: 20px 0;
-    color: white; /* Barva textu v patičce */
+/* Nadpis úvodního obrázku */
+.header-title {
+    position: absolute; /* Umístění nadpisu */
+    top: 50%; /* Umístění ve středu */
+    left: 50%; /* Umístění ve středu */
+    transform: translate(-50%, -50%); /* Vycentrování */
+    font-size: 36px; /* Velikost nadpisu */
+    color: white; /* Barva nadpisu */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Stín pro lepší čitelnost */
 }
 
-/* Styl pro odkazy v patičce */
-footer a {
-    color: white; /* Barva textu */
+/* Styl pro nadpisy v sekcích */
+h2, h3 {
+    font-weight: bold; /* Tučné písmo */
+    color: var(--primary-color); /* Barva nadpisu */
+    margin: 20px 0; /* Mezera pod nadpisem */
+    text-transform: uppercase; /* Velká písmena */
+}
+
+/* Podtržení nadpisu */
+h2 {
     text-decoration: underline; /* Podtržení */
-    transition: color 0.3s ease; /* Plynulé přechody */
+    text-decoration-color: var(--highlight-color); /* Barva podtržení */
 }
 
-/* Styl pro hover na odkazy v patičce */
-footer a:hover {
-    color: var(--highlight-color); /* Změna barvy textu při najetí */
+/* Styl pro zvýrazněné odkazy */
+a {
+    color: var(--link-color); /* Barva pro odkazy */
+    text-decoration: none; /* Žádné podtržení */
+}
+
+a:hover {
+    color: var(--highlight-color); /* Změna barvy odkazu při najetí */
+    text-decoration: underline; /* Podtržení při najetí */
 }
