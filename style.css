@@ -85,6 +85,27 @@ button {
     right: 20px; /* Vzdálenost od pravé části */
 }
 
+/* Červené čáry ve stylu kolejnic */
+.track-line {
+    position: absolute;
+    background-color: var(--accent-color);
+    height: 4px; /* Výška čáry */
+    z-index: 1; /* Zajištění, že čára bude nad ostatním obsahem */
+}
+
+.track-line.short {
+    width: 80%; /* Délka kratší čáry */
+    left: 10%; /* Umístění kratší čáry */
+    top: 50%; /* Vertikální zarovnání */
+    transform: translateY(-50%); /* Centrování čáry */
+}
+
+.track-line.long {
+    width: 100%; /* Délka delší čáry */
+    left: 0; /* Umístění delší čáry */
+    top: 45%; /* Vertikální zarovnání */
+}
+
 /* Atraktivní tlačítko pro desktop */
 .attractive-button {
     position: relative;
