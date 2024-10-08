@@ -37,7 +37,7 @@ function updateContent() {
 }
 
 // Jazykový přepínač
-const languageButtons = document.querySelectorAll('.lang-btn');
+const languageButtons = document.querySelectorAll('.lang-flag');
 languageButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         currentLanguage = e.target.dataset.lang; // Získání zvoleného jazyka
