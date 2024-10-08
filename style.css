@@ -110,6 +110,7 @@ button {
 /* Zarovnání vlajek do pravého horního rohu */
 .lang-btn-container {
     display: flex;
+    flex-direction: column; /* Změna na sloupec pro mobilní zobrazení */
     justify-content: flex-end; /* Zarovnání vlajek doprava */
     align-items: center; /* Zarovnání na stejnou výšku */
     gap: 10px; /* Mezera mezi vlajkami */
@@ -166,6 +167,10 @@ button {
         width: 100%; /* Tlačítko na celou šířku pro mobilní zařízení */
         height: auto; /* Výška automatická pro lepší vzhled */
     }
+
+    .lang-btn-container {
+        flex-direction: column; /* Zajištění sloupcového uspořádání na mobilních zařízeních */
+    }
 }
 
 @media (max-width: 480px) {
@@ -207,47 +212,24 @@ button {
 .menu-link {
     color: white; /* Barva textu */
     text-decoration: none; /* Žádné podtržení */
-    font-size: 18px; /* Velikost textu */
-    margin: 0 15px; /* Okraje mezi odkazy */
+    padding: 10px; /* Prostor kolem odkazu */
+    transition: color 0.3s; /* Plynulé přechody pro barvu */
 }
 
-/* Změna barvy odkazu při najetí */
 .menu-link:hover {
-    text-decoration: underline; /* Podtržení při najetí */
+    color: var(--accent-color); /* Změna barvy při najetí */
 }
 
-/* Nadpis úvodního obrázku */
-.header-title {
-    position: absolute; /* Umístění nadpisu */
-    top: 50%; /* Umístění ve středu */
-    left: 50%; /* Umístění ve středu */
-    transform: translate(-50%, -50%); /* Vycentrování */
-    font-size: 36px; /* Velikost nadpisu */
-    color: white; /* Barva nadpisu */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Stín pro lepší čitelnost */
+/* Footer */
+footer {
+    background-color: var(--footer-bg-color);
+    color: white; /* Barva textu v patičce */
+    padding: 20px; /* Prostor uvnitř patičky */
 }
 
-/* Styl pro nadpisy v sekcích */
-h2, h3 {
-    font-weight: bold; /* Tučné písmo */
-    color: var(--primary-color); /* Barva nadpisu */
-    margin: 20px 0; /* Mezera pod nadpisem */
-    text-transform: uppercase; /* Velká písmena */
-}
-
-/* Podtržení nadpisu */
-h2 {
-    text-decoration: underline; /* Podtržení */
-    text-decoration-color: var(--highlight-color); /* Barva podtržení */
-}
-
-/* Styl pro zvýrazněné odkazy */
-a {
-    color: var(--link-color); /* Barva pro odkazy */
-    text-decoration: none; /* Žádné podtržení */
-}
-
-a:hover {
-    color: var(--highlight-color); /* Změna barvy odkazu při najetí */
-    text-decoration: underline; /* Podtržení při najetí */
+/* Vytvoření jednoduchého stínu pro celý web */
+body {
+    box-shadow: 0 0 15px var(--shadow-color);
+    border-radius: 15px; /* Zakulacení rohů */
+    overflow: hidden; /* Skrytí přetékajícího obsahu */
 }
