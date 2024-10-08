@@ -50,7 +50,7 @@ body {
 /* Čáry ve stylu kolejnic */
 .track-line {
     position: absolute;
-    left: -50px; /* Vzdálenost od levého okraje */
+    left: 0; /* Umístění od levého okraje */
     background-color: var(--accent-color);
 }
 
@@ -189,7 +189,7 @@ button {
 /* Pozadí menu */
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
-    height: 400px; /* Výška pozadí menu */
+    height: 350px; /* Zmenšení výšky pozadí o 50 px */
 }
 
 /* Styly pro odkazy v menu */
@@ -208,8 +208,10 @@ button {
 /* Hlavní nadpis */
 h1 {
     font-size: 36px; /* Velikost nadpisu */
-    margin-bottom: 20px; /* Mezera pod nadpisem */
+    margin: 20px 0; /* Mezera pod nadpisem */
     color: var(--primary-color); /* Barva nadpisu */
+    z-index: 2; /* Zajištění, že je nad sekcí */
+    position: relative; /* Přidání relativní pozice */
 }
 
 /* Footer */
@@ -222,6 +224,15 @@ footer {
 /* Responzivní design pro footer */
 @media (max-width: 768px) {
     footer {
-        padding: 15px 0; /* Menší padding pro mobilní zařízení */
+        font-size: 14px; /* Zmenšení písma pro footer */
     }
+}
+
+/* Zajištění, že celá stránka je vycentrována */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Výška minimálně 100% výšky obrazovky */
 }
