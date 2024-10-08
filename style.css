@@ -49,7 +49,7 @@ body {
 }
 
 /* Čáry ve stylu kolejnic */
-.track-line {
+.rail-line {
     position: absolute;
     left: 50%; /* Umístění od středu */
     background-color: var(--accent-color);
@@ -58,12 +58,12 @@ body {
     height: 6px; /* Výška čáry */
 }
 
-.track-line.short {
+.short-rail {
     width: 80px; /* Šířka kratší čáry */
     top: 40%; /* Umístění na 40% výšky sekce */
 }
 
-.track-line.long {
+.long-rail {
     width: 120px; /* Šířka delší čáry */
     top: 60%; /* Umístění na 60% výšky sekce */
 }
@@ -132,8 +132,7 @@ button {
     text-transform: uppercase;
     cursor: pointer;
     overflow: hidden; /* Skrytí přetékajícího obsahu */
-    transition: color 0.4s, transform 0.4s; /* Plynulé přechody */
-    width: 100%; /* Tlačítko na celou šířku */
+    transition: color 0.4s ease; /* Plynulý přechod barvy */
 }
 
 /* Efekt na tlačítku při hover */
