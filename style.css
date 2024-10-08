@@ -23,6 +23,9 @@ body {
     background-color: var(--main-bg-color);
     line-height: 1.6;
     text-align: center;
+    box-shadow: 0 0 15px var(--shadow-color);
+    border-radius: 15px; /* Zakulacení rohů */
+    overflow: hidden; /* Skrytí přetékajícího obsahu */
 }
 
 /* Sekce s dýcháním */
@@ -137,8 +140,9 @@ button {
     width: 100%; /* Roztažení tlačítka na celou šířku */
 }
 
+/* Efekt hover pro tlačítko */
 .attractive-button:hover {
-    color: var(--primary-color); /* Změna barvy textu při najetí */
+    color: var(--highlight-color); /* Změna barvy textu při najetí */
     transform: translateY(-3px); /* Lehké přiblížení */
 }
 
@@ -204,32 +208,29 @@ button {
 /* Pozadí menu */
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
-    height: 300px; /* Zmenšení výšky pozadí o 50 px */
+    height: 250px; /* Zmenšení výšky pozadí o 50 px */
     position: relative; /* Přidání relativní pozice pro nadpis */
 }
 
 /* Styly pro odkazy v menu */
 .menu-link {
-    color: white; /* Barva textu */
-    text-decoration: none; /* Žádné podtržení */
-    padding: 10px; /* Prostor kolem odkazu */
-    transition: color 0.3s; /* Plynulé přechody pro barvu */
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
+/* Efekt hover pro odkazy v menu */
 .menu-link:hover {
-    color: var(--accent-color); /* Změna barvy při najetí */
+    background-color: var(--accent-color);
+    color: white; /* Zajištění čitelnosti textu */
 }
 
-/* Footer */
-footer {
+/* Patička */
+.footer {
     background-color: var(--footer-bg-color);
-    color: white; /* Barva textu v patičce */
-    padding: 20px; /* Prostor uvnitř patičky */
-}
-
-/* Vytvoření jednoduchého stínu pro celý web */
-body {
-    box-shadow: 0 0 15px var(--shadow-color);
-    border-radius: 15px; /* Zakulacení rohů */
-    overflow: hidden; /* Skrytí přetékajícího obsahu */
+    color: white; /* Barva textu */
+    text-align: center; /* Vycentrování textu */
+    padding: 15px 0; /* Padding pro patičku */
+    margin-top: 20px; /* Mezera nahoře */
 }
