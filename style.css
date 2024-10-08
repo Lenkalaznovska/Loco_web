@@ -255,6 +255,6 @@ button {
 
 .red-stripe h3 {
     color: white; /* Barva textu kolejnic */
-    font-weight: bold;
-    margin: 0; /* Odstranění defaultního marginu */
+    font-weight: bold; /* Tučné písmo */
+    margin: 0;
 }
