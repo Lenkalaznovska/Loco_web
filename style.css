@@ -55,16 +55,15 @@ body {
     background-color: var(--accent-color);
     z-index: 1; /* Zajištění, že je nad sekcí */
     transform: translateX(-50%); /* Vycentrování čáry */
+    height: 6px; /* Výška čáry */
 }
 
 .track-line.short {
-    height: 4px; /* Výška kratší čáry */
     width: 80px; /* Šířka kratší čáry */
     top: 40%; /* Umístění na 40% výšky sekce */
 }
 
 .track-line.long {
-    height: 6px; /* Výška delší čáry */
     width: 120px; /* Šířka delší čáry */
     top: 60%; /* Umístění na 60% výšky sekce */
 }
@@ -74,7 +73,9 @@ button {
     background-color: var(--primary-color); /* Hlavní barva tlačítka */
     color: white; /* Barva textu */
     border: none; /* Odstranění okrajů */
-    padding: 12px 24px; /* Prostor kolem textu */
+    padding: 12px; /* Prostor kolem textu */
+    width: 100%; /* Tlačítko na celou šířku */
+    height: 100%; /* Tlačítko na celou výšku */
     font-size: 16px;
     font-weight: bold; /* Tučné písmo */
     text-transform: uppercase; /* Velká písmena */
@@ -89,9 +90,10 @@ button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    width: 100%; /* Tlačítko na celou šířku */
+    height: 100%; /* Tlačítko na celou výšku */
+    position: relative; /* Přidání relativní pozice */
     transition: transform 0.3s ease;
-    width: 50px; /* Zvětšení šířky tlačítka pro vlajku */
-    height: 40px; /* Zvětšení výšky tlačítka pro vlajku */
 }
 
 .lang-btn img {
@@ -131,6 +133,7 @@ button {
     cursor: pointer;
     overflow: hidden; /* Skrytí přetékajícího obsahu */
     transition: color 0.4s, transform 0.4s; /* Plynulé přechody */
+    width: 100%; /* Roztažení tlačítka na celou šířku */
 }
 
 .attractive-button:hover {
@@ -146,36 +149,42 @@ button {
 /* Responzivní design pro tlačítka na menších obrazovkách */
 @media (max-width: 768px) {
     button {
-        padding: 10px 20px;
+        padding: 10px;
         font-size: 14px; /* Menší písmo pro menší zařízení */
         border-radius: 6px;
+        width: 100%; /* Tlačítko na celou šířku */
+        height: auto; /* Výška automatická pro lepší vzhled */
     }
 
     .attractive-button {
-        padding: 10px 20px; /* Úprava paddingu pro mobilní zařízení */
+        padding: 10px; /* Úprava paddingu pro mobilní zařízení */
         font-size: 16px; /* Mírně menší písmo */
+        width: 100%; /* Roztažení tlačítka na celou šířku */
     }
 
     .lang-btn {
-        width: 45px; /* Mírně menší šířka pro mobilní zařízení */
-        height: 35px; /* Mírně menší výška pro mobilní zařízení */
+        width: 100%; /* Tlačítko na celou šířku pro mobilní zařízení */
+        height: auto; /* Výška automatická pro lepší vzhled */
     }
 }
 
 @media (max-width: 480px) {
     button {
-        padding: 8px 16px; /* Další zmenšení pro velmi malé obrazovky */
+        padding: 8px;
         font-size: 12px;
+        width: 100%; /* Tlačítko na celou šířku */
+        height: auto; /* Výška automatická pro lepší vzhled */
     }
 
     .attractive-button {
-        padding: 8px 16px; /* Úprava paddingu pro mobilní zařízení */
+        padding: 8px; /* Úprava paddingu pro mobilní zařízení */
         font-size: 14px; /* Mírně menší písmo */
+        width: 100%; /* Roztažení tlačítka na celou šířku */
     }
 
     .lang-btn {
-        width: 40px; /* Ještě menší šířka pro mobilní zařízení */
-        height: 30px; /* Ještě menší výška pro mobilní zařízení */
+        width: 100%; /* Tlačítko na celou šířku pro mobilní zařízení */
+        height: auto; /* Výška automatická pro lepší vzhled */
     }
 }
 
@@ -191,6 +200,7 @@ button {
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
     height: 300px; /* Zmenšení výšky pozadí o 50 px */
+    position: relative; /* Přidání relativní pozice pro nadpis */
 }
 
 /* Styly pro odkazy v menu */
@@ -201,28 +211,20 @@ button {
     margin: 0 15px; /* Okraje mezi odkazy */
 }
 
-/* Změna barvy odkazu při najetí myší */
+/* Změna barvy odkazu při najetí */
 .menu-link:hover {
-    color: var(--highlight-color); /* Barva při najetí */
+    text-decoration: underline; /* Podtržení při najetí */
 }
 
-/* Hlavní nadpis */
-h1 {
-    font-size: 48px; /* Zvětšení velikosti nadpisu */
-    margin: 20px 0; /* Mezera pod nadpisem */
-    color: white; /* Bílá barva nadpisu */
-    font-weight: bold; /* Tučné písmo */
-    z-index: 2; /* Zajištění, že je nad sekcí */
-    position: relative; /* Přidání relativní pozice */
-    text-align: center; /* Vycentrování nadpisu */
-}
-
-/* Hlavní patička */
-footer {
-    background-color: var(--footer-bg-color); /* Barva pozadí */
-    color: white; /* Barva textu */
-    padding: 20px 0; /* Padding okolo textu */
-    text-align: center; /* Vycentrování textu */
+/* Nadpis úvodního obrázku */
+.header-title {
+    position: absolute; /* Umístění nadpisu */
+    top: 50%; /* Umístění ve středu */
+    left: 50%; /* Umístění ve středu */
+    transform: translate(-50%, -50%); /* Vycentrování */
+    font-size: 36px; /* Velikost nadpisu */
+    color: white; /* Barva nadpisu */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Stín pro lepší čitelnost */
 }
 
 /* Styl pro nadpisy v sekcích */
