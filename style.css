@@ -137,66 +137,75 @@ button {
         font-size: 16px; /* Mírně menší písmo */
     }
 
-    .lang-btn {
-        width: 45px; /* Mírně menší šířka pro mobilní zařízení */
-        height: 35px; /* Mírně menší výška pro mobilní zařízení */
-    }
-}
-
-@media (max-width: 480px) {
-    button {
-        padding: 8px 16px; /* Další zmenšení pro velmi malé obrazovky */
-        font-size: 12px;
-    }
-
-    .attractive-button {
-        padding: 8px 16px; /* Úprava paddingu pro mobilní zařízení */
-        font-size: 14px; /* Mírně menší písmo */
+    .lang-btn-container {
+        gap: 5px; /* Zmenšení mezery mezi vlajkami */
     }
 
     .lang-btn {
-        width: 40px; /* Ještě menší šířka pro mobilní zařízení */
-        height: 30px; /* Ještě menší výška pro mobilní zařízení */
+        width: 40px; /* Zmenšení šířky tlačítka pro vlajku */
+        height: 30px; /* Zmenšení výšky tlačítka pro vlajku */
     }
 }
 
-/* Menu */
-.menu-header {
-    position: relative;
-    overflow: hidden;
-    background-color: var(--primary-color);
-    padding: 20px 0;
-}
-
-/* Pozadí menu */
-.menu-background {
-    background: url("images/train.jpg") no-repeat center right/cover;
-    height: 400px; /* Výška pozadí menu */
-}
-
-/* Styly pro odkazy v menu */
-.menu-link {
-    color: white; /* Barva textu */
-    text-decoration: none; /* Žádné podtržení */
-    font-size: 18px; /* Velikost textu */
-    margin: 0 15px; /* Okraje mezi odkazy */
-}
-
-/* Změna barvy odkazu při najetí myší */
-.menu-link:hover {
-    color: var(--highlight-color); /* Barva při najetí */
-}
-
-/* Footer */
-footer {
+.footer {
     background-color: var(--footer-bg-color);
     color: white;
     padding: 20px 0;
+    position: relative;
+    z-index: 1; /* Zajistit, že footer bude nad sekcemi */
 }
 
-/* Responzivní design pro footer */
-@media (max-width: 768px) {
-    footer {
-        padding: 15px 0; /* Menší padding pro mobilní zařízení */
+/* Odkazy */
+a {
+    color: var(--link-color);
+    text-decoration: none; /* Odstranění podtržení */
+    transition: color 0.3s; /* Plynulé přechody pro odkazy */
+}
+
+a:hover {
+    color: var(--highlight-color); /* Změna barvy při najetí */
+}
+
+/* Hlavní nadpis */
+.main-heading {
+    font-size: 3rem; /* Velikost písma hlavního nadpisu */
+    color: var(--primary-color);
+    line-height: 1.2;
+    transition: transform 0.5s; /* Plynulý přechod pro efekt */
+}
+
+.main-heading:hover {
+    transform: translateY(-5px); /* Přiblížení při najetí */
+}
+
+/* Styly pro tlačítka */
+button {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s; /* Přidání efektu dýchání */
+}
+
+button:hover {
+    background-color: var(--highlight-color);
+    transform: scale(1.05); /* Efekt přiblížení */
+}
+
+/* Pro responsivní zařízení */
+@media (max-width: 600px) {
+    .main-heading {
+        font-size: 2rem; /* Mírné zmenšení pro menší obrazovky */
+    }
+
+    .section {
+        padding: 30px 10px; /* Mírné zmenšení paddingu */
     }
 }
