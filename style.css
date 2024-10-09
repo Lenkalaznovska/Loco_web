@@ -156,7 +156,7 @@ button {
 /* Pozadí menu */
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
-    height: 160px;
+    height: 110px;
     position: relative;
 }
 
