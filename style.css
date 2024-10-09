@@ -83,13 +83,13 @@ h1 {
 }
 
 .track-line.short {
-    width: 40%; /* Kratší šířka čáry */
+    width: 35%; /* Kratší šířka čáry */
     top: 50%;
 }
 
 .track-line.long {
-    width: 50%; /* Kratší šířka čáry */
-    top: 80%;
+    width: 65%; /* Kratší šířka čáry */
+    top: 90%;
     margin-left: -10%; /* Posun pro vycentrování */
 }
 
