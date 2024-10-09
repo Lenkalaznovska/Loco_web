@@ -35,7 +35,7 @@ h1 {
 
 /* Navigační menu */
 nav {
-    background-color: #0055a5; /* Změňte tuto hodnotu pro jinou barvu pozadí navigace */
+    background-color: #ffcc00; /* Změna barvy na žlutou */
     padding: 10px 0;
 }
 
@@ -45,7 +45,7 @@ nav {
 }
 
 .nav-links {
-    display: flex;
+    display: flex; /* Umožní umístit položky vedle sebe */
     justify-content: center;
     gap: 20px;
 }
