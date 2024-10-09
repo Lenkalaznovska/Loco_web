@@ -66,12 +66,12 @@ h1 {
 
 .track-line.short {
     width: 40%; /* Kratší šířka čáry */
-    top: 40%;
+    top: 50%;
 }
 
 .track-line.long {
     width: 60%; /* Kratší šířka čáry */
-    top: 60%;
+    top: 70%;
     margin-left: -10%; /* Posun pro vycentrování */
 }
 
