@@ -38,15 +38,16 @@ body {
     border-radius: 20px; /* Zakulacení rohů */
 }
 
-.intro img {
-    height: 250px; /* Výška úvodního obrázku */
-    width: auto; /* Automatická šířka */
-}
-
 /* Hlavní nadpis v úvodu */
 .intro h1 {
     font-size: 50px; /* Velikost hlavního nadpisu */
     font-weight: bold; /* Tučné písmo */
+}
+
+/* Úvodní obrázek */
+.intro img {
+    height: 250px; /* Výška úvodního obrázku */
+    width: 100%; /* Automatická šířka */
 }
 
 /* Sekce s dýcháním */
@@ -128,98 +129,42 @@ button {
     transform: scale(1.1);
 }
 
-/* Zarovnání vlajek do pravého horního rohu */
-.lang-btn-container {
-    display: flex;
-    justify-content: flex-end; /* Zarovnání vlajek doprava */
-    align-items: center; /* Zarovnání na stejnou výšku */
-    gap: 10px; /* Mezera mezi vlajkami */
-    position: absolute; /* Absolutní pozicování */
-    top: 20px; /* Vzdálenost od horní části */
-    right: 20px; /* Vzdálenost od pravé části */
-}
-
-/* Atraktivní tlačítko pro desktop */
-.attractive-button {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    border-radius: 10px; /* Zakulacení rohů */
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    overflow: hidden; /* Skrytí přetékajícího obsahu */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Plynulé přechody */
-}
-
-/* Hover efekt pro atraktivní tlačítko */
-.attractive-button:hover {
-    background-color: #cc2f39;
-    transform: scale(1.05); /* Mírné zvětšení tlačítka */
-}
-
-/* Footer */
+/* Zarovnání footeru */
 .footer {
     background-color: var(--footer-bg-color);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 -4px 10px var(--shadow-color);
-    border-radius: 0 0 15px 15px; /* Zakulacení rohů nahoře */
+    color: white; /* Barva textu footeru */
+    padding: 20px; /* Prostor uvnitř footeru */
+    position: relative; /* Přidání relativní pozice */
+    box-shadow: 0 -2px 10px var(--shadow-color); /* Stín nad footerem */
+    border-radius: 20px; /* Zakulacení rohů footeru */
 }
 
 /* Odkazy */
 a {
     color: var(--link-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    text-decoration: none; /* Odstranění podtržení */
+    font-weight: bold; /* Tučné písmo */
 }
 
 a:hover {
-    color: var(--highlight-color); /* Zvýraznění odkazu při hoveru */
+    color: var(--highlight-color); /* Změna barvy odkazu při najetí myší */
 }
 
-h1, h2 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-weight: bold; /* Tučné písmo pro nadpisy */
-}
-
-h1 {
-    color: white; /* Bílá barva pro nadpis v úvodu */
-}
-
-/* Animace při příchodu sekce */
-.text-container {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.text-container.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responzivita */
+/* Vycentrování sekcí na mobilních zařízeních */
 @media (max-width: 768px) {
-    body {
-        font-size: 14px; /* Menší písmo pro mobilní zařízení */
-    }
-
     .section {
-        padding: 30px 10px; /* Menší padding v sekcích */
+        padding: 30px 10px; /* Méně místa na mobilu */
     }
-
+    
+    .main-heading {
+        font-size: 40px; /* Menší velikost nadpisu */
+    }
+    
+    .intro-heading {
+        font-size: 30px; /* Menší velikost nadpisu */
+    }
+    
     button {
-        width: auto; /* Šířka tlačítka se přizpůsobí obsahu */
-    }
-
-    .intro h1 {
-        font-size: 36px; /* Menší nadpis pro mobil */
+        width: 100%; /* Tlačítka se přizpůsobí šířce */
     }
 }
