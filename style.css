@@ -38,7 +38,7 @@ h1 {
 /* Navigační menu */
 nav.navigation {
     background-color: var(--menu-bg-color); /* Pozadí navigace */
-    padding: 7px 0; /* Padding pro navigaci */
+    padding: 4px 0; /* Padding pro navigaci */
     position: relative; /* Relativní pozice pro pruh */
     z-index: 10; /* Z-index pro zajištění viditelnosti */
 }
