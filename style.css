@@ -49,7 +49,7 @@ nav.navigation::before {
     top: 0; /* Vzdálenost od horní části */
     left: 0; /* Vzdálenost od levé strany */
     right: 0; /* Vzdálenost od pravé strany */
-    height: 3px; /* Výška pruhu */
+    height: 5px; /* Výška pruhu */
     background-color: var(--accent-color); /* Barva pruhu */
     z-index: -1; /* Z-index, aby byl pruh pod navigací */
 }
@@ -70,7 +70,7 @@ nav.navigation a {
     color: var(--footer-bg-color); /* Barva odkazů */
     text-decoration: none; /* Žádné podtržení */
     font-weight: bold; /* Tloušťka písma */
-    padding: 10px 20px; /* Padding pro odkazy */
+    padding: 10px 10px; /* Padding pro odkazy */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Přechody */
 }
 
