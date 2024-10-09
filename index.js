@@ -15,7 +15,10 @@ const languages = {
         "products-title": "Naše modely",
         "products-desc": "Nabízíme širokou škálu modelových vlaků, kolejnic a příslušenství pro všechny železniční nadšence. Naše produkty jsou známé svou kvalitou a precizností.",
         "order-title": "Objednejte si svůj model ještě dnes!",
-        "order-desc": "Pro více informací nás kontaktujte na e-mailu nebo telefonním čísle uvedeném níže."
+        "order-desc": "Pro více informací nás kontaktujte na e-mailu nebo telefonním čísle uvedeném níže.",
+        "footer-contact": "Kontaktujte nás",
+        "footer-privacy": "Ochrana osobních údajů",
+        "footer-terms": "Obchodní podmínky"
     },
     en: {
         "home": "Home",
@@ -32,7 +35,10 @@ const languages = {
         "products-title": "Our Models",
         "products-desc": "We offer a wide range of model trains, tracks, and accessories for all railway enthusiasts. Our products are known for their quality and precision.",
         "order-title": "Order Your Model Today!",
-        "order-desc": "For more information, contact us via the email or phone number below."
+        "order-desc": "For more information, contact us via the email or phone number below.",
+        "footer-contact": "Contact Us",
+        "footer-privacy": "Privacy Policy",
+        "footer-terms": "Terms and Conditions"
     },
     de: {
         "home": "Startseite",
@@ -49,7 +55,10 @@ const languages = {
         "products-title": "Unsere Modelle",
         "products-desc": "Wir bieten eine breite Palette von Modellzügen, Schienen und Zubehör für alle Eisenbahnenthusiasten. Unsere Produkte sind für ihre Qualität und Präzision bekannt.",
         "order-title": "Bestellen Sie Ihr Modell noch heute!",
-        "order-desc": "Für weitere Informationen kontaktieren Sie uns bitte per E-Mail oder Telefonnummer unten."
+        "order-desc": "Für weitere Informationen kontaktieren Sie uns bitte per E-Mail oder Telefonnummer unten.",
+        "footer-contact": "Kontaktieren Sie uns",
+        "footer-privacy": "Datenschutz",
+        "footer-terms": "Nutzungsbedingungen"
     }
 };
 
@@ -70,6 +79,16 @@ function updateContent() {
 
     // Aktualizace textu v navigačním menu
     document.querySelectorAll('.navigation a[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (languages[currentLanguage][key]) {
+            el.innerText = languages[currentLanguage][key];
+        } else {
+            console.warn(`Chybějící překlad pro klíč: ${key}`);
+        }
+    });
+
+    // Aktualizace textu v patičce
+    document.querySelectorAll('.footer [data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
         if (languages[currentLanguage][key]) {
             el.innerText = languages[currentLanguage][key];
