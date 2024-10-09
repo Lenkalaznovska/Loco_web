@@ -225,7 +225,7 @@ button {
     text-align: center;
     padding: 20px;
     position: relative; /* Pozice pro čáru */
-    bottom: 0; /* Vzdálenost od spodní části */
+    margin-top: auto; /* Posunout footer dolů */
 }
 
 /* Animace dýchání */
@@ -272,3 +272,4 @@ button {
     body {
         font-size: 14px; /* Další zmenšení písma */
     }
+}
