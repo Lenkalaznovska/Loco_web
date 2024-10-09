@@ -96,10 +96,13 @@ button {
 }
 
 .lang-btn img {
-    width: 40px; /* Šířka obrázků vlajek */
-    height: 30px; /* Výška obrázků vlajek */
-    object-fit: cover; /* Zajištění správného oříznutí obrázků */
+    width: 40px; /* Šířka obrázku */
+    height: 30px; /* Výška obrázku */
+    object-fit: contain; /* Zachování poměru stran obrázků bez deformace */
+    background-color: white; /* Přidání pozadí, aby nedošlo k deformaci, pokud má vlajka jiný poměr stran */
+    padding: 2px; /* Malé odsazení pro lepší vzhled */
     display: block;
+    border: 1px solid #ccc; /* Volitelný rámeček pro zarovnání */
 }
 
 .lang-btn:hover {
