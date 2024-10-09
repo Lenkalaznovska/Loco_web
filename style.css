@@ -1,4 +1,4 @@
-/* Reset a obecné styly */
+/* Reset a obecné styly */ 
 :root {
     --main-bg-color: #ffffff;
     --primary-color: #003366; /* tmavě modrá barva */
@@ -36,6 +36,15 @@ body {
     text-align: center; /* Vycentrování textu */
     box-shadow: 0 4px 10px var(--shadow-color);
     border-radius: 20px; /* Zakulacení rohů */
+    height: 250px; /* Fixní výška */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vycentrování obsahu vertikálně */
+}
+
+.intro h1 {
+    font-size: 50px; /* Velikost hlavního nadpisu */
+    font-weight: bold; /* Tučné písmo */
 }
 
 /* Sekce s dýcháním */
@@ -94,6 +103,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Plynulé přechody */
     box-shadow: 0 4px 6px var(--shadow-color); /* Jemný stín */
+    width: 100%; /* Šířka tlačítek */
 }
 
 /* Tlačítka s vlajkami */
@@ -158,6 +168,8 @@ button {
     text-align: center;
     box-shadow: 0 -4px 10px var(--shadow-color);
     border-radius: 0 0 15px 15px; /* Zakulacení rohů nahoře */
+    position: relative; /* Zajištění viditelnosti */
+    margin-top: 20px; /* Vzdálenost od předchozí sekce */
 }
 
 /* Odkazy */
@@ -191,4 +203,19 @@ h1 {
 .text-container.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Responzivita */
+@media (max-width: 768px) {
+    .intro {
+        padding: 30px 10px; /* Menší padding pro mobilní zařízení */
+    }
+
+    .intro h1 {
+        font-size: 36px; /* Menší velikost nadpisu pro mobilní zařízení */
+    }
+
+    button {
+        font-size: 14px; /* Menší písmo pro tlačítka */
+    }
 }
