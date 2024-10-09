@@ -28,6 +28,16 @@ body {
     overflow: hidden; /* Skrytí přetékajícího obsahu */
 }
 
+/* Úvodní sekce */
+.intro {
+    background-color: var(--footer-bg-color); /* Modrá barva footeru */
+    color: white; /* Bílá barva textu */
+    padding: 50px 20px;
+    text-align: center; /* Vycentrování textu */
+    box-shadow: 0 4px 10px var(--shadow-color);
+    border-radius: 20px; /* Zakulacení rohů */
+}
+
 /* Sekce s dýcháním */
 .section {
     background-color: var(--section-bg-color);
@@ -77,8 +87,6 @@ button {
     color: white; /* Barva textu */
     border: none; /* Odstranění okrajů */
     padding: 12px; /* Prostor kolem textu */
-    width: 100%; /* Tlačítko na celou šířku */
-    height: 100%; /* Tlačítko na celou výšku */
     font-size: 16px;
     font-weight: bold; /* Tučné písmo */
     text-transform: uppercase; /* Velká písmena */
@@ -93,8 +101,6 @@ button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    width: 100%; /* Tlačítko na celou šířku */
-    height: 100%; /* Tlačítko na celou výšku */
     position: relative; /* Přidání relativní pozice */
     transition: transform 0.3s ease;
 }
@@ -113,7 +119,6 @@ button {
 /* Zarovnání vlajek do pravého horního rohu */
 .lang-btn-container {
     display: flex;
-    flex-direction: column; /* Změna na sloupec pro mobilní zobrazení */
     justify-content: flex-end; /* Zarovnání vlajek doprava */
     align-items: center; /* Zarovnání na stejnou výšku */
     gap: 10px; /* Mezera mezi vlajkami */
@@ -169,10 +174,11 @@ a:hover {
 h1, h2 {
     color: var(--primary-color);
     margin-bottom: 20px;
+    font-weight: bold; /* Tučné písmo pro nadpisy */
 }
 
-h1 span {
-    color: var(--accent-color);
+h1 {
+    color: white; /* Bílá barva pro nadpis v úvodu */
 }
 
 /* Animace při příchodu sekce */
