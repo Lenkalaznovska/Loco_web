@@ -36,12 +36,12 @@ h1 {
 /* Styly pro sekce */
 .section {
     background-color: var(--section-bg-color);
-    padding: 30px 20px; /* Zmenšení paddingu */
+    padding: 30px 20px; /* Padding pro sekce */
     transition: transform 0.6s ease-in-out, background-color 0.6s ease-in-out; /* Přidání přechodu pro barvu pozadí */
     box-shadow: 0 4px 10px var(--shadow-color);
     position: relative;
     max-width: 800px;
-    margin: 20px auto;
+    margin: 20px auto; /* Zarovnání na střed */
     animation: breathing 3s infinite; /* Efekt dýchání */
     border-radius: 10px; /* Přidání zaoblení */
 }
@@ -84,12 +84,12 @@ h1 {
 
 .track-line.short {
     width: 40%; /* Kratší šířka čáry */
-    top: 50%;
+    top: 60%;
 }
 
 .track-line.long {
-    width: 70%; /* Kratší šířka čáry */
-    top: 80%;
+    width: 60%; /* Kratší šířka čáry */
+    top: 90%;
     margin-left: -10%; /* Posun pro vycentrování */
 }
 
@@ -156,7 +156,7 @@ button {
 /* Pozadí menu */
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
-    height: 190px;
+    height: 180px;
     position: relative;
 }
 
@@ -185,6 +185,7 @@ button {
 
     .section {
         padding: 20px 10px; /* Upraveno pro menší obrazovky */
+        margin: 15px auto; /* Snížení marginu */
     }
 
     button {
@@ -200,6 +201,7 @@ button {
 
     .section {
         padding: 15px 5px; /* Upraveno pro menší obrazovky */
+        margin: 10px auto; /* Snížení marginu */
     }
 
     button {
