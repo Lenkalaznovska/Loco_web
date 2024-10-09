@@ -35,8 +35,8 @@ const languages = {
     }
 };
 
-// První jazyk (čeština)
-let currentLanguage = 'cs';
+// Získání jazyka z localStorage nebo nastavení na výchozí (čeština)
+let currentLanguage = localStorage.getItem('language') || 'cs';
 
 // Funkce pro aktualizaci textu na stránce
 function updateContent() {
@@ -66,6 +66,7 @@ const languageButtons = document.querySelectorAll('.lang-flag');
 languageButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         currentLanguage = e.target.dataset.lang; // Získání zvoleného jazyka
+        localStorage.setItem('language', currentLanguage); // Uložení zvoleného jazyka do localStorage
         updateContent(); // Aktualizace obsahu
     });
 });
