@@ -16,9 +16,7 @@ const languages = {
         "products-desc": "Nabízíme širokou škálu modelových vlaků, kolejnic a příslušenství pro všechny železniční nadšence. Naše produkty jsou známé svou kvalitou a precizností.",
         "order-title": "Objednejte si svůj model ještě dnes!",
         "order-desc": "Pro více informací nás kontaktujte na e-mailu nebo telefonním čísle uvedeném níže.",
-        "footer-contact": "Kontaktujte nás",
-        "footer-privacy": "Ochrana osobních údajů",
-        "footer-terms": "Obchodní podmínky"
+        "footer": "© 2024 Modelové Vláčky. Všechna práva vyhrazena."
     },
     en: {
         "home": "Home",
@@ -36,9 +34,7 @@ const languages = {
         "products-desc": "We offer a wide range of model trains, tracks, and accessories for all railway enthusiasts. Our products are known for their quality and precision.",
         "order-title": "Order Your Model Today!",
         "order-desc": "For more information, contact us via the email or phone number below.",
-        "footer-contact": "Contact Us",
-        "footer-privacy": "Privacy Policy",
-        "footer-terms": "Terms and Conditions"
+        "footer": "© 2024 Model Trains. All rights reserved."
     },
     de: {
         "home": "Startseite",
@@ -56,9 +52,7 @@ const languages = {
         "products-desc": "Wir bieten eine breite Palette von Modellzügen, Schienen und Zubehör für alle Eisenbahnenthusiasten. Unsere Produkte sind für ihre Qualität und Präzision bekannt.",
         "order-title": "Bestellen Sie Ihr Modell noch heute!",
         "order-desc": "Für weitere Informationen kontaktieren Sie uns bitte per E-Mail oder Telefonnummer unten.",
-        "footer-contact": "Kontaktieren Sie uns",
-        "footer-privacy": "Datenschutz",
-        "footer-terms": "Nutzungsbedingungen"
+        "footer": "© 2024 Modellzüge. Alle Rechte vorbehalten."
     }
 };
 
@@ -88,14 +82,10 @@ function updateContent() {
     });
 
     // Aktualizace textu v patičce
-    document.querySelectorAll('.footer [data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (languages[currentLanguage][key]) {
-            el.innerText = languages[currentLanguage][key];
-        } else {
-            console.warn(`Chybějící překlad pro klíč: ${key}`);
-        }
-    });
+    const footerElement = document.querySelector('.footer-text'); // Změňte selektor podle struktury vaší stránky
+    if (footerElement && languages[currentLanguage]["footer"]) {
+        footerElement.innerText = languages[currentLanguage]["footer"];
+    }
 }
 
 // Jazykový přepínač
@@ -110,23 +100,3 @@ languageButtons.forEach(button => {
 
 // Inicializace obsahu
 updateContent();
-
-// Funkce pro sledování viditelnosti sekcí
-const sections = document.querySelectorAll('.text-container');
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1 // Spustí animaci, když je 10% sekce viditelné
-};
-
-const observerCallback = (entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible'); // Přidá třídu pro viditelnost
-            observer.unobserve(entry.target); // Zastaví sledování po zobrazení
-        }
-    });
-};
-
-const observer = new IntersectionObserver(observerCallback, observerOptions);
-sections.forEach(section => observer.observe(section)); // Začátek sledování všech sekcí
