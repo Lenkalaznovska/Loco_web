@@ -3,42 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naše práce</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Odkaz na externí CSS soubor -->
+    <meta name="description" content="Modelové vlaky - Naše práce a projekty.">
+    <title>Naše Práce - Modelové Vláčky</title>
+    <link rel="icon" href="images/locomotive.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container"> <!-- Přidáno pro flexbox strukturu -->
+        <header class="menu-header">
+            <div class="menu-background">
+                <div class="menu-content">
+                    <h1 class="main-heading">Modelové Vláčky</h1>
+                    <div class="rails">
+                        <span class="track-line short"></span>
+                        <span class="track-line long"></span>
+                    </div>
+                </div>
+                <div class="lang-btn-container">
+                    <img id="cs" class="lang-btn lang-flag" src="images/CZ.png" alt="Czech" data-lang="cs">
+                    <img id="en" class="lang-btn lang-flag" src="images/EN.png" alt="English" data-lang="en">
+                    <img id="de" class="lang-btn lang-flag" src="images/DE.png" alt="German" data-lang="de">
+                </div>
+            </div>
+        </header>
+
         <!-- Navigační menu -->
         <nav class="navigation">
             <ul>
-                <li><a href="index.html">Úvod</a></li>
-                <li><a href="nase-prace.html" class="active">Naše práce</a></li>
-                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="index.html" class="menu-link" data-key="home">Domů</a></li>
+                <li><a href="models.html" class="menu-link" data-key="models">Modely</a></li>
+                <li><a href="our-work.html" class="menu-link" data-key="our-work">Naše práce</a></li>
             </ul>
         </nav>
+        <div class="third-line"></div>
 
-        <!-- Sekce "Naše práce" -->
-        <section class="section">
-            <h1>Naše práce</h1>
-            <p>V této sekci představujeme naše projekty a úspěchy, které jsme dosáhli.</p>
-            <div class="project">
-                <h2>Projekt 1</h2>
-                <p>Popis prvního projektu, jeho cíle a výsledky.</p>
-            </div>
-            <div class="project">
-                <h2>Projekt 2</h2>
-                <p>Popis druhého projektu, jeho cíle a výsledky.</p>
-            </div>
-            <div class="project">
-                <h2>Projekt 3</h2>
-                <p>Popis třetího projektu, jeho cíle a výsledky.</p>
-            </div>
-        </section>
+        <main>
+            <section class="about text-container section">
+                <h2 data-key="our-work-title">Naše práce</h2>
+                <p data-key="our-work-desc">Podívejte se na naše nejlepší projekty a realizace. Každý model byl vytvořen s maximální pečlivostí a vášní pro železniční modelářství.</p>
+            </section>
 
-        <!-- Patička -->
+            <section class="projects-gallery text-container section">
+                <h2 data-key="projects-gallery-title">Galerie projektů</h2>
+                <p data-key="projects-gallery-desc">Zde najdete fotografie našich projektů, které demonstrují kvalitu a preciznost našich modelů.</p>
+                <!-- Můžete zde přidat obrázky projektů -->
+            </section>
+        </main>
+
         <footer class="footer">
-            <p>&copy; 2024 Všechna práva vyhrazena. | <a href="o-nas.html" class="menu-link">O nás</a></p>
+            <p>© 2024 Modelové Vláčky. Všechna práva vyhrazena.</p>
         </footer>
-    </div>
+    </div> <!-- Ukončení kontejneru -->
+    
+    <script src="index.js" defer></script>
 </body>
 </html>
