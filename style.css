@@ -35,7 +35,7 @@ h1 {
 
 /* Navigační menu */
 nav {
-    background-color: var(--footer-bg-color); /* Tmavě modrá barva pro menu */
+    background-color: #d3d3d3; /* Světle šedá barva pozadí */
     padding: 10px 0;
 }
 
@@ -51,46 +51,47 @@ nav {
 }
 
 .nav-link {
-    color: white; /* Bílý text položek */
+    color: white;
     text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
     background-color: var(--accent-color); /* Červená při najetí myší */
-    border-radius: 5px;
+    border-radius: 5px; /* Zaoblené rohy */
+    transform: scale(1.1); /* Zvětšení při najetí myší */
 }
 
 /* Styly pro sekce */
 .section {
     background-color: var(--section-bg-color);
-    padding: 30px 20px; /* Padding pro sekce */
-    transition: transform 0.6s ease-in-out, background-color 0.6s ease-in-out; /* Přidání přechodu pro barvu pozadí */
+    padding: 30px 20px;
+    transition: transform 0.6s ease-in-out, background-color 0.6s ease-in-out;
     box-shadow: 0 4px 10px var(--shadow-color);
     position: relative;
     max-width: 800px;
-    margin: 20px auto; /* Zarovnání na střed */
-    animation: breathing 3s infinite; /* Efekt dýchání */
-    border-radius: 10px; /* Přidání zaoblení */
+    margin: 20px auto;
+    animation: breathing 3s infinite;
+    border-radius: 10px;
 }
 
 /* Čáry pod nadpisy */
 .section h1 {
     position: relative;
-    padding-bottom: 10px; /* Vytvoření místa pro čáru */
+    padding-bottom: 10px;
 }
 
 .section h1::after {
     content: '';
     display: block;
-    width: 100%; /* Šířka čáry na 100% */
-    height: 4px; /* Výška čáry */
-    background-color: var(--highlight-color); /* Červená barva */
+    width: 100%;
+    height: 4px;
+    background-color: var(--highlight-color);
     position: absolute;
-    bottom: 0; /* Umístění čáry na dno nadpisu */
-    left: 0; /* Zarovnání na levou stranu */
+    bottom: 0;
+    left: 0;
 }
 
 /* Čáry ve stylu kolejnic */
@@ -99,18 +100,18 @@ nav {
     left: 0;
     background-color: var(--accent-color);
     z-index: 1;
-    height: 4px; /* Snížená výška čáry */
+    height: 4px;
 }
 
 .track-line.short {
-    width: 35%; /* Kratší šířka čáry */
+    width: 35%;
     top: 50%;
 }
 
 .track-line.long {
-    width: 55%; /* Kratší šířka čáry */
+    width: 55%;
     top: 90%;
-    margin-left: -10%; /* Posun pro vycentrování */
+    margin-left: -10%;
 }
 
 /* Tlačítka - obecný styl */
@@ -137,21 +138,21 @@ button {
     cursor: pointer;
     position: relative;
     transition: transform 0.3s ease;
-    width: 50px; /* Zvětšení šířky kontejneru */
-    height: 40px; /* Zvětšení výšky kontejneru */
-    overflow: hidden; /* Skrytí přebytku */
+    width: 50px;
+    height: 40px;
+    overflow: hidden;
 }
 
 .lang-btn img {
-    width: 100%; /* Šířka na 100% kontejneru */
-    height: 100%; /* Výška na 100% kontejneru */
-    object-fit: cover; /* Vyplnění prostoru bez deformace */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    margin: auto; /* Ucentrování obrázku, pokud je menší než kontejner */
+    margin: auto;
 }
 
 .lang-btn:hover {
-    transform: scale(1.1); /* Efekt zvětšení při najetí myší */
+    transform: scale(1.1);
 }
 
 /* Zarovnání vlajek do pravého horního rohu */
@@ -176,7 +177,7 @@ button {
 /* Pozadí menu */
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
-    height: 80px; /* Zmenšení výšky úvodního obrázku */
+    height: 80px;
     position: relative;
 }
 
@@ -204,8 +205,8 @@ button {
     }
 
     .section {
-        padding: 20px 10px; /* Upraveno pro menší obrazovky */
-        margin: 15px auto; /* Snížení marginu */
+        padding: 20px 10px;
+        margin: 15px auto;
     }
 
     button {
@@ -214,12 +215,11 @@ button {
     }
 
     .nav-links {
-        flex-direction: column; /* Položky pod sebou na malých obrazovkách */
-        align-items: center;
+        flex-direction: column;
     }
 
     .nav-link {
-        padding: 8px 15px; /* Snížení paddingu pro menší obrazovky */
+        padding: 8px 15px;
     }
 }
 
@@ -229,8 +229,8 @@ button {
     }
 
     .section {
-        padding: 15px 5px; /* Upraveno pro menší obrazovky */
-        margin: 10px auto; /* Snížení marginu */
+        padding: 15px 5px;
+        margin: 10px auto;
     }
 
     button {
