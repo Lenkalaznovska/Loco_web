@@ -34,7 +34,7 @@ body {
     color: white;
     padding: 50px 20px;
     text-align: center;
-    position: relative;
+    position: relative; /* Aby se dal obrázek umístit */
 }
 
 /* Hlavní nadpis */
@@ -43,6 +43,15 @@ h1 {
     color: #ffffff; /* Barva písma nadpisu */
     font-weight: bold; /* Tučné písmo */
     margin-bottom: 30px; /* Prostor pod nadpisem */
+}
+
+/* Úvodní obrázek */
+.intro-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px; /* Maximální šířka obrázku */
+    border-radius: 15px; /* Zakulacení rohů obrázku */
+    margin: 20px auto; /* Centrování obrázku */
 }
 
 /* Sekce */
@@ -126,6 +135,7 @@ button {
     text-transform: uppercase;
     cursor: pointer;
     transition: color 0.4s, transform 0.4s;
+    width: 100%; /* Tlačítko na 100% šířky */
 }
 
 .attractive-button:hover {
