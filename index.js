@@ -6,7 +6,9 @@ const languages = {
         "products-title": "Naše modely",
         "products-desc": "Nabízíme širokou škálu modelových vlaků, kolejnic a příslušenství pro všechny železniční nadšence. Naše produkty jsou známé svou kvalitou a precizností.",
         "order-title": "Objednejte si svůj model ještě dnes!",
-        "order-desc": "Pro více informací nás kontaktujte na e-mailu nebo telefonním čísle uvedeném níže."
+        "order-desc": "Pro více informací nás kontaktujte na e-mailu nebo telefonním čísle uvedeném níže.",
+        "models": "Modely",
+        "our-work": "Naše práce"
     },
     en: {
         "about-title": "About us",
@@ -14,7 +16,9 @@ const languages = {
         "products-title": "Our models",
         "products-desc": "We offer a wide range of model trains, tracks, and accessories for all railway enthusiasts. Our products are known for their quality and precision.",
         "order-title": "Order your model today!",
-        "order-desc": "For more information, contact us via email or phone number below."
+        "order-desc": "For more information, contact us via email or phone number below.",
+        "models": "Models",
+        "our-work": "Our work"
     },
     de: {
         "about-title": "Über uns",
@@ -22,7 +26,9 @@ const languages = {
         "products-title": "Unsere Modelle",
         "products-desc": "Wir bieten eine breite Palette von Modellzügen, Schienen und Zubehör für alle Eisenbahnfans. Unsere Produkte sind für ihre Qualität und Präzision bekannt.",
         "order-title": "Bestellen Sie Ihr Modell noch heute!",
-        "order-desc": "Für weitere Informationen kontaktieren Sie uns per E-Mail oder unter der unten angegebenen Telefonnummer."
+        "order-desc": "Für weitere Informationen kontaktieren Sie uns per E-Mail oder unter der unten angegebenen Telefonnummer.",
+        "models": "Modelle",
+        "our-work": "Unsere Arbeit"
     }
 };
 
@@ -31,7 +37,13 @@ let currentLanguage = 'cs';
 
 // Funkce pro aktualizaci textu na stránce
 function updateContent() {
+    // Aktualizace obsahu sekcí
     document.querySelectorAll('[data-key]').forEach(el => {
+        el.innerText = languages[currentLanguage][el.getAttribute('data-key')];
+    });
+
+    // Aktualizace textu v navigačním menu
+    document.querySelectorAll('.navigation a[data-key]').forEach(el => {
         el.innerText = languages[currentLanguage][el.getAttribute('data-key')];
     });
 }
