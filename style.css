@@ -34,6 +34,7 @@ body {
     color: white;
     padding: 50px 20px;
     text-align: center;
+    position: relative;
 }
 
 /* Hlavní nadpis */
