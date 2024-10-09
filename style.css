@@ -54,14 +54,14 @@ h1 {
 }
 
 .track-line.short {
-    width: 80%; /* Šířka kratší čáry - 80% šířky sekce */
+    width: 50%; /* Šířka kratší čáry - 50% šířky sekce */
     top: 40%; /* Umístění na 40% výšky sekce */
 }
 
 .track-line.long {
-    width: 120%; /* Šířka delší čáry - 120% šířky sekce */
+    width: 70%; /* Šířka delší čáry - 70% šířky sekce */
     top: 60%; /* Umístění na 60% výšky sekce */
-    margin-left: -10%; /* Posun do leva, aby byla delší čára vycentrovaná */
+    margin-left: -15%; /* Posun do leva, aby byla delší čára vycentrovaná */
 }
 
 /* Tlačítka - obecný styl */
