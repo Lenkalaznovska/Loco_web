@@ -35,7 +35,7 @@ h1 {
 
 /* Navigační menu */
 nav {
-    background-color: #ffcc00; /* Změna barvy na žlutou */
+    background-color: #d3d3d3; /* Světle šedá barva */
     padding: 10px 0;
 }
 
@@ -176,7 +176,7 @@ button {
 /* Pozadí menu */
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
-    height: 110px;
+    height: 80px; /* Zmenšení výšky úvodního obrázku */
     position: relative;
 }
 
