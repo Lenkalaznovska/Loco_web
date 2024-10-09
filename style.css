@@ -1,16 +1,15 @@
 /* Reset a obecné styly */
 :root {
     --main-bg-color: #ffffff;
-    --primary-color: #003366; /* tmavě modrá barva */
-    --accent-color: #e63946; /* červená barva pro kolejnice */
-    --section-bg-color: #e0f7fa; /* velmi světlá nebesky modrá barva */
-    --footer-bg-color: #003366; /* tmavě modrá pro footer */
-    --link-color: #003366; /* tmavě modrá pro odkazy */
-    --highlight-color: #e63946; /* červená pro zvýraznění */
+    --primary-color: #003366;
+    --accent-color: #e63946;
+    --section-bg-color: #e0f7fa;
+    --footer-bg-color: #003366;
+    --link-color: #003366;
+    --highlight-color: #e63946;
     --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Resetování marginů a paddingů */
 * {
     margin: 0;
     padding: 0;
@@ -25,66 +24,47 @@ body {
     text-align: center;
 }
 
-/* Header */
-.menu-header {
+header {
     position: relative;
-    background-color: var(--section-bg-color);
     padding: 20px;
-    box-shadow: 0 4px 10px var(--shadow-color);
+    background-color: var(--section-bg-color);
 }
 
 .main-heading {
-    font-size: 3em;
-    margin: 20px 0;
-    text-transform: uppercase;
-}
-
-.menu-content {
-    position: relative;
-    z-index: 2;
+    font-size: 3rem;
+    color: var(--primary-color);
 }
 
 .rails {
-    margin: 20px 0;
+    margin-top: 10px;
 }
 
 .rail {
     display: block;
-    width: 100px;
     height: 5px;
+    width: 100px;
     margin: 5px auto;
     background-color: var(--accent-color);
 }
 
-/* Jazykové tlačítka */
+/* Zarovnání vlajek do jedné řady nahoře v pravém rohu */
 .lang-btn-container {
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
 }
 
-.lang-flag {
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
-}
-
-/* Sekce */
+/* Responzivní sekce */
 .section {
     background-color: var(--section-bg-color);
-    padding: 50px 20px;
+    padding: 50px;
     margin: 20px auto;
     max-width: 800px;
-    border-radius: 20px;
     box-shadow: 0 4px 10px var(--shadow-color);
-    transition: transform 0.5s ease-in-out;
-}
-
-.section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    border-radius: 20px;
 }
 
 /* Footer */
@@ -93,21 +73,23 @@ body {
     color: white;
     padding: 20px;
     text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-/* Responzivita */
+/* Responzivní design */
 @media (max-width: 768px) {
     .main-heading {
-        font-size: 2.5em;
+        font-size: 2.5rem;
     }
 
     .lang-btn-container {
-        top: 10px;
-        right: 10px;
+        gap: 5px;
+        flex-direction: row;
     }
 
-    .lang-flag {
-        width: 30px;
-        height: 30px;
+    .section {
+        padding: 20px;
     }
 }
