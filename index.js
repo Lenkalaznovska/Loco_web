@@ -39,12 +39,22 @@ let currentLanguage = 'cs';
 function updateContent() {
     // Aktualizace obsahu sekcí
     document.querySelectorAll('[data-key]').forEach(el => {
-        el.innerText = languages[currentLanguage][el.getAttribute('data-key')];
+        const key = el.getAttribute('data-key');
+        if (languages[currentLanguage][key]) {
+            el.innerText = languages[currentLanguage][key];
+        } else {
+            console.warn(`Chybějící překlad pro klíč: ${key}`);
+        }
     });
 
     // Aktualizace textu v navigačním menu
     document.querySelectorAll('.navigation a[data-key]').forEach(el => {
-        el.innerText = languages[currentLanguage][el.getAttribute('data-key')];
+        const key = el.getAttribute('data-key');
+        if (languages[currentLanguage][key]) {
+            el.innerText = languages[currentLanguage][key];
+        } else {
+            console.warn(`Chybějící překlad pro klíč: ${key}`);
+        }
     });
 }
 
