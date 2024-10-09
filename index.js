@@ -1,6 +1,7 @@
 // Jazykové možnosti
 const languages = {
     cs: {
+        "home": "Domů",
         "models-title": "Naše modely",
         "models-desc": "Zde najdete širokou škálu našich modelových vlaků, které jsou precizně zpracovány a navrženy tak, aby splnily očekávání každého železničního nadšence.",
         "gallery-title": "Galerie modelů",
@@ -9,6 +10,7 @@ const languages = {
         "our-work": "Naše práce"
     },
     en: {
+        "home": "Home",
         "models-title": "Our models",
         "models-desc": "Here you can find a wide range of our model trains, which are meticulously crafted and designed to meet the expectations of every railway enthusiast.",
         "gallery-title": "Gallery of models",
@@ -17,6 +19,7 @@ const languages = {
         "our-work": "Our work"
     },
     de: {
+        "home": "Startseite",
         "models-title": "Unsere Modelle",
         "models-desc": "Hier finden Sie eine große Auswahl unserer Modellzüge, die sorgfältig gestaltet und entworfen wurden, um die Erwartungen jedes Eisenbahnenthusiasten zu erfüllen.",
         "gallery-title": "Galerie der Modelle",
