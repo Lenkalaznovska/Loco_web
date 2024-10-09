@@ -38,16 +38,15 @@ body {
     border-radius: 20px; /* Zakulacení rohů */
 }
 
+.intro img {
+    height: 250px; /* Výška úvodního obrázku */
+    width: auto; /* Automatická šířka */
+}
+
 /* Hlavní nadpis v úvodu */
 .intro h1 {
     font-size: 50px; /* Velikost hlavního nadpisu */
     font-weight: bold; /* Tučné písmo */
-}
-
-/* Úvodní obrázek */
-.intro img {
-    height: 250px; /* Výška úvodního obrázku */
-    width: 100%; /* Automatická šířka */
 }
 
 /* Sekce s dýcháním */
@@ -129,42 +128,36 @@ button {
     transform: scale(1.1);
 }
 
-/* Zarovnání footeru */
-.footer {
-    background-color: var(--footer-bg-color);
-    color: white; /* Barva textu footeru */
-    padding: 20px; /* Prostor uvnitř footeru */
-    position: relative; /* Přidání relativní pozice */
-    box-shadow: 0 -2px 10px var(--shadow-color); /* Stín nad footerem */
-    border-radius: 20px; /* Zakulacení rohů footeru */
+/* Zarovnání vlajek do pravého horního rohu */
+.lang-btn-container {
+    display: flex;
+    justify-content: flex-end; /* Zarovnání vlajek doprava */
+    align-items: center;
+    margin-top: 10px; /* Mezera nahoře */
 }
 
-/* Odkazy */
+.footer {
+    background-color: var(--footer-bg-color);
+    color: white; /* Bílá barva textu */
+    padding: 20px; /* Padding pro footer */
+    text-align: center; /* Vycentrování textu v patičce */
+}
+
+.footer p {
+    margin: 0; /* Žádné marginy */
+}
+
 a {
-    color: var(--link-color);
+    color: var(--link-color); /* Barva pro odkazy */
     text-decoration: none; /* Odstranění podtržení */
-    font-weight: bold; /* Tučné písmo */
+    transition: color 0.3s ease; /* Plynulý přechod pro barvu */
 }
 
 a:hover {
-    color: var(--highlight-color); /* Změna barvy odkazu při najetí myší */
+    color: var(--highlight-color); /* Barva pro zvýraznění při hover */
 }
 
-/* Vycentrování sekcí na mobilních zařízeních */
-@media (max-width: 768px) {
-    .section {
-        padding: 30px 10px; /* Méně místa na mobilu */
-    }
-    
-    .main-heading {
-        font-size: 40px; /* Menší velikost nadpisu */
-    }
-    
-    .intro-heading {
-        font-size: 30px; /* Menší velikost nadpisu */
-    }
-    
-    button {
-        width: 100%; /* Tlačítka se přizpůsobí šířce */
-    }
+/* Odkazy */
+a:focus {
+    outline: 2px solid var(--highlight-color); /* Zvýraznění při fokusu */
 }
