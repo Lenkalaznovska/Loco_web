@@ -1,6 +1,6 @@
 /* Reset a obecné styly */
 :root {
-    --main-bg-color: #ffffff;
+    --main-bg-color: #ffffff; /* Hlavní pozadí */
     --primary-color: #003366; /* tmavě modrá barva */
     --accent-color: #e63946; /* červená barva pro kolejnice */
     --section-bg-color: #e0f7fa; /* velmi světlá nebesky modrá barva */
@@ -28,12 +28,19 @@ body {
     overflow-x: hidden; /* Skrytí horizontálního přetékajícího obsahu */
 }
 
+/* Úvodní sekce s obrázkem */
+.intro-section {
+    background-color: var(--primary-color); /* Modrá barva pro úvodní sekci */
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
 /* Hlavní nadpis */
 h1 {
     font-size: 50px; /* Velikost písma hlavního nadpisu */
     color: #ffffff; /* Barva písma nadpisu */
     font-weight: bold; /* Tučné písmo */
-    text-align: center;
     margin-bottom: 30px; /* Prostor pod nadpisem */
 }
 
@@ -60,34 +67,14 @@ h1 {
     }
 }
 
-/* Čáry ve stylu kolejnic */
-.track-line {
-    position: absolute;
-    left: 50%;
-    background-color: var(--accent-color);
-    z-index: 1;
-    transform: translateX(-50%);
-    height: 6px;
-}
-
-.track-line.short {
-    width: 80px;
-    top: 40%;
-}
-
-.track-line.long {
-    width: 120px;
-    top: 60%;
-}
-
 /* Tlačítka */
 button {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 12px;
+    padding: 15px; /* Nastavení paddingu pro tlačítka */
     width: 100%;
-    font-size: 16px;
+    font-size: 18px; /* Zvětšená velikost písma tlačítek */
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 8px;
@@ -180,12 +167,12 @@ button {
 
     button {
         padding: 10px;
-        font-size: 14px;
+        font-size: 16px; /* Stejná velikost pro všechna tlačítka */
     }
 
     .attractive-button {
         padding: 10px;
-        font-size: 16px;
+        font-size: 18px; /* Zajištění jednotné velikosti */
     }
 
     .lang-btn img {
@@ -201,12 +188,12 @@ button {
 @media (max-width: 480px) {
     button {
         padding: 8px;
-        font-size: 12px;
+        font-size: 14px; /* Stejná velikost pro všechna tlačítka */
     }
 
     .attractive-button {
         padding: 8px;
-        font-size: 14px;
+        font-size: 16px; /* Zajištění jednotné velikosti */
     }
 
     .lang-btn img {
