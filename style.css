@@ -1,6 +1,6 @@
 /* Reset a obecné styly */
 :root {
-    --main-bg-color: #ffffff;
+    --main-bg-color: #fef4e5; /* Světle medová barva */
     --primary-color: #003366; /* Tmavě modrá barva */
     --accent-color: #e63946; /* Červená barva pro kolejnice */
     --section-bg-color: #e0f7fa; /* Velmi světlá nebesky modrá barva */
@@ -56,6 +56,42 @@ body {
     background-color: var(--primary-color); /* Tmavě modrá */
 }
 
+/* Styl pro úvodní nadpis a čáry */
+.header {
+    background-color: var(--primary-color); /* Modrá barva jako ve footeru */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 4rem;
+    position: relative;
+}
+
+.header h1::before,
+.header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    height: 3px;
+    background-color: #d4af37; /* Zlatavá barva */
+}
+
+.header h1::before {
+    width: 50%; /* Delší čára */
+    left: 0;
+}
+
+.header h1::after {
+    width: 30%; /* Kratší čára */
+    right: 0;
+}
+
 /* Sekce s efektem dýchání */
 .section {
     background-color: var(--section-bg-color);
@@ -85,6 +121,23 @@ body {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Podtržení nadpisů v sekcích */
+h2 {
+    position: relative;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+h2::after {
+    content: '';
+    width: 100%; /* Čáry jsou přes celou sekci */
+    height: 4px;
+    background-color: var(--highlight-color);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
 }
 
 /* Footer */
@@ -148,6 +201,10 @@ body {
 
     .rail {
         width: 70%; /* Čáry se budou zmenšovat na menších obrazovkách */
+    }
+
+    .header h1 {
+        font-size: 2.5rem;
     }
 }
 
@@ -219,34 +276,6 @@ button:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* Podtržení nadpisů v sekcích */
-h2 {
-    position: relative;
-    font-size: 2em;
-    margin-bottom: 30px;
-}
-
-h2::after {
-    content: '';
-    width: 60px;
-    height: 4px;
-    background-color: var(--highlight-color);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -10px;
-}
-
-/* Sekce a jejich styl */
-.section-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 50px 20px;
-    background-color: var(--section-bg-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px var(--shadow-color);
 }
 
 /* Zvýraznění objednávky medu */
