@@ -3,7 +3,7 @@
     --main-bg-color: #ffffff; /* Hlavní pozadí */
     --primary-color: #003366; /* Tmavě modrá barva pro text */
     --accent-color: #e63946; /* Červená barva pro kolejnice */
-    --section-bg-color: #e0f7fa; /* Velmi světlá nebesky modrá barva pro sekce */
+    --section-bg-color: #cceeff; /* Ztmavená barva pro pozadí sekcí */
     --footer-bg-color: #003366; /* Tmavě modrá pro footer */
     --link-color: #003366; /* Tmavě modrá pro odkazy */
     --highlight-color: #e63946; /* Červená pro zvýraznění */
@@ -37,16 +37,22 @@ h1 {
 .section {
     background-color: var(--section-bg-color);
     padding: 50px 20px;
-    transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out, background-color 0.6s ease-in-out; /* Přidání přechodu pro barvu pozadí */
     box-shadow: 0 4px 10px var(--shadow-color);
     position: relative;
     max-width: 800px;
     margin: 20px auto;
+    animation: breathing 3s infinite; /* Efekt dýchání */
 }
 
 /* Efekt dýchání */
-.section:hover {
-    transform: scale(1.03); /* Plynulý efekt dýchání */
+@keyframes breathing {
+    0%, 100% {
+        transform: scale(1.01); /* Zmenšení na 101% */
+    }
+    50% {
+        transform: scale(1.03); /* Zvýšení na 103% */
+    }
 }
 
 /* Čáry ve stylu kolejnic */
