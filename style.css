@@ -84,12 +84,12 @@ h1 {
 
 .track-line.short {
     width: 40%; /* Kratší šířka čáry */
-    top: 50%;
+    top: 55%;
 }
 
 .track-line.long {
     width: 60%; /* Kratší šířka čáry */
-    top: 80%;
+    top: 90%;
     margin-left: -10%; /* Posun pro vycentrování */
 }
 
@@ -156,7 +156,7 @@ button {
 /* Pozadí menu */
 .menu-background {
     background: url("images/train.jpg") no-repeat center right/cover;
-    height: 180px;
+    height: 160px;
     position: relative;
 }
 
