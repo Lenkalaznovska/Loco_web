@@ -1,4 +1,4 @@
-/* Reset a obecné styly */ 
+/* Reset a obecné styly */
 :root {
     --main-bg-color: #ffffff;
     --primary-color: #003366; /* tmavě modrá barva */
@@ -32,18 +32,21 @@ body {
 .intro {
     background-color: var(--footer-bg-color); /* Modrá barva footeru */
     color: white; /* Bílá barva textu */
-    padding: 50px 20px;
-    text-align: center; /* Vycentrování textu */
+    padding: 20px 20px; /* Padding nahoře a dole */
     box-shadow: 0 4px 10px var(--shadow-color);
     border-radius: 20px; /* Zakulacení rohů */
-    height: 250px; /* Fixní výška */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vycentrování obsahu vertikálně */
 }
 
+/* Úvodní obrázek */
+.intro-image {
+    height: 250px; /* Výška úvodního obrázku */
+    width: 100%; /* Automatická šířka */
+    object-fit: cover; /* Zachování proporcí */
+}
+
+/* Velký nadpis v úvodu */
 .intro h1 {
-    font-size: 50px; /* Velikost hlavního nadpisu */
+    font-size: 50px; /* Velikost nadpisu */
     font-weight: bold; /* Tučné písmo */
 }
 
@@ -103,7 +106,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Plynulé přechody */
     box-shadow: 0 4px 6px var(--shadow-color); /* Jemný stín */
-    width: 100%; /* Šířka tlačítek */
+    width: 100%; /* Výška tlačítka */
 }
 
 /* Tlačítka s vlajkami */
@@ -168,8 +171,6 @@ button {
     text-align: center;
     box-shadow: 0 -4px 10px var(--shadow-color);
     border-radius: 0 0 15px 15px; /* Zakulacení rohů nahoře */
-    position: relative; /* Zajištění viditelnosti */
-    margin-top: 20px; /* Vzdálenost od předchozí sekce */
 }
 
 /* Odkazy */
@@ -205,17 +206,21 @@ h1 {
     transform: translateY(0);
 }
 
-/* Responzivita */
+/* Responzivní stylování */
 @media (max-width: 768px) {
-    .intro {
-        padding: 30px 10px; /* Menší padding pro mobilní zařízení */
-    }
-
     .intro h1 {
-        font-size: 36px; /* Menší velikost nadpisu pro mobilní zařízení */
+        font-size: 40px; /* Menší nadpis na menších obrazovkách */
     }
 
     button {
-        font-size: 14px; /* Menší písmo pro tlačítka */
+        padding: 10px; /* Menší padding na menších obrazovkách */
+    }
+
+    .section {
+        padding: 30px 10px; /* Menší padding v sekcích na menších obrazovkách */
+    }
+
+    .footer {
+        padding: 15px; /* Menší padding ve footeru na menších obrazovkách */
     }
 }
