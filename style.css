@@ -77,7 +77,6 @@ nav.navigation a {
 /* Hover efekt na odkazy */
 nav.navigation a:hover {
     background-color: var(--hover-bg-color); /* Tmavší šedá pro hover efekt */
-    transform: translateY(5px); /* Posunutí o 1 pixel dolů */
 }
 
 /* Styly pro sekce */
