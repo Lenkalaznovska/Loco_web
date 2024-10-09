@@ -35,7 +35,7 @@ h1 {
 
 /* Navigační menu */
 nav {
-    background-color: #d3d3d3; /* Světle šedá barva */
+    background-color: var(--footer-bg-color); /* Tmavě modrá barva pro menu */
     padding: 10px 0;
 }
 
@@ -45,13 +45,13 @@ nav {
 }
 
 .nav-links {
-    display: flex; /* Umožní umístit položky vedle sebe */
+    display: flex; /* Položky vedle sebe */
     justify-content: center;
     gap: 20px;
 }
 
 .nav-link {
-    color: white;
+    color: white; /* Bílý text položek */
     text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
@@ -59,7 +59,7 @@ nav {
 }
 
 .nav-link:hover {
-    background-color: var(--accent-color);
+    background-color: var(--accent-color); /* Červená při najetí myší */
     border-radius: 5px;
 }
 
@@ -211,6 +211,11 @@ button {
     button {
         width: 130px;
         height: 45px;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Položky pod sebou na malých obrazovkách */
+        align-items: center;
     }
 
     .nav-link {
