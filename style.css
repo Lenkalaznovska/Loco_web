@@ -58,7 +58,7 @@ body {
 
 /* Styl pro úvodní nadpis a čáry */
 .header {
-    background-color: var(--primary-color); /* Modrá barva jako ve footeru */
+    background-color: var(--footer-bg-color); /* Barva jako ve footeru */
     height: 100vh;
     display: flex;
     justify-content: center;
