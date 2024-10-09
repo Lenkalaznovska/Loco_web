@@ -35,7 +35,7 @@ h1 {
 
 /* Navigační menu */
 nav {
-    background-color: var(--footer-bg-color); /* Tmavě modrá barva pro menu */
+    background-color: var(--footer-bg-color); /* Tmavě modrá barva */
     padding: 10px 0;
 }
 
@@ -51,7 +51,7 @@ nav {
 }
 
 .nav-link {
-    color: white; /* Barva textu položek menu */
+    color: var(--link-color); /* Tmavě modrá barva pro text */
     text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
@@ -59,7 +59,7 @@ nav {
 }
 
 .nav-link:hover {
-    background-color: var(--accent-color);
+    background-color: var(--accent-color); /* Změňte barvu na požadovanou */
     border-radius: 5px;
 }
 
@@ -161,7 +161,7 @@ button {
     align-items: center;
     gap: 10px;
     position: absolute;
-    bottom: 70px;
+    bottom: 80px;
     right: 20px;
 }
 
