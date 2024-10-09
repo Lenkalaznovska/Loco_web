@@ -35,7 +35,7 @@ h1 {
 
 /* Navigační menu */
 nav {
-    background-color: #d3d3d3; /* Světle šedá barva */
+    background-color: var(--footer-bg-color); /* Tmavě modrá barva pro menu */
     padding: 10px 0;
 }
 
@@ -51,7 +51,7 @@ nav {
 }
 
 .nav-link {
-    color: white;
+    color: white; /* Barva textu položek menu */
     text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
