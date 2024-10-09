@@ -224,48 +224,52 @@ button {
     color: white;
     text-align: center;
     padding: 20px;
-    position: relative; /* Zajištění relativní pozice */
-    margin-top: auto; /* Umožní patičce jít dolů */
-    width: 100%; /* Zajištění, že patička zabírá celou šířku */
+    position: relative; /* Pozice pro čáru */
+    bottom: 0; /* Vzdálenost od spodní části */
 }
 
-/* Media queries pro responzivitu */
+/* Animace dýchání */
+@keyframes breathing {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 40px;
+    body {
+        font-size: 16px; /* Zmenšení písma pro menší obrazovky */
     }
 
     .section {
-        padding: 20px 10px;
-        margin: 15px auto;
+        padding: 20px 10px; /* Zmenšení paddingu sekcí */
+    }
+
+    h1 {
+        font-size: 36px; /* Zmenšení nadpisu */
     }
 
     button {
-        width: 130px;
-        height: 45px;
+        width: 100px; /* Zmenšení šířky tlačítek */
     }
 
-    .nav-links {
-        flex-direction: column;
-    }
-
-    .nav-link {
-        padding: 8px 15px;
+    .lang-btn {
+        width: 40px; /* Zmenšení šířky tlačítka pro vlajky */
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 30px;
+        font-size: 28px; /* Další zmenšení nadpisu */
     }
 
-    .section {
-        padding: 15px 5px;
-        margin: 10px auto;
-    }
-
-    button {
-        width: 120px;
-        height: 40px;
+    body {
+        font-size: 14px; /* Další zmenšení písma */
     }
 }
