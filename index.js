@@ -7,7 +7,9 @@ const languages = {
         "gallery-title": "Galerie modelů",
         "gallery-desc": "Prohlédněte si naši galerii modelů, kde najdete fotografie našich nejnovějších a nejoblíbenějších výrobků.",
         "models": "Modely",
-        "our-work": "Naše práce"
+        "our-work": "Naše práce",
+        "our-work-title": "Naše práce",
+        "our-work-desc": "Zde si můžete prohlédnout naše dosavadní projekty a realizace, které jsme s nadšením dokončili."
     },
     en: {
         "home": "Home",
@@ -16,7 +18,9 @@ const languages = {
         "gallery-title": "Gallery of models",
         "gallery-desc": "Take a look at our gallery of models, where you can find photos of our latest and most popular products.",
         "models": "Models",
-        "our-work": "Our work"
+        "our-work": "Our work",
+        "our-work-title": "Our Work",
+        "our-work-desc": "Here you can view our completed projects and implementations that we have enthusiastically finished."
     },
     de: {
         "home": "Startseite",
@@ -25,7 +29,9 @@ const languages = {
         "gallery-title": "Galerie der Modelle",
         "gallery-desc": "Schauen Sie sich unsere Modellgalerie an, wo Sie Fotos unserer neuesten und beliebtesten Produkte finden können.",
         "models": "Modelle",
-        "our-work": "Unsere Arbeit"
+        "our-work": "Unsere Arbeit",
+        "our-work-title": "Unsere Arbeit",
+        "our-work-desc": "Hier können Sie unsere abgeschlossenen Projekte und Umsetzungen ansehen, die wir mit Begeisterung abgeschlossen haben."
     }
 };
 
