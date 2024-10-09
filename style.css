@@ -83,13 +83,13 @@ h1 {
 }
 
 .track-line.short {
-    width: 40%; /* Kratší šířka čáry */
-    top: 55%;
+    width: 20%; /* Kratší šířka čáry */
+    top: 45%;
 }
 
 .track-line.long {
-    width: 60%; /* Kratší šířka čáry */
-    top: 90%;
+    width: 40%; /* Kratší šířka čáry */
+    top: 60%;
     margin-left: -10%; /* Posun pro vycentrování */
 }
 
@@ -141,7 +141,7 @@ button {
     align-items: center;
     gap: 10px;
     position: absolute;
-    top: 10px; /* Posunuto výše */
+    top: 50px; /* Posunuto výše */
     right: 20px;
 }
 
