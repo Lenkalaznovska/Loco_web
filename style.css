@@ -136,101 +136,53 @@ button {
     text-transform: uppercase;
     cursor: pointer;
     overflow: hidden; /* Skrytí přetékajícího obsahu */
-    transition: color 0.4s, transform 0.4s; /* Plynulé přechody */
-    width: 100%; /* Roztažení tlačítka na celou šířku */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Plynulé přechody */
 }
 
-/* Efekt hover pro tlačítko */
+/* Hover efekt pro atraktivní tlačítko */
 .attractive-button:hover {
-    color: var(--highlight-color); /* Změna barvy textu při najetí */
-    transform: translateY(-3px); /* Lehké přiblížení */
+    background-color: #cc2f39;
+    transform: scale(1.05); /* Mírné zvětšení tlačítka */
 }
 
-/* Kliknutí na tlačítko */
-.attractive-button:active {
-    transform: scale(0.95); /* Mírné zmenšení při kliknutí */
-}
-
-/* Responzivní design pro tlačítka na menších obrazovkách */
-@media (max-width: 768px) {
-    button {
-        padding: 10px;
-        font-size: 14px; /* Menší písmo pro menší zařízení */
-        border-radius: 6px;
-        width: 100%; /* Tlačítko na celou šířku */
-        height: auto; /* Výška automatická pro lepší vzhled */
-    }
-
-    .attractive-button {
-        padding: 10px; /* Úprava paddingu pro mobilní zařízení */
-        font-size: 16px; /* Mírně menší písmo */
-        width: 100%; /* Roztažení tlačítka na celou šířku */
-    }
-
-    .lang-btn {
-        width: 100%; /* Tlačítko na celou šířku pro mobilní zařízení */
-        height: auto; /* Výška automatická pro lepší vzhled */
-    }
-
-    .lang-btn-container {
-        flex-direction: column; /* Zajištění sloupcového uspořádání na mobilních zařízeních */
-    }
-}
-
-@media (max-width: 480px) {
-    button {
-        padding: 8px;
-        font-size: 12px;
-        width: 100%; /* Tlačítko na celou šířku */
-        height: auto; /* Výška automatická pro lepší vzhled */
-    }
-
-    .attractive-button {
-        padding: 8px; /* Úprava paddingu pro mobilní zařízení */
-        font-size: 14px; /* Mírně menší písmo */
-        width: 100%; /* Roztažení tlačítka na celou šířku */
-    }
-
-    .lang-btn {
-        width: 100%; /* Tlačítko na celou šířku pro mobilní zařízení */
-        height: auto; /* Výška automatická pro lepší vzhled */
-    }
-}
-
-/* Menu */
-.menu-header {
-    position: relative;
-    overflow: hidden;
-    background-color: var(--primary-color);
-    padding: 20px 0;
-}
-
-/* Pozadí menu */
-.menu-background {
-    background: url("images/train.jpg") no-repeat center right/cover;
-    height: 250px; /* Zmenšení výšky pozadí o 50 px */
-    position: relative; /* Přidání relativní pozice pro nadpis */
-}
-
-/* Styly pro odkazy v menu */
-.menu-link {
-    color: white;
-    text-decoration: none;
-    padding: 15px 25px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* Efekt hover pro odkazy v menu */
-.menu-link:hover {
-    background-color: var(--accent-color);
-    color: white; /* Zajištění čitelnosti textu */
-}
-
-/* Patička */
+/* Footer */
 .footer {
     background-color: var(--footer-bg-color);
-    color: white; /* Barva textu */
-    text-align: center; /* Vycentrování textu */
-    padding: 15px 0; /* Padding pro patičku */
-    margin-top: 20px; /* Mezera nahoře */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -4px 10px var(--shadow-color);
+    border-radius: 0 0 15px 15px; /* Zakulacení rohů nahoře */
+}
+
+/* Odkazy */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--highlight-color); /* Zvýraznění odkazu při hoveru */
+}
+
+h1, h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: var(--accent-color);
+}
+
+/* Animace při příchodu sekce */
+.text-container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.text-container.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
