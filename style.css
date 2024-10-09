@@ -1,13 +1,13 @@
 /* Reset a obecné styly */
 :root {
-    --main-bg-color: #ffffff;
-    --primary-color: #003366; /* tmavě modrá barva */
-    --accent-color: #e63946; /* červená barva pro kolejnice */
-    --section-bg-color: #e0f7fa; /* velmi světlá nebesky modrá barva */
-    --footer-bg-color: #003366; /* tmavě modrá pro footer */
-    --link-color: #003366; /* tmavě modrá pro odkazy */
-    --highlight-color: #e63946; /* červená pro zvýraznění */
-    --shadow-color: rgba(0, 0, 0, 0.1);
+    --main-bg-color: #ffffff; /* Hlavní pozadí */
+    --primary-color: #003366; /* Tmavě modrá barva pro text */
+    --accent-color: #e63946; /* Červená barva pro kolejnice */
+    --section-bg-color: #e0f7fa; /* Velmi světlá nebesky modrá barva pro sekce */
+    --footer-bg-color: #003366; /* Tmavě modrá pro footer */
+    --link-color: #003366; /* Tmavě modrá pro odkazy */
+    --highlight-color: #e63946; /* Červená pro zvýraznění */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Barva pro stíny */
 }
 
 /* Resetování marginů a paddingů */
@@ -18,11 +18,11 @@
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    color: var(--primary-color);
-    background-color: var(--main-bg-color);
-    line-height: 1.6;
-    text-align: center;
+    font-family: "Roboto", sans-serif; /* Font pro celé tělo */
+    color: var(--primary-color); /* Barva textu */
+    background-color: var(--main-bg-color); /* Barva pozadí */
+    line-height: 1.6; /* Řádkování pro lepší čitelnost */
+    text-align: center; /* Zarovnání textu na střed */
 }
 
 /* Hlavní nadpis */
@@ -31,17 +31,17 @@ h1 {
     margin: 20px 0; /* Okraje nadpisu */
 }
 
-/* Sekce s dýcháním */
+/* Styly pro sekce */
 .section {
-    background-color: var(--section-bg-color);
-    padding: 50px 20px;
+    background-color: var(--section-bg-color); /* Barva pozadí sekce */
+    padding: 50px 20px; /* Vnitřní prostor sekce */
     transition: transform 0.5s ease-in-out; /* Efekt dýchání */
-    box-shadow: 0 4px 10px var(--shadow-color);
-    position: relative; /* Přidání relativní pozice */
+    box-shadow: 0 4px 10px var(--shadow-color); /* Stín pro sekci */
+    position: relative; /* Relativní pozice pro efekt */
     max-width: 800px; /* Maximální šířka sekce */
     margin: 20px auto; /* Vycentrování sekce */
-    animation: breathing 4s infinite; /* Neustálý efekt dýchání */
-    border-radius: 20px; /* Zakulacení rohů sekce */
+    animation: breathing 4s infinite; /* Efekt dýchání */
+    border-radius: 20px; /* Zakulacení rohů */
 }
 
 /* Efekt dýchání */
@@ -56,9 +56,9 @@ h1 {
 
 /* Čáry ve stylu kolejnic */
 .track-line {
-    position: absolute;
+    position: absolute; /* Absolutní pozicování */
     left: 50%; /* Umístění od středu */
-    background-color: var(--accent-color);
+    background-color: var(--accent-color); /* Barva čáry */
     z-index: 1; /* Zajištění, že je nad sekcí */
     transform: translateX(-50%); /* Vycentrování čáry */
     height: 6px; /* Výška čáry */
@@ -77,41 +77,41 @@ h1 {
 /* Tlačítka - obecný styl */
 button {
     background-color: var(--primary-color); /* Hlavní barva tlačítka */
-    color: white; /* Barva textu */
+    color: white; /* Barva textu tlačítka */
     border: none; /* Odstranění okrajů */
-    padding: 12px; /* Prostor kolem textu */
-    font-size: 16px;
+    padding: 12px; /* Prostor kolem textu tlačítka */
+    font-size: 16px; /* Velikost písma */
     font-weight: bold; /* Tučné písmo */
     text-transform: uppercase; /* Velká písmena */
-    border-radius: 8px; /* Zakulacené rohy */
-    cursor: pointer;
+    border-radius: 8px; /* Zakulacené rohy tlačítka */
+    cursor: pointer; /* Ukazatel myši jako ruka */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Plynulé přechody */
     box-shadow: 0 4px 6px var(--shadow-color); /* Jemný stín */
 }
 
 /* Tlačítka s vlajkami */
 .lang-btn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+    background-color: transparent; /* Pozadí průhledné */
+    border: none; /* Bez okrajů */
+    cursor: pointer; /* Ukazatel myši jako ruka */
     position: relative; /* Přidání relativní pozice */
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Efekt na hover */
 }
 
 .lang-btn img {
     width: 40px; /* Šířka obrázku vlajky */
     height: 30px; /* Výška obrázku vlajky */
     object-fit: cover; /* Zajištění, že vlajka vyplní celý prostor */
-    display: block;
+    display: block; /* Zajištění, že obrázek je blokový element */
 }
 
 .lang-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Efekt na hover */
 }
 
 /* Zarovnání vlajek do pravého horního rohu */
 .lang-btn-container {
-    display: flex;
+    display: flex; /* Flexbox pro zarovnání */
     justify-content: flex-end; /* Zarovnání vlajek doprava */
     align-items: center; /* Zarovnání na stejnou výšku */
     gap: 10px; /* Mezera mezi vlajkami */
@@ -120,70 +120,34 @@ button {
     right: 20px; /* Vzdálenost od pravé části */
 }
 
-/* Atraktivní tlačítko pro desktop */
-.attractive-button {
-    position: relative;
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    border-radius: 10px; /* Zakulacení rohů */
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    overflow: hidden; /* Skrytí přetékajícího obsahu */
-    transition: color 0.4s, transform 0.4s; /* Plynulé přechody */
-}
-
-.attractive-button:hover {
-    color: var(--primary-color); /* Změna barvy textu při najetí */
-    transform: translateY(-3px); /* Lehké přiblížení */
-}
-
-/* Kliknutí na tlačítko */
-.attractive-button:active {
-    transform: scale(0.95); /* Mírné zmenšení při kliknutí */
-}
-
 /* Menu */
 .menu-header {
-    position: relative;
-    overflow: hidden;
-    background-color: var(--primary-color);
-    padding: 20px 0;
+    position: relative; /* Relativní pozice pro menu */
+    overflow: hidden; /* Skrytí přetečení */
+    background-color: var(--primary-color); /* Barva pozadí pro menu */
+    padding: 20px 0; /* Vnitřní prostor menu */
 }
 
 /* Pozadí menu */
 .menu-background {
-    background: url("images/train.jpg") no-repeat center right/cover;
-    height: 300px; /* Zmenšení výšky pozadí o 50 px */
-    position: relative; /* Přidání relativní pozice pro nadpis */
+    background: url("images/train.jpg") no-repeat center right/cover; /* Pozadí pro menu */
+    height: 300px; /* Výška pozadí menu */
+    position: relative; /* Relativní pozice pro nadpis */
 }
 
 /* Styly pro odkazy v menu */
 .menu-link {
-    color: white; /* Barva textu */
+    color: white; /* Barva odkazu */
     text-decoration: none; /* Žádné podtržení */
-    padding: 10px; /* Prostor kolem odkazu */
-    transition: color 0.3s; /* Plynulé přechody pro barvu */
+    font-weight: bold; /* Tučné písmo */
 }
 
-.menu-link:hover {
-    color: var(--accent-color); /* Změna barvy při najetí */
-}
-
-/* Footer */
-footer {
-    background-color: var(--footer-bg-color);
+/* Styly pro patičku */
+.footer {
+    background-color: var(--footer-bg-color); /* Barva pozadí patičky */
     color: white; /* Barva textu v patičce */
-    padding: 20px; /* Prostor uvnitř patičky */
-}
-
-/* Vytvoření jednoduchého stínu pro celý web */
-body {
-    box-shadow: 0 0 15px var(--shadow-color);
-    border-radius: 15px; /* Zakulacení rohů */
-    overflow: hidden; /* Skrytí přetékajícího obsahu */
+    text-align: center; /* Zarovnání textu na střed */
+    padding: 20px; /* Vnitřní prostor kolem textu */
+    position: relative; /* Relativní pozice pro footer */
+    margin-top: 20px; /* Odstup od sekcí */
 }
