@@ -1,4 +1,4 @@
-/* Reset a obecné styly */
+/* Reset a obecné styly */ 
 :root {
     --main-bg-color: #ffffff; /* Hlavní pozadí */
     --primary-color: #003366; /* Tmavě modrá barva pro text */
@@ -55,18 +55,18 @@ h1 {
     left: 0;
     background-color: var(--accent-color);
     z-index: 1;
-    height: 4px;
+    height: 4px; /* Snížená výška čáry */
 }
 
 .track-line.short {
-    width: 35%; /* Zkrácení čáry */
+    width: 40%; /* Kratší šířka čáry */
     top: 40%;
 }
 
 .track-line.long {
-    width: 55%; /* Zkrácení čáry */
+    width: 60%; /* Kratší šířka čáry */
     top: 60%;
-    margin-left: -10%;
+    margin-left: -10%; /* Posun pro vycentrování */
 }
 
 /* Tlačítka - obecný styl */
@@ -82,8 +82,8 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     box-shadow: 0 4px 6px var(--shadow-color);
-    width: 150px; /* Stejná šířka tlačítek */
-    height: 50px; /* Stejná výška tlačítek */
+    width: 150px;
+    height: 50px;
 }
 
 /* Tlačítka s vlajkami */
@@ -137,31 +137,6 @@ button {
     color: white;
     text-decoration: none;
     font-weight: bold;
-}
-
-/* Styly pro nadpisy v sekcích s červeným podtržením */
-.section h2 {
-    font-size: 36px;
-    font-weight: bold;
-    color: var(--accent-color);
-    margin-bottom: 10px;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.section h2::after {
-    content: "";
-    position: absolute;
-    width: 100%; /* Celá délka sekce */
-    height: 3px;
-    background-color: var(--accent-color);
-    left: 0;
-    bottom: 0;
-}
-
-/* Ztmavení textů v sekcích */
-.section p {
-    color: #333; /* Tmavší odstín pro text */
 }
 
 /* Styly pro patičku */
