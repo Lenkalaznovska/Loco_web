@@ -129,6 +129,14 @@ nav.navigation a:hover {
     margin-left: -10%;
 }
 
+/* Třetí čára pod navigačním menu */
+.third-line {
+    height: 6px; /* Výška čáry */
+    background-color: var(--accent-color); /* Barva čáry */
+    width: 75%; /* Délka čáry - můžete upravit dle potřeby */
+    margin: 0 auto; /* Zarovnání na střed */
+}
+
 /* Tlačítka - obecný styl */
 button {
     background-color: var(--primary-color);
