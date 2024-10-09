@@ -44,6 +44,11 @@ h1 {
     margin: 20px auto; /* Vycentrování sekce */
 }
 
+/* Efekt dýchání */
+.section:hover {
+    transform: scale(1.02); /* Mírné zvětšení sekce při hoveru */
+}
+
 /* Čáry ve stylu kolejnic */
 .track-line {
     position: absolute; /* Absolutní pozicování */
@@ -78,6 +83,7 @@ button {
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Plynulé přechody */
     box-shadow: 0 4px 6px var(--shadow-color); /* Jemný stín */
     width: 150px; /* Stejná šířka pro všechna tlačítka */
+    height: 50px; /* Stejná výška pro všechna tlačítka */
 }
 
 /* Tlačítka s vlajkami */
