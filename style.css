@@ -63,14 +63,14 @@ h1 {
 }
 
 /* Čáry ve stylu kolejnic přes celou šířku sekce */
-.section::before {
+.section::after {
     content: '';
     display: block;
     width: 100%; /* Šířka čáry na 100% */
     height: 4px; /* Výška čáry */
     background-color: var(--highlight-color); /* Červená barva */
     position: absolute;
-    top: 0; /* Umístění čáry na vrchol sekce */
+    bottom: 0; /* Umístění čáry na spodní část sekce */
     left: 0; /* Zarovnání na levou stranu */
 }
 
