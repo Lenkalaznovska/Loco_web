@@ -38,7 +38,7 @@ h1 {
 /* Navigační menu */
 nav.navigation {
     background-color: var(--menu-bg-color); /* Pozadí navigace */
-    padding: 4px 0; /* Padding pro navigaci */
+    padding: 8px 0; /* Padding pro navigaci */
     position: relative; /* Relativní pozice pro pruh */
     z-index: 10; /* Z-index pro zajištění viditelnosti */
 }
@@ -49,7 +49,7 @@ nav.navigation::before {
     top: 0; /* Vzdálenost od horní části */
     left: 0; /* Vzdálenost od levé strany */
     right: 0; /* Vzdálenost od pravé strany */
-    height: 5px; /* Změněná výška pruhu */
+    height: 3px; /* Změněná výška pruhu */
     background-color: var(--accent-color); /* Barva pruhu */
     z-index: -1; /* Z-index, aby byl pruh pod navigací */
 }
