@@ -93,8 +93,8 @@ button {
     cursor: pointer;
     position: relative;
     transition: transform 0.3s ease;
-    width: 40px; /* Nastavení šířky kontejneru */
-    height: 30px; /* Nastavení výšky kontejneru */
+    width: 50px; /* Zvětšení šířky kontejneru */
+    height: 40px; /* Zvětšení výšky kontejneru */
     overflow: hidden; /* Skrytí přebytku */
 }
 
@@ -103,10 +103,11 @@ button {
     height: 100%; /* Výška na 100% kontejneru */
     object-fit: cover; /* Vyplnění prostoru bez deformace */
     display: block;
+    margin: auto; /* Ucentrování obrázku, pokud je menší než kontejner */
 }
 
 .lang-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Efekt zvětšení při najetí myší */
 }
 
 /* Zarovnání vlajek do pravého horního rohu */
