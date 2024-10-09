@@ -9,6 +9,7 @@
     --link-color: #003366; /* Tmavě modrá pro odkazy */
     --highlight-color: #e63946; /* Červená pro zvýraznění */
     --shadow-color: rgba(0, 0, 0, 0.1); /* Barva pro stíny */
+    --hover-bg-color: #b3b3b3; /* Tmavší šedá pro hover efekt */
 }
 
 /* Resetování marginů a paddingů */
@@ -71,6 +72,11 @@ nav.navigation a {
     font-weight: bold; /* Tloušťka písma */
     padding: 10px 20px; /* Padding pro odkazy */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Přechody */
+}
+
+/* Hover efekt na odkazy */
+nav.navigation a:hover {
+    background-color: var(--hover-bg-color); /* Tmavší šedá pro hover efekt */
 }
 
 /* Styly pro sekce */
