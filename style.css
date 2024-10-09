@@ -70,7 +70,7 @@ nav.navigation a {
     color: var(--footer-bg-color); /* Barva odkazů */
     text-decoration: none; /* Žádné podtržení */
     font-weight: bold; /* Tloušťka písma */
-    padding: 10px 10px; /* Padding pro odkazy */
+    padding: 10px 20px; /* Padding pro odkazy */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Přechody */
 }
 
