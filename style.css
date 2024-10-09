@@ -141,7 +141,7 @@ button {
     align-items: center;
     gap: 10px;
     position: absolute;
-    top: 20px;
+    top: 10px; /* Posunuto výše */
     right: 20px;
 }
 
