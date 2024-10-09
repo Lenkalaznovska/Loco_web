@@ -46,16 +46,6 @@ h1 {
     border-radius: 10px; /* Přidání zaoblení */
 }
 
-/* Efekt dýchání */
-@keyframes breathing {
-    0%, 100% {
-        transform: scale(1.01); /* Zmenšení na 101% */
-    }
-    50% {
-        transform: scale(1.03); /* Zvýšení na 103% */
-    }
-}
-
 /* Čáry pod nadpisy */
 .section h1 {
     position: relative;
