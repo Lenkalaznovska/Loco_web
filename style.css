@@ -93,16 +93,16 @@ button {
     cursor: pointer;
     position: relative;
     transition: transform 0.3s ease;
+    width: 40px; /* Nastavení šířky kontejneru */
+    height: 30px; /* Nastavení výšky kontejneru */
+    overflow: hidden; /* Skrytí přebytku */
 }
 
 .lang-btn img {
-    width: 40px; /* Šířka obrázku */
-    height: 30px; /* Výška obrázku */
-    object-fit: contain; /* Zachování poměru stran obrázků bez deformace */
-    background-color: white; /* Přidání pozadí, aby nedošlo k deformaci, pokud má vlajka jiný poměr stran */
-    padding: 2px; /* Malé odsazení pro lepší vzhled */
+    width: 100%; /* Šířka na 100% kontejneru */
+    height: 100%; /* Výška na 100% kontejneru */
+    object-fit: cover; /* Vyplnění prostoru bez deformace */
     display: block;
-    border: 1px solid #ccc; /* Volitelný rámeček pro zarovnání */
 }
 
 .lang-btn:hover {
