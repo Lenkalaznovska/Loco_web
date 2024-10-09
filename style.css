@@ -77,14 +77,15 @@ button {
     color: white; /* Barva textu */
     border: none; /* Odstranění okrajů */
     padding: 12px; /* Prostor kolem textu */
-    font-size: 18px; /* Velikost písma tlačítka */
+    width: 100%; /* Tlačítko na celou šířku */
+    height: 100%; /* Tlačítko na celou výšku */
+    font-size: 16px;
     font-weight: bold; /* Tučné písmo */
     text-transform: uppercase; /* Velká písmena */
     border-radius: 8px; /* Zakulacené rohy */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Plynulé přechody */
     box-shadow: 0 4px 6px var(--shadow-color); /* Jemný stín */
-    width: 100%; /* Tlačítko na celou šířku */
 }
 
 /* Tlačítka s vlajkami */
@@ -93,13 +94,14 @@ button {
     border: none;
     cursor: pointer;
     width: 100%; /* Tlačítko na celou šířku */
+    height: 100%; /* Tlačítko na celou výšku */
     position: relative; /* Přidání relativní pozice */
     transition: transform 0.3s ease;
 }
 
 .lang-btn img {
     width: 100%; /* Šířka obrázku vlajky */
-    height: auto; /* Výška obrázku vlajky */
+    height: 100%; /* Výška obrázku vlajky */
     object-fit: cover; /* Zajištění, že vlajka vyplní celý prostor */
     display: block;
 }
@@ -135,6 +137,7 @@ button {
     cursor: pointer;
     overflow: hidden; /* Skrytí přetékajícího obsahu */
     transition: color 0.4s, transform 0.4s; /* Plynulé přechody */
+    width: 100%; /* Roztažení tlačítka na celou šířku */
 }
 
 /* Efekt hover pro tlačítko */
@@ -152,16 +155,21 @@ button {
 @media (max-width: 768px) {
     button {
         padding: 10px;
-        font-size: 16px; /* Mírně menší písmo pro menší zařízení */
+        font-size: 14px; /* Menší písmo pro menší zařízení */
+        border-radius: 6px;
+        width: 100%; /* Tlačítko na celou šířku */
+        height: auto; /* Výška automatická pro lepší vzhled */
     }
 
     .attractive-button {
         padding: 10px; /* Úprava paddingu pro mobilní zařízení */
         font-size: 16px; /* Mírně menší písmo */
+        width: 100%; /* Roztažení tlačítka na celou šířku */
     }
 
     .lang-btn {
         width: 100%; /* Tlačítko na celou šířku pro mobilní zařízení */
+        height: auto; /* Výška automatická pro lepší vzhled */
     }
 
     .lang-btn-container {
@@ -172,16 +180,20 @@ button {
 @media (max-width: 480px) {
     button {
         padding: 8px;
-        font-size: 14px;
+        font-size: 12px;
+        width: 100%; /* Tlačítko na celou šířku */
+        height: auto; /* Výška automatická pro lepší vzhled */
     }
 
     .attractive-button {
         padding: 8px; /* Úprava paddingu pro mobilní zařízení */
         font-size: 14px; /* Mírně menší písmo */
+        width: 100%; /* Roztažení tlačítka na celou šířku */
     }
 
     .lang-btn {
         width: 100%; /* Tlačítko na celou šířku pro mobilní zařízení */
+        height: auto; /* Výška automatická pro lepší vzhled */
     }
 }
 
@@ -220,23 +232,5 @@ button {
     color: white; /* Barva textu */
     text-align: center; /* Vycentrování textu */
     padding: 15px 0; /* Padding pro patičku */
-    margin-top: 20px; /* Mezera nad patičkou */
-}
-
-/* Hlavní nadpis */
-h1 {
-    font-size: 36px; /* Nová velikost nadpisu */
-    margin: 20px 0; /* Mezera nad a pod nadpisem */
-}
-
-/* Malé písmo */
-small {
-    font-size: 0.8em; /* Mírně menší písmo */
-    color: gray; /* Barva pro malé písmo */
-}
-
-/* Pozadí pro sekce */
-.section-background {
-    background-color: var(--section-bg-color);
-    padding: 30px; /* Padding pro sekci */
+    margin-top: 20px; /* Mezera nahoře */
 }
