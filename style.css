@@ -27,7 +27,9 @@ body {
 
 /* Hlavní nadpis */
 h1 {
-    font-size: 2.5em; /* Velikost hlavního nadpisu */
+    font-size: 50px; /* Velikost hlavního nadpisu */
+    font-weight: bold; /* Tučné písmo */
+    color: white; /* Barva textu nadpisu */
     margin: 20px 0; /* Okraje nadpisu */
 }
 
@@ -40,38 +42,26 @@ h1 {
     position: relative; /* Relativní pozice pro efekt */
     max-width: 800px; /* Maximální šířka sekce */
     margin: 20px auto; /* Vycentrování sekce */
-    animation: breathing 4s infinite; /* Efekt dýchání */
-    border-radius: 20px; /* Zakulacení rohů */
-}
-
-/* Efekt dýchání */
-@keyframes breathing {
-    0%, 100% {
-        transform: scale(1); /* Výchozí velikost */
-    }
-    50% {
-        transform: scale(1.05); /* Mírné zvětšení */
-    }
 }
 
 /* Čáry ve stylu kolejnic */
 .track-line {
     position: absolute; /* Absolutní pozicování */
-    left: 50%; /* Umístění od středu */
+    left: 0; /* Začátek od levého okraje */
     background-color: var(--accent-color); /* Barva čáry */
     z-index: 1; /* Zajištění, že je nad sekcí */
-    transform: translateX(-50%); /* Vycentrování čáry */
     height: 6px; /* Výška čáry */
 }
 
 .track-line.short {
-    width: 80px; /* Šířka kratší čáry */
+    width: 80%; /* Šířka kratší čáry - 80% šířky sekce */
     top: 40%; /* Umístění na 40% výšky sekce */
 }
 
 .track-line.long {
-    width: 120px; /* Šířka delší čáry */
+    width: 120%; /* Šířka delší čáry - 120% šířky sekce */
     top: 60%; /* Umístění na 60% výšky sekce */
+    margin-left: -10%; /* Posun do leva, aby byla delší čára vycentrovaná */
 }
 
 /* Tlačítka - obecný styl */
@@ -79,7 +69,7 @@ button {
     background-color: var(--primary-color); /* Hlavní barva tlačítka */
     color: white; /* Barva textu tlačítka */
     border: none; /* Odstranění okrajů */
-    padding: 12px; /* Prostor kolem textu tlačítka */
+    padding: 12px 20px; /* Vnitřní prostor kolem textu tlačítka */
     font-size: 16px; /* Velikost písma */
     font-weight: bold; /* Tučné písmo */
     text-transform: uppercase; /* Velká písmena */
@@ -87,6 +77,7 @@ button {
     cursor: pointer; /* Ukazatel myši jako ruka */
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Plynulé přechody */
     box-shadow: 0 4px 6px var(--shadow-color); /* Jemný stín */
+    width: 150px; /* Stejná šířka pro všechna tlačítka */
 }
 
 /* Tlačítka s vlajkami */
