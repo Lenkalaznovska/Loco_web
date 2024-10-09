@@ -4,40 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naše práce</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Odkaz na váš CSS soubor -->
+    <link rel="stylesheet" href="styles.css"> <!-- Odkaz na externí CSS soubor -->
 </head>
 <body>
-    <header>
+    <div class="container">
+        <!-- Navigační menu -->
         <nav class="navigation">
             <ul>
-                <li><a href="index.html" data-key="home-title">Domov</a></li>
-                <li><a href="our-models.html" data-key="models">Naše modely</a></li>
-                <li><a href="our-work.html" data-key="our-work">Naše práce</a></li>
-                <li><a href="gallery.html" data-key="gallery-title">Galerie</a></li>
-                <li class="lang-flag" data-lang="cs">🇨🇿</li>
-                <li class="lang-flag" data-lang="en">🇬🇧</li>
-                <li class="lang-flag" data-lang="de">🇩🇪</li>
+                <li><a href="index.html">Úvod</a></li>
+                <li><a href="nase-prace.html" class="active">Naše práce</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
             </ul>
         </nav>
-    </header>
 
-    <main>
-        <section class="our-work text-container section">
-            <h2 data-key="our-work">Naše práce</h2>
-            <p data-key="our-work-desc">Naše portfolio zahrnuje širokou škálu projektů, od detailních modelů až po unikátní zakázkové práce, které splňují specifické požadavky našich zákazníků.</p>
-            <h3 data-key="featured-projects">Vybrané projekty</h3>
-            <ul>
-                <li data-key="project-1">Model vlaku pro speciální akci</li>
-                <li data-key="project-2">Historický vlak z 19. století</li>
-                <li data-key="project-3">Zakázková výroba pro muzea</li>
-            </ul>
+        <!-- Sekce "Naše práce" -->
+        <section class="section">
+            <h1>Naše práce</h1>
+            <p>V této sekci představujeme naše projekty a úspěchy, které jsme dosáhli.</p>
+            <div class="project">
+                <h2>Projekt 1</h2>
+                <p>Popis prvního projektu, jeho cíle a výsledky.</p>
+            </div>
+            <div class="project">
+                <h2>Projekt 2</h2>
+                <p>Popis druhého projektu, jeho cíle a výsledky.</p>
+            </div>
+            <div class="project">
+                <h2>Projekt 3</h2>
+                <p>Popis třetího projektu, jeho cíle a výsledky.</p>
+            </div>
         </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2024 Vaše Společnost</p>
-    </footer>
-
-    <script src="script.js"></script> <!-- Odkaz na váš JavaScript soubor -->
+        <!-- Patička -->
+        <footer class="footer">
+            <p>&copy; 2024 Všechna práva vyhrazena. | <a href="o-nas.html" class="menu-link">O nás</a></p>
+        </footer>
+    </div>
 </body>
 </html>
