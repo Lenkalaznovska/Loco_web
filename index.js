@@ -9,7 +9,13 @@ const languages = {
         "models": "Modely",
         "our-work": "Naše práce",
         "our-work-title": "Naše práce",
-        "our-work-desc": "Zde si můžete prohlédnout naše dosavadní projekty a realizace, které jsme s nadšením dokončili."
+        "our-work-desc": "Zde si můžete prohlédnout naše dosavadní projekty a realizace, které jsme s nadšením dokončili.",
+        "about-title": "O nás",
+        "about-desc": "Naše firma se specializuje na výrobu detailně propracovaných modelů vlaků a železnic. Každý model je precizně zpracován a je věnována maximální pozornost každému detailu.",
+        "products-title": "Naše modely",
+        "products-desc": "Nabízíme širokou škálu modelových vlaků, kolejnic a příslušenství pro všechny železniční nadšence. Naše produkty jsou známé svou kvalitou a precizností.",
+        "order-title": "Objednejte si svůj model ještě dnes!",
+        "order-desc": "Pro více informací nás kontaktujte na e-mailu nebo telefonním čísle uvedeném níže."
     },
     en: {
         "home": "Home",
@@ -20,7 +26,13 @@ const languages = {
         "models": "Models",
         "our-work": "Our work",
         "our-work-title": "Our Work",
-        "our-work-desc": "Here you can view our completed projects and implementations that we have enthusiastically finished."
+        "our-work-desc": "Here you can view our completed projects and implementations that we have enthusiastically finished.",
+        "about-title": "About Us",
+        "about-desc": "Our company specializes in the production of intricately crafted model trains and railways. Each model is precisely made, with maximum attention to detail.",
+        "products-title": "Our Models",
+        "products-desc": "We offer a wide range of model trains, tracks, and accessories for all railway enthusiasts. Our products are known for their quality and precision.",
+        "order-title": "Order Your Model Today!",
+        "order-desc": "For more information, contact us via the email or phone number below."
     },
     de: {
         "home": "Startseite",
@@ -31,7 +43,13 @@ const languages = {
         "models": "Modelle",
         "our-work": "Unsere Arbeit",
         "our-work-title": "Unsere Arbeit",
-        "our-work-desc": "Hier können Sie unsere abgeschlossenen Projekte und Umsetzungen ansehen, die wir mit Begeisterung abgeschlossen haben."
+        "our-work-desc": "Hier können Sie unsere abgeschlossenen Projekte und Umsetzungen ansehen, die wir mit Begeisterung abgeschlossen haben.",
+        "about-title": "Über uns",
+        "about-desc": "Unser Unternehmen spezialisiert sich auf die Herstellung detailliert gestalteter Modellzüge und Eisenbahnen. Jedes Modell wird präzise verarbeitet und es wird maximaler Wert auf jedes Detail gelegt.",
+        "products-title": "Unsere Modelle",
+        "products-desc": "Wir bieten eine breite Palette von Modellzügen, Schienen und Zubehör für alle Eisenbahnenthusiasten. Unsere Produkte sind für ihre Qualität und Präzision bekannt.",
+        "order-title": "Bestellen Sie Ihr Modell noch heute!",
+        "order-desc": "Für weitere Informationen kontaktieren Sie uns bitte per E-Mail oder Telefonnummer unten."
     }
 };
 
