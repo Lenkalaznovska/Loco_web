@@ -37,6 +37,19 @@ h1 {
 nav.navigation {
     background-color: var(--menu-bg-color); /* Pozadí navigace */
     padding: 10px 0; /* Padding pro navigaci */
+    position: relative; /* Relativní pozice pro pruh */
+    z-index: 10; /* Z-index pro zajištění viditelnosti */
+}
+
+nav.navigation::before {
+    content: ''; /* Pseudo-element pro pruh */
+    position: absolute; /* Absolutní pozice */
+    top: 0; /* Vzdálenost od horní části */
+    left: 0; /* Vzdálenost od levé strany */
+    right: 0; /* Vzdálenost od pravé strany */
+    height: 5px; /* Výška pruhu */
+    background-color: var(--accent-color); /* Barva pruhu */
+    z-index: -1; /* Z-index, aby byl pruh pod navigací */
 }
 
 nav.navigation ul {
@@ -45,24 +58,6 @@ nav.navigation ul {
     list-style: none; /* Žádné odrážky */
     gap: 20px; /* Mezery mezi položkami */
     padding: 0; /* Žádný padding */
-}
-
-nav.navigation li {
-    display: inline-block; /* Inline-block pro seznam */
-}
-
-nav.navigation a {
-    color: var(--footer-bg-color); /* Barva odkazů */
-    text-decoration: none; /* Žádné podtržení */
-    font-weight: bold; /* Tloušťka písma */
-    padding: 10px 20px; /* Padding pro odkazy */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Přechody */
-}
-
-nav.navigation a:hover {
-    background-color: var(--accent-color); /* Barva pozadí při hoveru */
-    border-radius: 5px; /* Zaoblení rohů */
-    transform: scale(1.1); /* Zvýšení velikosti při hoveru */
 }
 
 /* Styly pro sekce */
