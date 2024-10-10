@@ -87,6 +87,51 @@ nav.navigation a:hover {
     background-color: var(--hover-bg-color); /* Tmavší šedá pro hover efekt */
 }
 
+/* Carousel */
+.carousel-section {
+    background-color: var(--section-bg-color);
+    padding: 20px;
+}
+
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.carousel-images {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-images img {
+    width: 100%;
+    display: none;
+}
+
+.carousel-images img:first-child {
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
 /* Styly pro sekce */
 .section {
     background-color: var(--section-bg-color);
