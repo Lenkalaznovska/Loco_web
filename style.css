@@ -87,7 +87,7 @@ nav.navigation a:hover {
     background-color: var(--hover-bg-color); /* Tmavší šedá pro hover efekt */
 }
 
-/* Základní styl carouselu */
+        /* Základní styl carouselu */
         .carousel-container {
             position: relative;
             width: 100%;
@@ -102,7 +102,7 @@ nav.navigation a:hover {
         }
 
         .slide {
-            min-width: 33.33%; /* Aby byly vidět části levého a pravého obrázku */
+            flex: 0 0 33.33%; /* Aby byly vidět části levého a pravého obrázku */
             box-sizing: border-box;
             padding: 10px;
         }
