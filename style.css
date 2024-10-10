@@ -12,6 +12,7 @@
     --hover-bg-color: #b3b3b3; /* Tmavší šedá pro hover efekt */
 }
 
+/* Resetování marginů a paddingů */
 * {
     margin: 0;
     padding: 0;
@@ -34,102 +35,11 @@ h1 {
     margin: 0;
 }
 
-/* Carousel */
-.carousel {
-    position: relative;
+/* Styly pro kontejner */
+.container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    max-width: 70%;
-    overflow: hidden;
-}
-
-.carousel-track-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 50%; /* Zajišťuje, že bude vidět 1 celá fotka a 2 poloviny po stranách */
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.carousel img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.carousel-control {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px;
-    z-index: 10;
-}
-
-.carousel-control.prev {
-    left: 0;
-}
-
-.carousel-control.next {
-    right: 0;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    padding-top: 60px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 60%;
-    max-width: 700px;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
+    flex-direction: column;
+    min-height: 100vh; /* Aby kontejner zabíral minimálně výšku obrazovky */
 }
 
 /* Navigační menu */
