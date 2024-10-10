@@ -58,7 +58,7 @@ h1 {
 }
 
 .carousel-slide {
-    min-width: 50%; /* Zajišťuje, že bude vidět 1 celá fotka a 2 poloviny po stranách */
+    min-width: 33%; /* Zajišťuje, že bude vidět 1 celá fotka a 2 poloviny po stranách */
     position: relative;
     display: flex;
     justify-content: center;
@@ -103,16 +103,12 @@ h1 {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
 }
 
 .modal-content {
     margin: auto;
     display: block;
-    width: 60%;
+    width: 80%;
     max-width: 700px;
 }
 
