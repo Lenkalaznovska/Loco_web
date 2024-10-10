@@ -100,3 +100,37 @@ languageButtons.forEach(button => {
 
 // Inicializace obsahu
 updateContent();
+
+// Carousel
+const carousel = document.querySelector('.carousel');
+const slides = carousel.querySelectorAll('.slide');
+let currentSlide = 0;
+
+// Funkce pro zobrazení aktuálního snímku
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+    });
+}
+
+// Funkce pro přechod na další snímek
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Funkce pro přechod na předchozí snímek
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+// Přidání událostí pro tlačítka
+document.querySelector('.carousel-next').addEventListener('click', nextSlide);
+document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
+
+// Zobrazit první snímek
+showSlide(currentSlide);
+
+// Automatický přechod mezi snímky (volitelně)
+setInterval(nextSlide, 5000); // Změna snímku každých 5 sekund
