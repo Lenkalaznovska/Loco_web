@@ -100,3 +100,45 @@ languageButtons.forEach(button => {
 
 // Inicializace obsahu
 updateContent();
+
+// Carousel funkcionalita
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const prevButton = document.querySelector('.carousel-control.prev');
+const nextButton = document.querySelector('.carousel-control.next');
+
+let currentSlideIndex = 0;
+
+// Funkce pro posun carouselu
+function updateCarousel() {
+    const amountToMove = slides[currentSlideIndex].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${amountToMove * currentSlideIndex}px)`;
+}
+
+// Předchozí slide
+prevButton.addEventListener('click', () => {
+    currentSlideIndex = (currentSlideIndex === 0) ? slides.length - 1 : currentSlideIndex - 1;
+    updateCarousel();
+});
+
+// Další slide
+nextButton.addEventListener('click', () => {
+    currentSlideIndex = (currentSlideIndex === slides.length - 1) ? 0 : currentSlideIndex + 1;
+    updateCarousel();
+});
+
+// Modal funkcionalita
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const closeModal = document.querySelector('.close');
+
+slides.forEach(slide => {
+    slide.addEventListener('click', () => {
+        modal.style.display = "block";
+        modalImg.src = slide.querySelector('img').src;
+    });
+});
+
+closeModal.addEventListener('click', () => {
+    modal.style.display = "none";
+});
