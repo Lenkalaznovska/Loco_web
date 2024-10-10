@@ -61,6 +61,7 @@ let currentLanguage = localStorage.getItem('language') || 'cs';
 
 // Funkce pro aktualizaci textu na stránce
 function updateContent() {
+    // Aktualizace obsahu sekcí
     document.querySelectorAll('[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
         if (languages[currentLanguage][key]) {
@@ -70,6 +71,7 @@ function updateContent() {
         }
     });
 
+    // Aktualizace textu v navigačním menu
     document.querySelectorAll('.navigation a[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
         if (languages[currentLanguage][key]) {
@@ -79,7 +81,8 @@ function updateContent() {
         }
     });
 
-    const footerElement = document.querySelector('.footer-text');
+    // Aktualizace textu v patičce
+    const footerElement = document.querySelector('.footer-text'); // Změňte selektor podle struktury vaší stránky
     if (footerElement && languages[currentLanguage]["footer"]) {
         footerElement.innerText = languages[currentLanguage]["footer"];
     }
@@ -89,82 +92,62 @@ function updateContent() {
 const languageButtons = document.querySelectorAll('.lang-flag');
 languageButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-        currentLanguage = e.target.dataset.lang;
-        localStorage.setItem('language', currentLanguage);
-        updateContent();
+        currentLanguage = e.target.dataset.lang; // Získání zvoleného jazyka
+        localStorage.setItem('language', currentLanguage); // Uložení zvoleného jazyka do localStorage
+        updateContent(); // Aktualizace obsahu
     });
 });
 
 // Inicializace obsahu
 updateContent();
 
-        // Carousel
-        const carousel = document.querySelector('.carousel');
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        let currentSlide = 0;
+// Carousel
+const carousel = document.querySelector('.carousel');
+const slides = carousel.querySelectorAll('.slide');
+let currentSlide = 0;
 
-        // Funkce pro zobrazení aktuálního slide s částečným náhledem vedlejších slideů
-        function showSlide(index) {
-            const slideWidth = slides[0].offsetWidth;
-            const offset = -index * slideWidth + (carousel.parentNode.offsetWidth - slideWidth) / 2;
-            carousel.style.transform = `translateX(${offset}px)`;
-        }
+// Funkce pro zobrazení aktuálního snímku
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+    });
+}
 
-        // Nekonečný carousel - klonování prvního a posledního slideu
-        function cloneSlides() {
-            const firstSlide = slides[0].cloneNode(true);
-            const lastSlide = slides[slides.length - 1].cloneNode(true);
-            carousel.appendChild(firstSlide);
-            carousel.insertBefore(lastSlide, slides[0]);
-        }
+// Funkce pro přechod na další snímek
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
 
-        // Inicializace - klonování prvního a posledního obrázku
-        cloneSlides();
+// Funkce pro přechod na předchozí snímek
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
 
-        // Aktualizace počtu slidů po klonování
-        let clonedSlides = document.querySelectorAll('.slide');
-        let clonedTotalSlides = clonedSlides.length;
+// Přidání událostí pro tlačítka
+document.querySelector('.carousel-next').addEventListener('click', nextSlide);
+document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
 
-        // Při dosažení posledního/klonovaného slideu, vrátit na první skutečný slide
-        function nextSlide() {
-            currentSlide++;
-            showSlide(currentSlide);
+// Zobrazit první snímek
+showSlide(currentSlide);
 
-            if (currentSlide === clonedTotalSlides - 1) {
-                setTimeout(() => {
-                    carousel.style.transition = 'none'; // Dočasně vypneme animaci
-                    currentSlide = 1; // Přesuneme se na první skutečný slide
-                    showSlide(currentSlide);
-                }, 500); // Po 500 ms
-            }
+// Automatický přechod mezi snímky (volitelně)
+setInterval(nextSlide, 5000); // Změna snímku každých 5 sekund
 
-            carousel.style.transition = 'transform 0.5s ease'; // Znovu povolíme animaci
-        }
+// Funkce pro otevření modálního okna
+function openModal(image) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    modal.style.display = "block"; // Zobrazit modal
+    modalImage.src = image.src; // Nastavit zdroj obrázku v modalu
+}
 
-        // Při dosažení prvního/klonovaného slideu, vrátit na poslední skutečný slide
-        function prevSlide() {
-            currentSlide--;
-            showSlide(currentSlide);
+// Funkce pro zavření modálního okna
+function closeModal() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none"; // Skrýt modal
+}
 
-            if (currentSlide === 0) {
-                setTimeout(() => {
-                    carousel.style.transition = 'none'; // Dočasně vypneme animaci
-                    currentSlide = clonedTotalSlides - 2; // Přesuneme se na poslední skutečný slide
-                    showSlide(currentSlide);
-                }, 500); // Po 500 ms
-            }
-
-            carousel.style.transition = 'transform 0.5s ease'; // Znovu povolíme animaci
-        }
-
-        // Event listeners pro tlačítka
-        document.querySelector('.carousel-next').addEventListener('click', nextSlide);
-        document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
-
-        // Přizpůsobit při změně velikosti okna
-        window.addEventListener('resize', () => showSlide(currentSlide));
-
-        // Nastavit počáteční slide (první skutečný slide)
-        currentSlide = 1;
-        showSlide(currentSlide);
+// Přidání události pro zavření modalu při kliknutí
+document.getElementById("imageModal").addEventListener("click", closeModal);
