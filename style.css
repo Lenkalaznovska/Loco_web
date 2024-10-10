@@ -90,44 +90,50 @@ nav.navigation a:hover {
 .carousel-container {
     position: relative;
     width: 100%;
-    max-width: 800px; /* Max width for the carousel */
-    overflow: hidden; /* Hide overflow */
-    margin: 0 auto; /* Center carousel */
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-.carousel {
+.carousel-slide {
     display: flex;
-    transition: transform 0.3s ease-in-out;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
 }
 
-.slide {
-    min-width: 300px; /* Slide width */
-    margin-right: 20px; /* Space between slides */
-    flex-shrink: 0;
+.carousel-slide img {
+    width: 100%;
+    max-width: 300px; /* Nastaví maximální velikost jednoho obrázku */
+    transition: transform 0.5s ease-in-out;
 }
 
-.carousel img {
-    width: 100%; /* Image fills the slide */
-    border-radius: 10px;
+.carousel-slide img.active {
+    transform: scale(1.1); /* Zvýrazní střední obrázek */
 }
 
-.carousel-prev, .carousel-next {
+.carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.5);
     border: none;
+    color: white;
+    font-size: 24px;
     padding: 10px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 10;
 }
 
-.carousel-prev {
+.carousel-button.left {
     left: 10px;
 }
 
-.carousel-next {
+.carousel-button.right {
     right: 10px;
+}
+
+.carousel-button:focus {
+    outline: none;
 }
 
 /* Styly pro sekce */
