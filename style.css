@@ -87,53 +87,49 @@ nav.navigation a:hover {
     background-color: var(--hover-bg-color); /* Tmavší šedá pro hover efekt */
 }
 
-         /* Základní styl carouselu */
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Skrýt přebytečné obrázky */
+}
 
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease;
-            will-change: transform;
-        }
+.carousel {
+    display: flex; /* Flexbox pro zarovnání obrázků vedle sebe */
+}
 
-        .slide {
-            flex: 0 0 50%; /* Aby byly vidět poloviny sousedních obrázků */
-            box-sizing: border-box;
-            padding: 10px;
-            transition: transform 0.5s ease;
-        }
+.slide {
+    min-width: 300px; /* Minimální šířka pro každý snímek */
+    margin-right: 20px; /* Mezera mezi snímky */
+}
 
-        .slide img {
-            width: 100%;
-            border-radius: 10px;
-        }
+.carousel img {
+    width: 100%; /* Obrázky se přizpůsobí šířce snímku */
+    border-radius: 10px; /* Rámeček pro hezčí vzhled */
+    transition: transform 0.3s ease; /* Plynulý přechod pro zvětšení */
+}
 
-        /* Carousel ovládací prvky */
-        .carousel-prev, .carousel-next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 20px;
-        }
+.carousel img:hover {
+    transform: scale(1.1); /* Zvětšení obrázku při najetí myší */
+}
 
-        .carousel-prev {
-            left: 0;
-        }
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7); /* Poloprůhledné pozadí */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
 
-        .carousel-next {
-            right: 0;
-        }
+.carousel-prev {
+    left: 10px; /* Umístění levého tlačítka */
+}
+
+.carousel-next {
+    right: 10px; /* Umístění pravého tlačítka */
+}
 
 /* Styly pro sekce */
 .section {
