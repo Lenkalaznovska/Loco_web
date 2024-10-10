@@ -99,10 +99,10 @@ languageButtons.forEach(button => {
 updateContent();
 
         // Carousel
-        const carousel = document.querySelector('.carousel');
+      const carousel = document.querySelector('.carousel');
         const slides = document.querySelectorAll('.slide');
-        let currentSlide = 1; // Nastavíme, aby výchozí byl prostřední slide
         const totalSlides = slides.length;
+        let currentSlide = 0;
 
         // Funkce pro zobrazení aktuálního slide s částečným náhledem vedlejších slideů
         function showSlide(index) {
@@ -111,20 +111,60 @@ updateContent();
             carousel.style.transform = `translateX(${offset}px)`;
         }
 
-        // Posun na další slide
-        document.querySelector('.carousel-next').addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        });
+        // Nekonečný carousel - klonování prvního a posledního slideu
+        function cloneSlides() {
+            const firstSlide = slides[0].cloneNode(true);
+            const lastSlide = slides[slides.length - 1].cloneNode(true);
+            carousel.appendChild(firstSlide);
+            carousel.insertBefore(lastSlide, slides[0]);
+        }
 
-        // Posun na předchozí slide
-        document.querySelector('.carousel-prev').addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        // Inicializace - klonování prvního a posledního obrázku
+        cloneSlides();
+
+        // Aktualizace počtu slidů po klonování
+        let clonedSlides = document.querySelectorAll('.slide');
+        let clonedTotalSlides = clonedSlides.length;
+
+        // Při dosažení posledního/klonovaného slideu, vrátit na první skutečný slide
+        function nextSlide() {
+            currentSlide++;
             showSlide(currentSlide);
-        });
+
+            if (currentSlide === clonedTotalSlides - 1) {
+                setTimeout(() => {
+                    carousel.style.transition = 'none'; // Dočasně vypneme animaci
+                    currentSlide = 1; // Přesuneme se na první skutečný slide
+                    showSlide(currentSlide);
+                }, 500); // Po 500 ms
+            }
+
+            carousel.style.transition = 'transform 0.5s ease'; // Znovu povolíme animaci
+        }
+
+        // Při dosažení prvního/klonovaného slideu, vrátit na poslední skutečný slide
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+
+            if (currentSlide === 0) {
+                setTimeout(() => {
+                    carousel.style.transition = 'none'; // Dočasně vypneme animaci
+                    currentSlide = clonedTotalSlides - 2; // Přesuneme se na poslední skutečný slide
+                    showSlide(currentSlide);
+                }, 500); // Po 500 ms
+            }
+
+            carousel.style.transition = 'transform 0.5s ease'; // Znovu povolíme animaci
+        }
+
+        // Event listeners pro tlačítka
+        document.querySelector('.carousel-next').addEventListener('click', nextSlide);
+        document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
 
         // Přizpůsobit při změně velikosti okna
         window.addEventListener('resize', () => showSlide(currentSlide));
 
-        // Počáteční nastavení na prostřední slide
+        // Nastavit počáteční slide (první skutečný slide)
+        currentSlide = 1;
         showSlide(currentSlide);
