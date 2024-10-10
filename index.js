@@ -99,96 +99,89 @@ languageButtons.forEach(button => {
 updateContent();
 
 // Carousel - Základní funkce
-        const carousel = document.querySelector('.carousel');
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        let currentSlide = 0;
+const carousel = document.querySelector('.carousel');
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+let currentSlide = 0;
 
-        // Funkce pro zobrazení aktuálního slide s částečným náhledem vedlejších slideů
-        function showSlide(index) {
-            const slideWidth = slides[0].offsetWidth;
-            const offset = -index * slideWidth + (carousel.parentNode.offsetWidth - slideWidth) / 2;
-            carousel.style.transform = `translateX(${offset}px)`;
-        }
+// Funkce pro zobrazení aktuálního slide s částečným náhledem vedlejších slideů
+function showSlide(index) {
+    const slideWidth = slides[0].offsetWidth;
+    const offset = -index * slideWidth + (carousel.parentNode.offsetWidth - slideWidth) / 2;
+    carousel.style.transform = `translateX(${offset}px)`;
+}
 
-        // Nekonečný carousel - klonování prvního a posledního slideu
-        function cloneSlides() {
-            const firstSlide = slides[0].cloneNode(true);
-            const lastSlide = slides[slides.length - 1].cloneNode(true);
-            carousel.appendChild(firstSlide);
-            carousel.insertBefore(lastSlide, slides[0]);
-        }
+// Nekonečný carousel - klonování prvního a posledního slideu
+function cloneSlides() {
+    const firstSlide = slides[0].cloneNode(true);
+    const lastSlide = slides[slides.length - 1].cloneNode(true);
+    carousel.appendChild(firstSlide);
+    carousel.insertBefore(lastSlide, slides[0]);
+}
 
-        // Inicializace - klonování prvního a posledního obrázku
-        cloneSlides();
+// Inicializace - klonování prvního a posledního obrázku
+cloneSlides();
 
-        // Aktualizace počtu slidů po klonování
-        let clonedSlides = document.querySelectorAll('.slide');
-        let clonedTotalSlides = clonedSlides.length;
+// Aktualizace počtu slidů po klonování
+let clonedSlides = document.querySelectorAll('.slide');
+let clonedTotalSlides = clonedSlides.length;
 
-        // Při dosažení posledního/klonovaného slideu, vrátit na první skutečný slide
-        function nextSlide() {
-            currentSlide++;
+// Při dosažení posledního/klonovaného slideu, vrátit na první skutečný slide
+function nextSlide() {
+    currentSlide++;
+    showSlide(currentSlide);
+
+    if (currentSlide === clonedTotalSlides - 1) {
+        setTimeout(() => {
+            carousel.style.transition = 'none'; // Dočasně vypneme animaci
+            currentSlide = 1; // Přesuneme se na první skutečný slide
             showSlide(currentSlide);
+        }, 500); // Po 500 ms
+    }
 
-            if (currentSlide === clonedTotalSlides - 1) {
-                setTimeout(() => {
-                    carousel.style.transition = 'none'; // Dočasně vypneme animaci
-                    currentSlide = 1; // Přesuneme se na první skutečný slide
-                    showSlide(currentSlide);
-                }, 500); // Po 500 ms
-            }
+    carousel.style.transition = 'transform 0.5s ease'; // Znovu povolíme animaci
+}
 
-            carousel.style.transition = 'transform 0.5s ease'; // Znovu povolíme animaci
-        }
+// Při dosažení prvního/klonovaného slideu, vrátit na poslední skutečný slide
+function prevSlide() {
+    currentSlide--;
+    showSlide(currentSlide);
 
-        // Při dosažení prvního/klonovaného slideu, vrátit na poslední skutečný slide
-        function prevSlide() {
-            currentSlide--;
+    if (currentSlide === 0) {
+        setTimeout(() => {
+            carousel.style.transition = 'none'; // Dočasně vypneme animaci
+            currentSlide = clonedTotalSlides - 2; // Přesuneme se na poslední skutečný slide
             showSlide(currentSlide);
+        }, 500); // Po 500 ms
+    }
 
-            if (currentSlide === 0) {
-                setTimeout(() => {
-                    carousel.style.transition = 'none'; // Dočasně vypneme animaci
-                    currentSlide = clonedTotalSlides - 2; // Přesuneme se na poslední skutečný slide
-                    showSlide(currentSlide);
-                }, 500); // Po 500 ms
-            }
+    carousel.style.transition = 'transform 0.5s ease'; // Znovu povolíme animaci
+}
 
-            carousel.style.transition = 'transform 0.5s ease'; // Znovu povolíme animaci
-        }
+// Event listeners pro tlačítka
+document.querySelector('.carousel-next').addEventListener('click', nextSlide);
+document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
 
-        // Event listeners pro tlačítka
-        document.querySelector('.carousel-next').addEventListener('click', nextSlide);
-        document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
+// Přizpůsobit při změně velikosti okna
+window.addEventListener('resize', () => showSlide(currentSlide));
 
-        // Přizpůsobit při změně velikosti okna
-        window.addEventListener('resize', () => showSlide(currentSlide));
+// Nastavit počáteční slide (první skutečný slide)
+currentSlide = 1;
+showSlide(currentSlide);
 
-        // Nastavit počáteční slide (první skutečný slide)
-        currentSlide = 1;
-        showSlide(currentSlide);
+// Funkce pro náhled a zvětšení obrázku
+const modal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+const modalCaption = document.getElementById('modalCaption');
 
-        // Funkce pro náhled a zvětšení obrázku
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-        const closeModal = document.querySelector('.close');
+document.querySelectorAll('.gallery-image').forEach(image => {
+    image.addEventListener('click', () => {
+        modal.style.display = 'block';
+        modalImage.src = image.src;
+        modalCaption.textContent = image.alt;
+    });
+});
 
-        slides.forEach(slide => {
-            slide.addEventListener('click', function () {
-                modal.style.display = 'flex'; // Zobrazit modální okno
-                modalImage.src = this.querySelector('img').src; // Nastavit zdroj obrázku do modálního okna
-            });
-        });
-
-        // Zavření modálního okna při kliknutí na křížek
-        closeModal.addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-
-        // Zavření modálního okna při kliknutí mimo obrázek
-        window.addEventListener('click', function (e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
+document.querySelector('.modal-close').addEventListener('click', () => {
+    modal.style.display = 'none';
+});
