@@ -104,39 +104,50 @@ updateContent();
 // Carousel
 const carousel = document.querySelector('.carousel');
 const slides = carousel.querySelectorAll('.slide');
-const carouselContainer = document.querySelector('.carousel-container');
 let currentSlide = 0;
-const slideWidth = slides[0].offsetWidth; // Get width of one slide
 
-// Set carousel width based on the number of slides
-carousel.style.width = `${slides.length * slideWidth}px`;
-
-// Show slide with partial previews on both sides
+// Funkce pro zobrazení aktuálního snímku
 function showSlide(index) {
-    const offset = -index * slideWidth + (carouselContainer.offsetWidth - slideWidth) / 2;
-    carousel.style.transform = `translateX(${offset}px)`;
+    slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+    });
 }
 
-// Move to next slide
+// Funkce pro přechod na další snímek
 function nextSlide() {
     currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
 }
 
-// Move to previous slide
+// Funkce pro přechod na předchozí snímek
 function prevSlide() {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(currentSlide);
 }
 
-// Button event listeners
+// Přidání událostí pro tlačítka
 document.querySelector('.carousel-next').addEventListener('click', nextSlide);
 document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
 
-// Set initial slide
+// Zobrazit první snímek
 showSlide(currentSlide);
 
-// Adjust carousel when window is resized
-window.addEventListener('resize', () => {
-    showSlide(currentSlide);
-});
+// Automatický přechod mezi snímky (volitelně)
+setInterval(nextSlide, 5000); // Změna snímku každých 5 sekund
+
+// Funkce pro otevření modálního okna
+function openModal(image) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    modal.style.display = "block"; // Zobrazit modal
+    modalImage.src = image.src; // Nastavit zdroj obrázku v modalu
+}
+
+// Funkce pro zavření modálního okna
+function closeModal() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none"; // Skrýt modal
+}
+
+// Přidání události pro zavření modalu při kliknutí
+document.getElementById("imageModal").addEventListener("click", closeModal);
