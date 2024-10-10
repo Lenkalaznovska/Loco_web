@@ -98,7 +98,8 @@ languageButtons.forEach(button => {
 // Inicializace obsahu
 updateContent();
 
-// Carousel - Základní funkce
+        // Carousel
+
         const carousel = document.querySelector('.carousel');
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
@@ -187,8 +188,51 @@ updateContent();
         });
 
         // Zavření modálního okna při kliknutí mimo obrázek
-        window.addEventListener('click', function (e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
+      const carouselImages = document.querySelectorAll('.carousel-image');
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.close');
+    const prevModalBtn = document.querySelector('.modal-prev');
+    const nextModalBtn = document.querySelector('.modal-next');
+    let currentModalIndex = 0;
+
+    // Otevření modálního okna s vybranou fotkou
+    function openModal(index) {
+        currentModalIndex = index;
+        modalImage.src = carouselImages[currentModalIndex].src;
+        modal.style.display = 'block';
+    }
+
+    // Zobrazení předchozí fotky v modálním okně
+    function prevModalSlide() {
+        currentModalIndex = (currentModalIndex - 1 + carouselImages.length) % carouselImages.length;
+        modalImage.src = carouselImages[currentModalIndex].src;
+    }
+
+    // Zobrazení další fotky v modálním okně
+    function nextModalSlide() {
+        currentModalIndex = (currentModalIndex + 1) % carouselImages.length;
+        modalImage.src = carouselImages[currentModalIndex].src;
+    }
+
+    // Zavření modálního okna
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // Přidání event listenerů pro obrázky v carouselu
+    carouselImages.forEach((image, index) => {
+        image.addEventListener('click', () => openModal(index));
+    });
+
+    // Event listenery pro tlačítka v modálním okně
+    closeBtn.addEventListener('click', closeModal);
+    prevModalBtn.addEventListener('click', prevModalSlide);
+    nextModalBtn.addEventListener('click', nextModalSlide);
+
+    // Zavření modálního okna kliknutím mimo obrázek
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
