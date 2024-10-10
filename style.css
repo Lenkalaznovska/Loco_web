@@ -87,49 +87,48 @@ nav.navigation a:hover {
     background-color: var(--hover-bg-color); /* Tmavší šedá pro hover efekt */
 }
 
-/* Carousel */
-.carousel-section {
-    background-color: var(--section-bg-color);
-    padding: 20px;
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Skrýt přebytečné obrázky */
 }
 
 .carousel {
-    position: relative;
-    max-width: 600px;
-    margin: auto;
+    display: flex; /* Flexbox pro zarovnání obrázků vedle sebe */
 }
 
-.carousel-images {
-    display: flex;
-    overflow: hidden;
+.slide {
+    min-width: 300px; /* Minimální šířka pro každý snímek */
+    margin-right: 20px; /* Mezera mezi snímky */
 }
 
-.carousel-images img {
-    width: 100%;
-    display: none;
+.carousel img {
+    width: 100%; /* Obrázky se přizpůsobí šířce snímku */
+    border-radius: 10px; /* Rámeček pro hezčí vzhled */
+    transition: transform 0.3s ease; /* Plynulý přechod pro zvětšení */
 }
 
-.carousel-images img:first-child {
-    display: block;
+.carousel img:hover {
+    transform: scale(1.1); /* Zvětšení obrázku při najetí myší */
 }
 
-.prev, .next {
+.carousel-prev, .carousel-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--accent-color);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.7); /* Poloprůhledné pozadí */
     border: none;
     padding: 10px;
     cursor: pointer;
+    z-index: 1;
 }
 
-.prev {
-    left: 0;
+.carousel-prev {
+    left: 10px; /* Umístění levého tlačítka */
 }
 
-.next {
-    right: 0;
+.carousel-next {
+    right: 10px; /* Umístění pravého tlačítka */
 }
 
 /* Styly pro sekce */
