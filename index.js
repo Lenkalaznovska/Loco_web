@@ -134,3 +134,20 @@ showSlide(currentSlide);
 
 // Automatický přechod mezi snímky (volitelně)
 setInterval(nextSlide, 5000); // Změna snímku každých 5 sekund
+
+// Funkce pro otevření modálního okna
+function openModal(image) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    modal.style.display = "block"; // Zobrazit modal
+    modalImage.src = image.src; // Nastavit zdroj obrázku v modalu
+}
+
+// Funkce pro zavření modálního okna
+function closeModal() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none"; // Skrýt modal
+}
+
+// Přidání události pro zavření modalu při kliknutí
+document.getElementById("imageModal").addEventListener("click", closeModal);
