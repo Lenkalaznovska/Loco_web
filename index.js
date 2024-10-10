@@ -98,42 +98,40 @@ languageButtons.forEach(button => {
 // Inicializace obsahu
 updateContent();
 
-// Carousel
-const carousel = document.querySelector('.carousel');
-const slides = carousel.querySelectorAll('.slide');
-const carouselContainer = document.querySelector('.carousel-container');
-let currentSlide = 0;
-const slideWidth = slides[0].offsetWidth; 
+     // Carousel
+        const carousel = document.querySelector('.carousel');
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
 
-// Set carousel width
-carousel.style.width = `${slides.length * slideWidth}px`;
+        // Nastavení šířky carouselu na základě počtu slideů
+        const updateCarouselWidth = () => {
+            const slideWidth = slides[0].offsetWidth;
+            const carouselWidth = totalSlides * slideWidth;
+            carousel.style.width = `${carouselWidth}px`;
+            showSlide(currentSlide); // Upraví pozici slideů po resize
+        };
 
-// Show slide with partial previews
-function showSlide(index) {
-    const offset = -index * slideWidth + (carouselContainer.offsetWidth - slideWidth) / 2;
-    carousel.style.transform = `translateX(${offset}px)`;
-}
+        // Funkce pro zobrazení aktuálního slide s částečným náhledem vedlejších slideů
+        function showSlide(index) {
+            const offset = -index * slides[0].offsetWidth + (carousel.parentNode.offsetWidth - slides[0].offsetWidth) / 2;
+            carousel.style.transform = `translateX(${offset}px)`;
+        }
 
-// Move to next slide
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-}
+        // Posun na další slide
+        document.querySelector('.carousel-next').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        });
 
-// Move to previous slide
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-}
+        // Posun na předchozí slide
+        document.querySelector('.carousel-prev').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        });
 
-// Button event listeners
-document.querySelector('.carousel-next').addEventListener('click', nextSlide);
-document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
+        // Přizpůsobit při změně velikosti okna
+        window.addEventListener('resize', updateCarouselWidth);
 
-// Set initial slide
-showSlide(currentSlide);
-
-// Adjust carousel on window resize
-window.addEventListener('resize', () => {
-    showSlide(currentSlide);
-});
+        // Počáteční nastavení
+        updateCarouselWidth();
