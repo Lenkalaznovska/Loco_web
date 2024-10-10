@@ -99,12 +99,14 @@ nav.navigation a:hover {
         .carousel {
             display: flex;
             transition: transform 0.5s ease;
+            will-change: transform;
         }
 
         .slide {
-            flex: 0 0 33.33%; /* Aby byly vidět části levého a pravého obrázku */
+            flex: 0 0 50%; /* Aby byly vidět poloviny sousedních obrázků */
             box-sizing: border-box;
             padding: 10px;
+            transition: transform 0.5s ease;
         }
 
         .slide img {
