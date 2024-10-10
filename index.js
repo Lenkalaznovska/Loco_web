@@ -61,7 +61,6 @@ let currentLanguage = localStorage.getItem('language') || 'cs';
 
 // Funkce pro aktualizaci textu na stránce
 function updateContent() {
-    // Aktualizace obsahu sekcí
     document.querySelectorAll('[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
         if (languages[currentLanguage][key]) {
@@ -71,7 +70,6 @@ function updateContent() {
         }
     });
 
-    // Aktualizace textu v navigačním menu
     document.querySelectorAll('.navigation a[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
         if (languages[currentLanguage][key]) {
@@ -81,8 +79,7 @@ function updateContent() {
         }
     });
 
-    // Aktualizace textu v patičce
-    const footerElement = document.querySelector('.footer-text'); // Změňte selektor podle struktury vaší stránky
+    const footerElement = document.querySelector('.footer-text');
     if (footerElement && languages[currentLanguage]["footer"]) {
         footerElement.innerText = languages[currentLanguage]["footer"];
     }
@@ -92,9 +89,9 @@ function updateContent() {
 const languageButtons = document.querySelectorAll('.lang-flag');
 languageButtons.forEach(button => {
     button.addEventListener('click', (e) => {
-        currentLanguage = e.target.dataset.lang; // Získání zvoleného jazyka
-        localStorage.setItem('language', currentLanguage); // Uložení zvoleného jazyka do localStorage
-        updateContent(); // Aktualizace obsahu
+        currentLanguage = e.target.dataset.lang;
+        localStorage.setItem('language', currentLanguage);
+        updateContent();
     });
 });
 
@@ -106,12 +103,12 @@ const carousel = document.querySelector('.carousel');
 const slides = carousel.querySelectorAll('.slide');
 const carouselContainer = document.querySelector('.carousel-container');
 let currentSlide = 0;
-const slideWidth = slides[0].offsetWidth; // Get width of one slide
+const slideWidth = slides[0].offsetWidth; 
 
-// Set carousel width based on the number of slides
+// Set carousel width
 carousel.style.width = `${slides.length * slideWidth}px`;
 
-// Show slide with partial previews on both sides
+// Show slide with partial previews
 function showSlide(index) {
     const offset = -index * slideWidth + (carouselContainer.offsetWidth - slideWidth) / 2;
     carousel.style.transform = `translateX(${offset}px)`;
@@ -136,7 +133,7 @@ document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
 // Set initial slide
 showSlide(currentSlide);
 
-// Adjust carousel when window is resized
+// Adjust carousel on window resize
 window.addEventListener('resize', () => {
     showSlide(currentSlide);
 });
