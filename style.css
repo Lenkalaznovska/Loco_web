@@ -1,4 +1,4 @@
- /* Reset a obecné styly */
+/* Reset a obecné styly */
 :root {
     --main-bg-color: #ffffff; /* Hlavní pozadí */
     --primary-color: #003366; /* Tmavě modrá barva pro text */
@@ -12,7 +12,6 @@
     --hover-bg-color: #b3b3b3; /* Tmavší šedá pro hover efekt */
 }
 
-/* Resetování marginů a paddingů */
 * {
     margin: 0;
     padding: 0;
