@@ -43,21 +43,26 @@ h1 {
     justify-content: center;
     margin: 20px auto;
     max-width: 70%;
+    overflow: hidden;
 }
 
 .carousel-track-container {
+    position: relative;
     overflow: hidden;
     width: 100%;
 }
 
 .carousel-track {
     display: flex;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-slide {
-    min-width: 100%;
-    overflow: hidden;
+    min-width: 33%; /* Zajišťuje, že bude vidět 1 celá fotka a 2 poloviny po stranách */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel img {
