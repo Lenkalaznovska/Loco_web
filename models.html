@@ -6,10 +6,10 @@
     <meta name="description" content="Modelové vlaky - Podívejte se na naše skvělé modely.">
     <title>Modely - Modelové Vláčky</title>
     <link rel="icon" href="images/locomotive.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container"> <!-- Flexbox struktura -->
+    <div class="container">
         <header class="menu-header">
             <div class="menu-background">
                 <div class="menu-content">
@@ -32,38 +32,37 @@
         </nav>
         <div class="third-line"></div>
 
-        <!-- Přepínač jazyků -->
-        <div class="language-switcher">
-            <button class="lang-flag" data-lang="cs">🇨🇿</button>
-            <button class="lang-flag" data-lang="en">🇬🇧</button>
-            <button class="lang-flag" data-lang="de">🇩🇪</button>
-        </div>
-
         <main>
             <section class="about text-container section">
                 <h2 data-key="models-title">Naše modely</h2>
                 <p data-key="models-desc">Zde najdete širokou škálu našich modelových vlaků, které jsou precizně zpracovány a navrženy tak, aby splnily očekávání každého železničního nadšence.</p>
             </section>
 
+            <!-- Carousel sekce -->
+            <section class="carousel-section">
+                <div class="carousel">
+                    <div class="carousel-images">
+                        <img src="images/loco1.jpeg" alt="Lokomotiva 1">
+                        <img src="images/loco2.jpeg" alt="Lokomotiva 2">
+                        <img src="images/loco3.jpeg" alt="Lokomotiva 3">
+                        <img src="images/loco4.jpeg" alt="Lokomotiva 4">
+                    </div>
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+            </section>
+
             <section class="models-gallery text-container section">
                 <h2 data-key="gallery-title">Galerie modelů</h2>
                 <p data-key="gallery-desc">Prohlédněte si naši galerii modelů, kde najdete fotografie našich nejnovějších a nejoblíbenějších výrobků.</p>
-                
-                <!-- Obrázky modelů -->
-                <div class="gallery">
-                    <img src="images/loco1.jpg" alt="Model vlak 1" class="model-image">
-                    <img src="images/loco2.jpg" alt="Model vlak 2" class="model-image">
-                    <img src="images/loco3.jpg" alt="Model vlak 3" class="model-image">
-                    <img src="images/loco4.jpg" alt="Model vlak 4" class="model-image">
-                </div>
             </section>
         </main>
 
         <footer class="footer">
             <p class="footer-text" data-key="footer">© 2024 Modelové Vláčky. Všechna práva vyhrazena.</p>
         </footer>
-    </div> <!-- Ukončení kontejneru -->
-    
-    <script src="script.js"></script> <!-- Odkaz na JS soubor -->
+    </div>
+
+    <script src="index.js" defer></script>
 </body>
 </html>
