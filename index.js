@@ -108,23 +108,30 @@ const prevButton = document.querySelector('.carousel-control.prev');
 const nextButton = document.querySelector('.carousel-control.next');
 
 let currentSlideIndex = 0;
+const slideWidth = slides[0].getBoundingClientRect().width;
+
+// Umístění slidu vedle sebe
+slides.forEach((slide, index) => {
+    slide.style.left = `${slideWidth * index}px`;
+});
 
 // Funkce pro posun carouselu
-function updateCarousel() {
-    const amountToMove = slides[currentSlideIndex].getBoundingClientRect().width;
-    track.style.transform = `translateX(-${amountToMove * currentSlideIndex}px)`;
+function moveToSlide(track, currentSlide, targetSlide) {
+    track.style.transform = `translateX(-${targetSlide.style.left})`;
 }
 
 // Předchozí slide
 prevButton.addEventListener('click', () => {
     currentSlideIndex = (currentSlideIndex === 0) ? slides.length - 1 : currentSlideIndex - 1;
-    updateCarousel();
+    const currentSlide = slides[currentSlideIndex];
+    moveToSlide(track, slides[0], currentSlide);
 });
 
 // Další slide
 nextButton.addEventListener('click', () => {
     currentSlideIndex = (currentSlideIndex === slides.length - 1) ? 0 : currentSlideIndex + 1;
-    updateCarousel();
+    const currentSlide = slides[currentSlideIndex];
+    moveToSlide(track, slides[0], currentSlide);
 });
 
 // Modal funkcionalita
@@ -139,6 +146,7 @@ slides.forEach(slide => {
     });
 });
 
+// Zavření modalu
 closeModal.addEventListener('click', () => {
     modal.style.display = "none";
 });
