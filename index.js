@@ -98,23 +98,16 @@ languageButtons.forEach(button => {
 // Inicializace obsahu
 updateContent();
 
-     // Carousel
+        // Carousel
         const carousel = document.querySelector('.carousel');
         const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
+        let currentSlide = 1; // Nastavíme, aby výchozí byl prostřední slide
         const totalSlides = slides.length;
-
-        // Nastavení šířky carouselu na základě počtu slideů
-        const updateCarouselWidth = () => {
-            const slideWidth = slides[0].offsetWidth;
-            const carouselWidth = totalSlides * slideWidth;
-            carousel.style.width = `${carouselWidth}px`;
-            showSlide(currentSlide); // Upraví pozici slideů po resize
-        };
 
         // Funkce pro zobrazení aktuálního slide s částečným náhledem vedlejších slideů
         function showSlide(index) {
-            const offset = -index * slides[0].offsetWidth + (carousel.parentNode.offsetWidth - slides[0].offsetWidth) / 2;
+            const slideWidth = slides[0].offsetWidth;
+            const offset = -index * slideWidth + (carousel.parentNode.offsetWidth - slideWidth) / 2;
             carousel.style.transform = `translateX(${offset}px)`;
         }
 
@@ -131,7 +124,7 @@ updateContent();
         });
 
         // Přizpůsobit při změně velikosti okna
-        window.addEventListener('resize', updateCarouselWidth);
+        window.addEventListener('resize', () => showSlide(currentSlide));
 
-        // Počáteční nastavení
-        updateCarouselWidth();
+        // Počáteční nastavení na prostřední slide
+        showSlide(currentSlide);
