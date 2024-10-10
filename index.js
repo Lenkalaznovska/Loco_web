@@ -98,141 +98,93 @@ languageButtons.forEach(button => {
 // Inicializace obsahu
 updateContent();
 
-        // Carousel
+// Carousel - Základní funkce
+const carousel = document.querySelector('.carousel');
+const slides = document.querySelectorAll('.slide');
+let currentSlide = 1;
 
-        const carousel = document.querySelector('.carousel');
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        let currentSlide = 0;
+function showSlide(index) {
+    const slideWidth = slides[0].offsetWidth;
+    const offset = -index * slideWidth + (carousel.parentNode.offsetWidth - slideWidth) / 2;
+    carousel.style.transform = `translateX(${offset}px)`;
+}
 
-        // Funkce pro zobrazení aktuálního slide s částečným náhledem vedlejších slideů
-        function showSlide(index) {
-            const slideWidth = slides[0].offsetWidth;
-            const offset = -index * slideWidth + (carousel.parentNode.offsetWidth - slideWidth) / 2;
-            carousel.style.transform = `translateX(${offset}px)`;
-        }
+function cloneSlides() {
+    const firstSlide = slides[0].cloneNode(true);
+    const lastSlide = slides[slides.length - 1].cloneNode(true);
+    carousel.appendChild(firstSlide);
+    carousel.insertBefore(lastSlide, slides[0]);
+}
 
-        // Nekonečný carousel - klonování prvního a posledního slideu
-        function cloneSlides() {
-            const firstSlide = slides[0].cloneNode(true);
-            const lastSlide = slides[slides.length - 1].cloneNode(true);
-            carousel.appendChild(firstSlide);
-            carousel.insertBefore(lastSlide, slides[0]);
-        }
+cloneSlides();
+let clonedSlides = document.querySelectorAll('.slide');
 
-        // Inicializace - klonování prvního a posledního obrázku
-        cloneSlides();
-
-        // Aktualizace počtu slidů po klonování
-        let clonedSlides = document.querySelectorAll('.slide');
-        let clonedTotalSlides = clonedSlides.length;
-
-        // Při dosažení posledního/klonovaného slideu, vrátit na první skutečný slide
-        function nextSlide() {
-            currentSlide++;
+function nextSlide() {
+    currentSlide++;
+    showSlide(currentSlide);
+    if (currentSlide === clonedSlides.length - 1) {
+        setTimeout(() => {
+            carousel.style.transition = 'none';
+            currentSlide = 1;
             showSlide(currentSlide);
+        }, 500);
+    }
+    carousel.style.transition = 'transform 0.5s ease';
+}
 
-            if (currentSlide === clonedTotalSlides - 1) {
-                setTimeout(() => {
-                    carousel.style.transition = 'none'; // Dočasně vypneme animaci
-                    currentSlide = 1; // Přesuneme se na první skutečný slide
-                    showSlide(currentSlide);
-                }, 500); // Po 500 ms
-            }
-
-            carousel.style.transition = 'transform 0.5s ease'; // Znovu povolíme animaci
-        }
-
-        // Při dosažení prvního/klonovaného slideu, vrátit na poslední skutečný slide
-        function prevSlide() {
-            currentSlide--;
+function prevSlide() {
+    currentSlide--;
+    showSlide(currentSlide);
+    if (currentSlide === 0) {
+        setTimeout(() => {
+            carousel.style.transition = 'none';
+            currentSlide = clonedSlides.length - 2;
             showSlide(currentSlide);
-
-            if (currentSlide === 0) {
-                setTimeout(() => {
-                    carousel.style.transition = 'none'; // Dočasně vypneme animaci
-                    currentSlide = clonedTotalSlides - 2; // Přesuneme se na poslední skutečný slide
-                    showSlide(currentSlide);
-                }, 500); // Po 500 ms
-            }
-
-            carousel.style.transition = 'transform 0.5s ease'; // Znovu povolíme animaci
-        }
-
-        // Event listeners pro tlačítka
-        document.querySelector('.carousel-next').addEventListener('click', nextSlide);
-        document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
-
-        // Přizpůsobit při změně velikosti okna
-        window.addEventListener('resize', () => showSlide(currentSlide));
-
-        // Nastavit počáteční slide (první skutečný slide)
-        currentSlide = 1;
-        showSlide(currentSlide);
-
-        // Funkce pro náhled a zvětšení obrázku
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-        const closeModal = document.querySelector('.close');
-
-        slides.forEach(slide => {
-            slide.addEventListener('click', function () {
-                modal.style.display = 'flex'; // Zobrazit modální okno
-                modalImage.src = this.querySelector('img').src; // Nastavit zdroj obrázku do modálního okna
-            });
-        });
-
-        // Zavření modálního okna při kliknutí na křížek
-        closeModal.addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-
-        // Zavření modálního okna při kliknutí mimo obrázek
-      const carouselImages = document.querySelectorAll('.carousel-image');
-    const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    const closeBtn = document.querySelector('.close');
-    const prevModalBtn = document.querySelector('.modal-prev');
-    const nextModalBtn = document.querySelector('.modal-next');
-    let currentModalIndex = 0;
-
-    // Otevření modálního okna s vybranou fotkou
-    function openModal(index) {
-        currentModalIndex = index;
-        modalImage.src = carouselImages[currentModalIndex].src;
-        modal.style.display = 'block';
+        }, 500);
     }
+    carousel.style.transition = 'transform 0.5s ease';
+}
 
-    // Zobrazení předchozí fotky v modálním okně
-    function prevModalSlide() {
-        currentModalIndex = (currentModalIndex - 1 + carouselImages.length) % carouselImages.length;
-        modalImage.src = carouselImages[currentModalIndex].src;
-    }
+document.querySelector('.carousel-next').addEventListener('click', nextSlide);
+document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
+window.addEventListener('resize', () => showSlide(currentSlide));
+showSlide(currentSlide);
 
-    // Zobrazení další fotky v modálním okně
-    function nextModalSlide() {
-        currentModalIndex = (currentModalIndex + 1) % carouselImages.length;
-        modalImage.src = carouselImages[currentModalIndex].src;
-    }
+// Modální okno
+const modal = document.getElementById('imageModal');
+const modalImage = document.getElementById('modalImage');
+const closeModal = document.querySelector('.close');
 
-    // Zavření modálního okna
-    function closeModal() {
+slides.forEach(slide => {
+    slide.addEventListener('click', function () {
+        modal.style.display = 'flex';
+        modalImage.src = this.querySelector('img').src;
+    });
+});
+
+closeModal.addEventListener('click', function () {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
         modal.style.display = 'none';
     }
+});
 
-    // Přidání event listenerů pro obrázky v carouselu
-    carouselImages.forEach((image, index) => {
-        image.addEventListener('click', () => openModal(index));
-    });
+const prevModalBtn = document.querySelector('.modal-prev');
+const nextModalBtn = document.querySelector('.modal-next');
+let currentModalIndex = 0;
 
-    // Event listenery pro tlačítka v modálním okně
-    closeBtn.addEventListener('click', closeModal);
-    prevModalBtn.addEventListener('click', prevModalSlide);
-    nextModalBtn.addEventListener('click', nextModalSlide);
+function prevModalSlide() {
+    currentModalIndex = (currentModalIndex - 1 + slides.length) % slides.length;
+    modalImage.src = slides[currentModalIndex].querySelector('img').src;
+}
 
-    // Zavření modálního okna kliknutím mimo obrázek
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) {
-            closeModal();
-        }
-    });
+function nextModalSlide() {
+    currentModalIndex = (currentModalIndex + 1) % slides.length;
+    modalImage.src = slides[currentModalIndex].querySelector('img').src;
+}
+
+prevModalBtn.addEventListener('click', prevModalSlide);
+nextModalBtn.addEventListener('click', nextModalSlide);
