@@ -67,7 +67,7 @@ function updateContent() {
         if (languages[currentLanguage][key]) {
             el.innerText = languages[currentLanguage][key];
         } else {
-            console.warn(Chybějící překlad pro klíč: ${key});
+            console.warn(`Chybějící překlad pro klíč: ${key}`);
         }
     });
 
@@ -77,7 +77,7 @@ function updateContent() {
         if (languages[currentLanguage][key]) {
             el.innerText = languages[currentLanguage][key];
         } else {
-            console.warn(Chybějící překlad pro klíč: ${key});
+            console.warn(`Chybějící překlad pro klíč: ${key}`);
         }
     });
 
