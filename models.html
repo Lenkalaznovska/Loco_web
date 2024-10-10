@@ -41,7 +41,28 @@
             <section class="models-gallery text-container section">
                 <h2 data-key="gallery-title">Galerie modelů</h2>
                 <p data-key="gallery-desc">Prohlédněte si naši galerii modelů, kde najdete fotografie našich nejnovějších a nejoblíbenějších výrobků.</p>
-                <!-- Můžete zde přidat obrázky modelů -->
+
+                <!-- Carousel s obrázky -->
+                <div class="carousel">
+                    <button class="carousel-control prev">‹</button>
+                    <div class="carousel-track-container">
+                        <ul class="carousel-track">
+                            <li class="carousel-slide"><img src="images/loco1.jpg" alt="Model 1"></li>
+                            <li class="carousel-slide"><img src="images/loco2.jpg" alt="Model 2"></li>
+                            <li class="carousel-slide"><img src="images/loco3.jpg" alt="Model 3"></li>
+                            <li class="carousel-slide"><img src="images/loco4.jpg" alt="Model 4"></li>
+                        </ul>
+                    </div>
+                    <button class="carousel-control next">›</button>
+                </div>
+
+                <!-- Modal pro zobrazení náhledu obrázku -->
+                <div id="modal" class="modal">
+                    <span class="close">&times;</span>
+                    <img class="modal-content" id="modal-img">
+                    <div class="modal-caption"></div>
+                </div>
+
             </section>
         </main>
 
