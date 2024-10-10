@@ -87,7 +87,7 @@ nav.navigation a:hover {
     background-color: var(--hover-bg-color); /* Tmavší šedá pro hover efekt */
 }
 
-        /* Základní styl carouselu */
+         /* Základní styl carouselu */
         .carousel-container {
             position: relative;
             width: 100%;
@@ -112,7 +112,6 @@ nav.navigation a:hover {
         .slide img {
             width: 100%;
             border-radius: 10px;
-            cursor: pointer; /* Přidání kurzoru ruky při najetí na obrázek */
         }
 
         /* Carousel ovládací prvky */
@@ -134,42 +133,6 @@ nav.navigation a:hover {
 
         .carousel-next {
             right: 0;
-        }
-
-        /* Styl pro modální okno (náhled obrázku) */
-        .modal {
-            display: none; /* Skryté, dokud není aktivováno */
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        .modal-content img {
-            width: 100%;
-            height: auto;
-        }
-
-        /* Styl pro křížek zavření */
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-            background: none;
-            border: none;
         }
 
 /* Styly pro sekce */
