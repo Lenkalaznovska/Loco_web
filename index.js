@@ -99,7 +99,8 @@ languageButtons.forEach(button => {
 updateContent();
 
         // Carousel
-      const carousel = document.querySelector('.carousel');
+
+        const carousel = document.querySelector('.carousel');
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
         let currentSlide = 0;
@@ -168,3 +169,27 @@ updateContent();
         // Nastavit počáteční slide (první skutečný slide)
         currentSlide = 1;
         showSlide(currentSlide);
+
+        // Funkce pro náhled a zvětšení obrázku
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModal = document.querySelector('.close');
+
+        slides.forEach(slide => {
+            slide.addEventListener('click', function () {
+                modal.style.display = 'flex'; // Zobrazit modální okno
+                modalImage.src = this.querySelector('img').src; // Nastavit zdroj obrázku do modálního okna
+            });
+        });
+
+        // Zavření modálního okna při kliknutí na křížek
+        closeModal.addEventListener('click', function () {
+            modal.style.display = 'none';
+        });
+
+        // Zavření modálního okna při kliknutí mimo obrázek
+        window.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
