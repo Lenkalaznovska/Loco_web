@@ -103,35 +103,60 @@ updateContent();
 
 // Carousel funkcionalita
 const track = document.querySelector('.carousel-track');
-const slides = Array.from(track.children);
-const prevButton = document.querySelector('.carousel-control.prev');
-const nextButton = document.querySelector('.carousel-control.next');
+const slides = [];
 
-let currentSlideIndex = 0;
-const slideWidth = slides[0].getBoundingClientRect().width;
+// Obrázky pro carousel
+const imagePaths = ['images/loco1.jpg', 'images/loco2.jpg', 'images/loco3.jpg', 'images/loco4.jpg'];
 
-// Umístění slidu vedle sebe
-slides.forEach((slide, index) => {
-    slide.style.left = `${slideWidth * index}px`;
-});
+// Inicializace prázdného carouselu
+function initializeCarousel() {
+    // Vytvoříme li elementy pro obrázky, ale zatím je neukážeme
+    imagePaths.forEach((src, index) => {
+        const li = document.createElement('li');
+        li.classList.add('carousel-slide');
+        const img = document.createElement('img');
+        img.src = ''; // Obrázky načteme později
+        img.alt = `Model ${index + 1}`;
+        li.appendChild(img);
+        track.appendChild(li);
+        slides.push(li);
+    });
 
-// Funkce pro posun carouselu
-function moveToSlide(track, currentSlide, targetSlide) {
-    track.style.transform = `translateX(-${targetSlide.style.left})`;
+    // Zajistíme pozice obrázků
+    updateCarousel();
 }
 
-// Předchozí slide
-prevButton.addEventListener('click', () => {
-    currentSlideIndex = (currentSlideIndex === 0) ? slides.length - 1 : currentSlideIndex - 1;
-    const currentSlide = slides[currentSlideIndex];
-    moveToSlide(track, slides[0], currentSlide);
+// Aktualizace pozice obrázků
+function updateCarousel() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    slides.forEach((slide, index) => {
+        slide.style.left = `${slideWidth * index}px`;
+    });
+}
+
+// Funkce pro načtení obrázku do carouselu při kliknutí na tlačítko
+function loadImage(index) {
+    const slide = slides[index];
+    if (slide.querySelector('img').src === '') {
+        slide.querySelector('img').src = imagePaths[index];
+    }
+}
+
+// Posuvníky
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
+let currentIndex = 0;
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % slides.length;
+    track.style.transform = `translateX(-${currentIndex * 50}%)`;
+    loadImage(currentIndex);
 });
 
-// Další slide
-nextButton.addEventListener('click', () => {
-    currentSlideIndex = (currentSlideIndex === slides.length - 1) ? 0 : currentSlideIndex + 1;
-    const currentSlide = slides[currentSlideIndex];
-    moveToSlide(track, slides[0], currentSlide);
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    track.style.transform = `translateX(-${currentIndex * 50}%)`;
+    loadImage(currentIndex);
 });
 
 // Modal funkcionalita
@@ -167,3 +192,6 @@ modalNextButton.addEventListener('click', () => {
     modalCurrentIndex = (modalCurrentIndex === slides.length - 1) ? 0 : modalCurrentIndex + 1;
     modalImg.src = slides[modalCurrentIndex].querySelector('img').src;
 });
+
+// Inicializace carouselu při načtení stránky
+window.addEventListener('load', initializeCarousel);
