@@ -138,15 +138,32 @@ nextButton.addEventListener('click', () => {
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
 const closeModal = document.querySelector('.close');
+const modalPrevButton = document.querySelector('.modal-prev');
+const modalNextButton = document.querySelector('.modal-next');
+let modalCurrentIndex = 0;
 
-slides.forEach(slide => {
+// Zobrazení modalu při kliknutí na obrázek
+slides.forEach((slide, index) => {
     slide.addEventListener('click', () => {
         modal.style.display = "block";
         modalImg.src = slide.querySelector('img').src;
+        modalCurrentIndex = index;
     });
 });
 
 // Zavření modalu
 closeModal.addEventListener('click', () => {
     modal.style.display = "none";
+});
+
+// Předchozí obrázek v modalu
+modalPrevButton.addEventListener('click', () => {
+    modalCurrentIndex = (modalCurrentIndex === 0) ? slides.length - 1 : modalCurrentIndex - 1;
+    modalImg.src = slides[modalCurrentIndex].querySelector('img').src;
+});
+
+// Další obrázek v modalu
+modalNextButton.addEventListener('click', () => {
+    modalCurrentIndex = (modalCurrentIndex === slides.length - 1) ? 0 : modalCurrentIndex + 1;
+    modalImg.src = slides[modalCurrentIndex].querySelector('img').src;
 });
