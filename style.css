@@ -87,54 +87,51 @@ nav.navigation a:hover {
     background-color: var(--hover-bg-color); /* Tmavší šedá pro hover efekt */
 }
 
-.carousel-container {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-}
+/* Základní styl carouselu */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
 
-.carousel-slide {
-    display: flex;
-    justify-content: center;
-    transition: transform 0.5s ease-in-out;
-}
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
 
-.carousel-slide img {
-    width: 100%;
-    max-width: 300px; /* Nastaví maximální velikost jednoho obrázku */
-    transition: transform 0.5s ease-in-out;
-}
+        .slide {
+            min-width: 33.33%; /* Aby byly vidět části levého a pravého obrázku */
+            box-sizing: border-box;
+            padding: 10px;
+        }
 
-.carousel-slide img.active {
-    transform: scale(1.1); /* Zvýrazní střední obrázek */
-}
+        .slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-}
+        /* Carousel ovládací prvky */
+        .carousel-prev, .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
 
-.carousel-button.left {
-    left: 10px;
-}
+        .carousel-prev {
+            left: 0;
+        }
 
-.carousel-button.right {
-    right: 10px;
-}
-
-.carousel-button:focus {
-    outline: none;
-}
+        .carousel-next {
+            right: 0;
+        }
 
 /* Styly pro sekce */
 .section {
