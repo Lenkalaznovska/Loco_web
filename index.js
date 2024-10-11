@@ -103,61 +103,29 @@ updateContent();
 
 // Carousel funkcionalita
 const track = document.querySelector('.carousel-track');
-const slides = [];
-
-// Obrázky pro carousel
-const imagePaths = ['images/loco1.jpg', 'images/loco2.jpg', 'images/loco3.jpg', 'images/loco4.jpg'];
-
-// Inicializace prázdného carouselu
-function initializeCarousel() {
-    // Vytvoříme li elementy pro obrázky, ale zatím je neukážeme
-    imagePaths.forEach((src, index) => {
-        const li = document.createElement('li');
-        li.classList.add('carousel-slide');
-        const img = document.createElement('img');
-        img.src = ''; // Obrázky načteme později
-        img.alt = `Model ${index + 1}`;
-        li.appendChild(img);
-        track.appendChild(li);
-        slides.push(li);
-    });
-
-    // Zajistíme pozice obrázků
-    updateCarousel();
-}
-
-// Aktualizace pozice obrázků
-function updateCarousel() {
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    slides.forEach((slide, index) => {
-        slide.style.left = `${slideWidth * index}px`;
-    });
-}
-
-// Funkce pro načtení obrázku do carouselu při kliknutí na tlačítko
-function loadImage(index) {
-    const slide = slides[index];
-    if (slide.querySelector('img').src === '') {
-        slide.querySelector('img').src = imagePaths[index];
-    }
-}
-
-// Posuvníky
-const nextButton = document.querySelector('.next');
-const prevButton = document.querySelector('.prev');
+const slides = Array.from(track.children);
 let currentIndex = 0;
 
-nextButton.addEventListener('click', () => {
+function updateCarouselPosition() {
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentIndex);
+    });
+}
+
+document.querySelector('.next').addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % slides.length;
-    track.style.transform = `translateX(-${currentIndex * 50}%)`;
-    loadImage(currentIndex);
+    updateCarouselPosition();
 });
 
-prevButton.addEventListener('click', () => {
+document.querySelector('.prev').addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    track.style.transform = `translateX(-${currentIndex * 50}%)`;
-    loadImage(currentIndex);
+    updateCarouselPosition();
 });
+
+// Nastavení karuselu při načtení
+updateCarouselPosition();
 
 // Modal funkcionalita
 const modal = document.getElementById("modal");
