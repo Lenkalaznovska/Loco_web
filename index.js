@@ -106,40 +106,54 @@ document.addEventListener('DOMContentLoaded', function () {
     const slides = Array.from(track.children);
     const prevButton = document.querySelector('.carousel-control.prev');
     const nextButton = document.querySelector('.carousel-control.next');
-    
+
+    let currentIndex = 1; // Startujeme od druhého obrázku (prostřední obrázek)
     const slideWidth = slides[0].getBoundingClientRect().width;
 
-    // Nastavení šířky každého slidu vedle sebe
-    slides.forEach((slide, index) => {
-        slide.style.left = `${slideWidth * index}px`;
-    });
+    // Duplikace prvního a posledního slide pro nekonečné scrollování
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
+    
+    // Přidání klonů na začátek a konec
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
 
-    const moveToSlide = (track, currentSlide, targetSlide) => {
-        track.style.transform = `translateX(-${targetSlide.style.left})`;
-        currentSlide.classList.remove('current-slide');
-        targetSlide.classList.add('current-slide');
+    const updateSlidePosition = () => {
+        track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
     };
 
-    prevButton.addEventListener('click', e => {
-        const currentSlide = track.querySelector('.current-slide');
-        const prevSlide = currentSlide.previousElementSibling;
+    updateSlidePosition();
 
-        if (prevSlide) {
-            moveToSlide(track, currentSlide, prevSlide);
-        }
+    const moveToSlide = (newIndex) => {
+        currentIndex = newIndex;
+        track.style.transition = 'transform 0.5s ease-in-out';
+        updateSlidePosition();
+    };
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex >= slides.length) return; // Disable excessive clicks
+        moveToSlide(currentIndex + 1);
     });
 
-    nextButton.addEventListener('click', e => {
-        const currentSlide = track.querySelector('.current-slide');
-        const nextSlide = currentSlide.nextElementSibling;
-
-        if (nextSlide) {
-            moveToSlide(track, currentSlide, nextSlide);
-        }
+    prevButton.addEventListener('click', () => {
+        if (currentIndex <= 0) return; // Disable excessive clicks
+        moveToSlide(currentIndex - 1);
     });
 
-    // Inicializace, aby první slide byl vždy zobrazen jako current-slide
-    slides[0].classList.add('current-slide');
+    // Pokud dojdeme na konec nebo začátek, skokově přesuneme pozici bez animace
+    track.addEventListener('transitionend', () => {
+        if (slides[currentIndex].classList.contains('last-clone')) {
+            track.style.transition = 'none';
+            currentIndex = slides.length - 2;
+            updateSlidePosition();
+        }
+
+        if (slides[currentIndex].classList.contains('first-clone')) {
+            track.style.transition = 'none';
+            currentIndex = 1;
+            updateSlidePosition();
+        }
+    });
 });
 
 // Modal funkcionalita
