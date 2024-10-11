@@ -19,10 +19,6 @@
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%; /* Zajišťuje, že celé tělo má výšku stránky */
-}
-
 body {
     font-family: "Roboto", sans-serif;
     color: var(--primary-color);
@@ -137,7 +133,7 @@ h1 {
 .container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Kontejner bude minimálně výšky celé obrazovky */
+    min-height: 100vh; /* Aby kontejner zabíral minimálně výšku obrazovky */
 }
 
 /* Navigační menu */
@@ -314,22 +310,47 @@ button {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
-    margin: 0 20px;
-    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Patička */
+/* Styly pro patičku */
 .footer {
-    background-color: var(--footer-bg-color); /* Barva pozadí */
-    color: white; /* Barva textu */
+    background-color: var(--footer-bg-color);
+    color: white;
     text-align: center;
-    padding: 40px 0; /* Padding */
-    border-top: 2px solid var(--accent-color); /* Hranice nahoře */
+    padding: 20px;
+    position: relative; /* Pozice pro čáru */
+    margin-top: auto; /* Posunout footer dolů */
 }
 
-/* Stíny pro patičku */
-.footer p {
-    font-size: 12px;
-    color: var(--highlight-color);
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Zmenšení písma pro menší obrazovky */
+    }
+
+    .section {
+        padding: 20px 10px; /* Zmenšení paddingu sekcí */
+    }
+
+    h1 {
+        font-size: 36px; /* Zmenšení nadpisu */
+    }
+
+    button {
+        width: 100px; /* Zmenšení šířky tlačítek */
+    }
+
+    .lang-btn {
+        width: 40px; /* Zmenšení šířky tlačítka pro vlajky */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px; /* Další zmenšení nadpisu */
+    }
+
+    body {
+        font-size: 14px; /* Další zmenšení písma */
+    }
 }
