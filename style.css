@@ -36,10 +36,9 @@ h1 {
 }
 
 /* Carousel */
-/* Carousel */
 .carousel {
     position: relative;
-    width: 80%; 
+    width: 80%; /* Upravit podle potřeby */
     margin: 0 auto;
     overflow: hidden;
 }
@@ -54,13 +53,10 @@ h1 {
     display: flex;
     transition: transform 0.5s ease;
     will-change: transform;
-    /* Zajistí nekonečné opakování fotek */
-    flex-wrap: nowrap;
 }
 
 .carousel-slide {
-    min-width: 33.33%;
-    flex-shrink: 0;
+    min-width: 33.33%; /* Hlavní fotka + poloviny dalších po stranách */
     transition: transform 0.5s ease;
 }
 
@@ -68,9 +64,46 @@ h1 {
     width: 100%;
     height: auto;
     display: block;
+    cursor: pointer;
 }
 
-.carousel-control {
+/* Modal pro zvětšení fotek */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.modal img {
+    width: 100%;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+/* Šipky pro posouvání v modalu */
+.modal-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -82,21 +115,12 @@ h1 {
     z-index: 1;
 }
 
-.carousel-control.prev {
-    left: 0;
+.modal-control.prev {
+    left: 10px;
 }
 
-.carousel-control.next {
-    right: 0;
-}
-
-/* Odstranění modálních stylů */
-.modal {
-    display: none;
-}
-
-.close {
-    display: none;
+.modal-control.next {
+    right: 10px;
 }
 
 /* Styly pro kontejner */
