@@ -39,61 +39,66 @@ h1 {
     margin: 0;
 }
 
-/* Carousel */
+/* CSS pro carousel */
 .carousel {
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px auto;
-    max-width: 70%;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     overflow: hidden;
 }
 
 .carousel-track-container {
     position: relative;
-    overflow: hidden;
     width: 100%;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 33%; /* Zajišťuje, že bude vidět 1 celá fotka a 2 poloviny po stranách */
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.carousel img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
+.carousel-slide {
+    min-width: 33.33%; /* Zajištění toho, že každá fotka zabírá 1/3 šířky */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5; /* Poloprůhlednost pro vedlejší fotky */
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-slide.active {
+    opacity: 1; /* Plná viditelnost pro hlavní fotku */
+}
+
+/* Ovládání karuselu */
 .carousel-control {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 10px;
-    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 0.5rem;
+    z-index: 1;
 }
 
 .carousel-control.prev {
-    left: 0;
+    left: 10px;
 }
 
 .carousel-control.next {
-    right: 0;
+    right: 10px;
 }
 
 /* Modal */
@@ -319,13 +324,15 @@ button {
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-/* Patička */
+/* Footer vždy na spodním okraji */
 .footer {
-    background-color: var(--footer-bg-color); /* Barva pozadí */
-    color: white; /* Barva textu */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    padding: 40px 0; /* Padding */
-    border-top: 2px solid var(--accent-color); /* Hranice nahoře */
+    padding: 10px 0;
 }
 
 /* Stíny pro patičku */
