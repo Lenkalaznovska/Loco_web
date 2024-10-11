@@ -101,31 +101,46 @@ languageButtons.forEach(button => {
 // Inicializace obsahu
 updateContent();
 
-// Carousel funkcionalita
-const track = document.querySelector('.carousel-track');
-const slides = Array.from(track.children);
-let currentIndex = 0;
-
-function updateCarouselPosition() {
+document.addEventListener('DOMContentLoaded', function () {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const nextButton = document.querySelector('.carousel-control.next');
+    
     const slideWidth = slides[0].getBoundingClientRect().width;
-    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+    // Nastavení šířky každého slidu vedle sebe
     slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === currentIndex);
+        slide.style.left = `${slideWidth * index}px`;
     });
-}
 
-document.querySelector('.next').addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateCarouselPosition();
+    const moveToSlide = (track, currentSlide, targetSlide) => {
+        track.style.transform = `translateX(-${targetSlide.style.left})`;
+        currentSlide.classList.remove('current-slide');
+        targetSlide.classList.add('current-slide');
+    };
+
+    prevButton.addEventListener('click', e => {
+        const currentSlide = track.querySelector('.current-slide');
+        const prevSlide = currentSlide.previousElementSibling;
+
+        if (prevSlide) {
+            moveToSlide(track, currentSlide, prevSlide);
+        }
+    });
+
+    nextButton.addEventListener('click', e => {
+        const currentSlide = track.querySelector('.current-slide');
+        const nextSlide = currentSlide.nextElementSibling;
+
+        if (nextSlide) {
+            moveToSlide(track, currentSlide, nextSlide);
+        }
+    });
+
+    // Inicializace, aby první slide byl vždy zobrazen jako current-slide
+    slides[0].classList.add('current-slide');
 });
-
-document.querySelector('.prev').addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateCarouselPosition();
-});
-
-// Nastavení karuselu při načtení
-updateCarouselPosition();
 
 // Modal funkcionalita
 const modal = document.getElementById("modal");
