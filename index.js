@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
     track.insertBefore(lastClone, slides[0]);
 
     const updateSlidePosition = () => {
-        track.style.transform = `translateX(-${(currentIndex) * slideWidth}px)`;
+        track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
     };
 
     updateSlidePosition();
