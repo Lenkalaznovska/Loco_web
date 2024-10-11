@@ -312,14 +312,16 @@ button {
     font-weight: bold;
 }
 
-/* Styly pro patičku */
 .footer {
     background-color: var(--footer-bg-color);
     color: white;
     text-align: center;
     padding: 20px;
-    position: relative; /* Pozice pro čáru */
-    margin-top: auto; /* Posunout footer dolů */
+    position: fixed; /* Fixní pozice */
+    bottom: 0; /* Na spodním okraji */
+    left: 0;
+    width: 100%; /* Šířka přes celou obrazovku */
+    z-index: 100; /* Nadřazená vrstva pro viditelnost */
 }
 
 /* Media Queries */
